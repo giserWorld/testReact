@@ -5,6 +5,7 @@ import Package_qs from './packageES6/package_qs';
 import Test_Component_Fun from './react/test_Component_Fun';
 import Test_htmlTag_a from './react/test_htmlTag_a';
 import Test_react_Fragment from './react/react_Fragment';
+import Test_router_to_url from './react/router_to_url';
 //componentWillReceiveProps声明周期函数
 import Lifecycle_componentWillReceiveProps from './react/lifecycle_componentWillReceiveProps';
 //componentDidUpdate声明周期函数
@@ -21,7 +22,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Test_react_Fragment/>
+                <Test_router_to_url/>
             </div>
         )
     }
