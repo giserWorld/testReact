@@ -1,22 +1,25 @@
 import React ,{ Component }from 'react';
-import MainPage from './main';
-class antViewer extends Component{
+
+class index extends Component{
     constructor(props){
         super(props);
         this.state={
-            name:"antViewer"
+            name:"index组件",
         }
     }
     render(){
         return(
-            <div className="wrap">
-                <MainPage></MainPage>
+            <div>
+                <h1>{this.state.name}</h1>
             </div>
         )
     }
     componentDidMount(){
-        
+       
+    }
+    componentWillUnmount(){
+
     }
     
 }
-export default antViewer;
+export default index;

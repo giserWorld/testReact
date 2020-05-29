@@ -1,0 +1,30 @@
+.mapdemo{
+    padding: 10px;
+    .divBox{
+        border-top: 1px solid #4e97d9;
+        margin-bottom: 20px;
+        padding-top: 10px; 
+        background: white;
+        .divBox_Card{
+            width: 246px; 
+            display: inline-block;
+        }  
+        .ant-card-head{
+            text-align: center;
+            min-height: 40px;
+        }
+        .ant-card-body{
+            text-align: center;
+            padding: 0px;
+        }
+        .ant-card-head-title{
+            padding: 8px 0px 0px 0px;
+        }
+        .divBox_col{
+            text-align: center;
+        }
+        .divBox_row{
+            border: 0px solid red;
+        }
+    }
+}

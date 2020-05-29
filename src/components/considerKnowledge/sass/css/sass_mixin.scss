@@ -1,0 +1,19 @@
+/*************************sass变量*************************
+*1.sass可以将反复使用的css属性值 定义成变量，然后通过变量名来引用它们，而无需重复书写这一属性值
+*2.sass使用$符号来标识变量
+*/
+/*声明变量*/
+$var_color: #F90;//单变量值
+$var_border: 1px solid blue;//多变量值
+$var_textSize: 20px;//多变量值
+
+.sass_variable{
+    .span1{
+        color: $var_color;//使用变量
+        border: $var_border;
+        font-size: $var_textSize;
+    }
+    .span2{
+        border:1px solid $var_color;
+    }
+}

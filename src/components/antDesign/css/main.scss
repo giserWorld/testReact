@@ -1,0 +1,40 @@
+#components-layout-demo-top-side-2 .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 28px 16px 0;
+    float: left;
+}
+.site-layout-background {
+background: #fff;
+}
+.mainPage{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    .page_Header{
+        color: #fff;
+        background-color: #4e97d9;
+        border: 0px solid red;
+    }
+    .page_Sider{
+        background-color: #4e97d9; 
+        border: 0px solid blue;
+        border-right: 1px solid #d4d4d4;
+    }
+    .page_content{
+        border: 0px solid goldenrod;  
+    }
+    .page_menu{
+        // background-color: #4e97d9;
+        // color: #fff;
+    }
+    .ant-menu-sub.ant-menu-inline{
+        // background-color: #4e97d9;
+        // color: #fff;
+    }
+}
+.page_menu66{
+
+}
