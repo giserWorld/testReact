@@ -14,12 +14,13 @@ class index extends Component{
         return(
             <div className="wrap">
                 <h2>{this.state.name}</h2>
-                <button onClick={this.to_router_url.bind(this)}>路由跳转url</button>
+                <button onClick={this.to_router_url.bind(this)}>路由跳转url(方法1)</button>
             </div>
         )
     }
+    //路由跳转url(方法1)
     to_router_url(){
-
+        
     }
     componentDidMount(){
           console.log("Component:",this);

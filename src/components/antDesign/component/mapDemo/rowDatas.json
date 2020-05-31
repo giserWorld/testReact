@@ -4,7 +4,7 @@
             "row_id":"1",
             "anchor_id":"demo_layer",
             "children":[
-                {"col_id":"1","title":"天地图","imgUrl":"./static/images/11_online_tdt_only.jpg"},
+                {"col_id":"1","title":"天地图","api_id":"addlayer","imgUrl":"./static/images/11_online_tdt_only.jpg"},
                 {"col_id":"1","title":"天地图","imgUrl":"./static/images/11_online_tdt_only.jpg"},
                 {"col_id":"1","title":"天地图","imgUrl":"./static/images/11_online_tdt_only.jpg"},
                 {"col_id":"1","title":"天地图","imgUrl":"./static/images/11_online_tdt_only.jpg"},

@@ -1,4 +1,5 @@
 import React ,{ Component }from 'react';
+import {Link} from "react-router-dom";
 import { FileTextOutlined } from '@ant-design/icons';
 import { Card, Col, Row } from 'antd';
 import { Anchor } from 'antd';
@@ -37,9 +38,9 @@ class mapDemo extends Component{
                                             return (
                                                 <Col className="divBox_col" span={col_num} key={"col"+idx2}>
                                                     <Card className="divBox_Card" title={item2.title} >
-                                                        <a>
+                                                        <Link to={"/index?api_id="+(item2.api_id||"")} target="_blank">
                                                             <img src={item2.imgUrl} style={{height:"180px"}}></img>
-                                                        </a>
+                                                        </Link>
                                                     </Card>
                                                 </Col>
                                             );   

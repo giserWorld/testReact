@@ -2,6 +2,7 @@ import React ,{ Component }from 'react';
 import 'antd/dist/antd.css';
 import './layout_main.scss';
 import { Layout, Menu, Breadcrumb } from 'antd';
+import qs from 'query-string';//urlParam工具
 import Left_menu from '../../components/antDesign/component/left_menu/left_menu';
 import MapDemo from '../../components/antDesign/component/mapDemo/mapDemo';
 
@@ -40,8 +41,16 @@ class main extends Component{
         )
     }
     componentDidMount(){
-        
+      var urlParam=this.getUrlParam();
+      console.log("routerParam:",urlParam);  
     }
-    
+    /**************获取route路径urlParam对象***************
+    */
+    getUrlParam(){
+        let location=this.props.location||{};//获取urlParam
+        let urlParamStr=location.search||"";
+        let urlParam=qs.parse(urlParamStr);//将urlParam转为param对象
+        return urlParam;
+    }//e
 }
 export default main;

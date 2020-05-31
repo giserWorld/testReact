@@ -1,6 +1,6 @@
 /**************************路由器组件************************/
 import React from 'react';
-import {HashRouter, Route, Switch} from 'react-router-dom';//hash模式路由
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';//hash模式路由
 //import { BrowserRouter as Router} from "react-router-dom";//history模式路由
 
 //react
@@ -14,7 +14,7 @@ import layout_main from '../viewer/layout_main/layout_main';
 
 //路由器组件
 const router=()=>(
-    <HashRouter>
+    <Router>
         <Switch>
             {/* react */}
             <Route exact path="/" component={layout_main}/>
@@ -24,6 +24,6 @@ const router=()=>(
             {/* considerKnowledge */}
             <Route exact path="/test" component={testViewer}/>
         </Switch>
-    </HashRouter>
+    </Router>
 );
 export default router;

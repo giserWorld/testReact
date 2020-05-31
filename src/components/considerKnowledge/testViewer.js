@@ -6,6 +6,9 @@ import Test_Component_Fun from './react/test_Component_Fun';
 import Test_htmlTag_a from './react/test_htmlTag_a';
 import Test_react_Fragment from './react/react_Fragment';
 import Test_router_to_url from './react/router_to_url';
+//router
+import Test_basic_Routing from './react/react-router-dom/basic_Routing';
+import Test_nested_routing from './react/react-router-dom/nested_routing';
 //componentWillReceiveProps声明周期函数
 import Lifecycle_componentWillReceiveProps from './react/lifecycle_componentWillReceiveProps';
 //componentDidUpdate声明周期函数
@@ -22,7 +25,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Test_router_to_url/>
+                <Test_basic_Routing/>
             </div>
         )
     }
