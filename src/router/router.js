@@ -17,8 +17,9 @@ const router=()=>(
     <Router>
         <Switch>
             {/* react */}
-            <Route exact path="/" component={layout_main}/>
+            <Route exact path="/" component={reactViewer}/>
             <Route exact path="/index" component={layout_main}/>
+            <Route exact path="/react" component={reactViewer}/>
             {/* antDesign */}
             <Route exact path="/ant" component={antViewer}/>
             {/* considerKnowledge */}
