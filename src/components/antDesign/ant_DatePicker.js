@@ -1,9 +1,8 @@
 import React ,{ Component }from 'react';
 import { Divider } from 'antd';
 import { DatePicker } from 'antd';
-import moment from 'moment';
-import 'moment/locale/zh-cn';
-moment.locale('zh-cn');
+import 'moment/locale/zh-cn';//moment中文包
+const { RangePicker } = DatePicker;//时间范围选择器
 /*****************************时间选择器**********************************
  *1.
  */
@@ -14,8 +13,8 @@ class index extends Component{
             name:"日期选择框",
         }
     }
-    onChange(date, dateString) {
-        console.log(date, dateString);
+    onChange(moment, dateString) {
+        console.log(moment,dateString);
     }
     render(){
         return(
@@ -24,6 +23,8 @@ class index extends Component{
                 <div>
                     <Divider>类型1</Divider>
                     <DatePicker onChange={this.onChange} />
+                    <Divider>类型2</Divider>
+                    <RangePicker />
                 </div>
             </div>
         )
