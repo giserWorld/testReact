@@ -5,7 +5,7 @@ import { Button } from 'antd';
 const { Column, ColumnGroup } = Table;
 
 /********************ant_table*********************
- * 
+ *1.表格组件 
  */
 class ant_table extends Component{
     constructor(props){

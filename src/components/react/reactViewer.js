@@ -17,6 +17,5 @@ class reactViewer extends Component{
     componentDidMount(){
         
     }
-    
 }
 export default reactViewer;
