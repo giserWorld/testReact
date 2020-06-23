@@ -12,7 +12,7 @@ import testViewer from '../components/considerKnowledge/testViewer';
 //page
 import layout_main from '../viewer/layout_main/layout_main';
 //typeScript
-// import tsViewer from '../components/typeScript/tsViewer';
+import tsViewer from '../components/typeScript/tsViewer';
 
 //路由器组件
 const router=()=>(
@@ -27,7 +27,7 @@ const router=()=>(
             {/* considerKnowledge */}
             <Route exact path="/test" component={testViewer}/>
             {/* typeScript */}
-            {/* <Route exact path="/ts" component={tsViewer}/> */}
+            <Route exact path="/ts" component={tsViewer}/>
         </Switch>
     </Router>
 );
