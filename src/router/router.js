@@ -13,6 +13,8 @@ import testViewer from '../components/considerKnowledge/testViewer';
 import layout_main from '../viewer/layout_main/layout_main';
 //typeScript
 import tsViewer from '../components/typeScript/tsViewer';
+//redux
+import reduxViewer from '../components/redux/reduxViewer';
 
 //路由器组件
 const router=()=>(
@@ -28,6 +30,8 @@ const router=()=>(
             <Route exact path="/test" component={testViewer}/>
             {/* typeScript */}
             <Route exact path="/ts" component={tsViewer}/>
+            {/* redux */}
+            <Route exact path="/redux" component={reduxViewer}/>
         </Switch>
     </Router>
 );
