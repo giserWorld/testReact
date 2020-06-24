@@ -8,6 +8,8 @@ import Ant_table from './ant_table';
 import Ant_table_qtfy from './ant_table_qtfy';
 import Ant_table_htfy from './ant_table_htfy';
 import Ant_DatePicker from './ant_DatePicker';
+import Ant_AutoComplete from './ant_AutoComplete';
+import Ant_Select from './ant_Select';
 //sample
 import sample_Anchor from './sample/test_Anchor';
 class antViewer extends Component{
@@ -20,7 +22,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_table_htfy/>
+              <Ant_Select/>
             </ConfigProvider>
         )
     }
