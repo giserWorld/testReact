@@ -1,7 +1,10 @@
 import React ,{ Component }from 'react';
-
+import baseDefinition from './component/baseDefinition';
+import ts_interface from './component/ts_interface';
 class tsViewer extends Component{
-    constructor(props){
+    baseDefinition=baseDefinition();//基础类型定义
+    ts_interface=ts_interface();//基础类型定义
+    constructor(props:any){
         super(props);
         this.state={
             name:"tsViewer"
@@ -10,7 +13,7 @@ class tsViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              {this.state.name}  
+              {/* {this.state.name}   */}
             </div>
         )
     }
