@@ -10,6 +10,7 @@ import Ant_table_htfy from './ant_table_htfy';
 import Ant_DatePicker from './ant_DatePicker';
 import Ant_AutoComplete from './ant_AutoComplete';
 import Ant_Select from './ant_Select';
+import Ant_tree from './ant_tree_data';
 //sample
 import sample_Anchor from './sample/test_Anchor';
 class antViewer extends Component{
@@ -22,7 +23,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_Select/>
+              <Ant_tree/>
             </ConfigProvider>
         )
     }
