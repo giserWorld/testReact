@@ -1,5 +1,7 @@
 import React ,{ Component }from 'react';
 
+import ReactDOM_render from './reactDOM_render';
+import React_createElement from './React_createElement';
 class reactViewer extends Component{
     constructor(props){
         super(props);
@@ -10,7 +12,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              {this.state.name}  
+              <React_createElement/>
             </div>
         )
     }

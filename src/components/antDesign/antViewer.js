@@ -11,6 +11,7 @@ import Ant_DatePicker from './ant_DatePicker';
 import Ant_AutoComplete from './ant_AutoComplete';
 import Ant_Select from './ant_Select';
 import Ant_tree from './ant_tree_data';
+import Ant_icon from './ant_icon';
 //sample
 import sample_Anchor from './sample/test_Anchor';
 class antViewer extends Component{
@@ -23,7 +24,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_tree/>
+              <Ant_icon/>
             </ConfigProvider>
         )
     }

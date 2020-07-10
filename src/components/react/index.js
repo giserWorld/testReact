@@ -2,11 +2,11 @@
 import React ,{ Component }from 'react';
 
 class index extends Component{
-    state={
-        name:"index",
-    }
     constructor(props){
         super(props);
+        this.state={
+            name:"index",
+        }
     }
     render(){
         return(

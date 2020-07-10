@@ -1,5 +1,5 @@
 import React ,{ Component }from 'react';
-
+import { Divider } from 'antd';
 /*****************************index**********************************
  *1.
  */
@@ -13,7 +13,7 @@ class index extends Component{
     render(){
         return(
             <div className="wrap">
-                <h2>{this.state.name}</h2>
+                <h2>{this.state.name}</h2><Divider/>
             </div>
         )
     }

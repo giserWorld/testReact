@@ -1,5 +1,6 @@
 import React ,{ Component }from 'react';//核心组件类,每一个组件中必须包含该类
 import { Tree } from 'antd';
+import { BlockOutlined } from '@ant-design/icons';
 const { TreeNode } = Tree;
 /*****************************ant树形控件**********************************
  *1.编程方式
@@ -9,16 +10,16 @@ const { TreeNode } = Tree;
 //树节点结构数据
 let treeData = [
     {//根节点
-        title: '1', 
+        title: '图层', 
         key:"1",
         children:[
             {
                 title: '1.1',
                 key: '1.1',
                 children: [
-                  { title: '1.1.1', key: '1.1.1' },
-                  { title: '1.1.2', key: '1.1.2' },
-                  { title: '1.1.3', key: '1.1.3' },
+                  { title: '1.1.1', key: '1.1.1',icon: <BlockOutlined />},
+                  { title: '1.1.2', key: '1.1.2' ,icon: <BlockOutlined />},
+                  { title: '1.1.3', key: '1.1.3' ,icon: <BlockOutlined />},
                 ],
             },
             {
@@ -37,9 +38,11 @@ class ant_tree extends Component{
         super(props);
         this.state={
             name:"ant树节点",
-            showLine:true,//是否展示连接线
+            showLine:false,//是否展示连接线
             autoExpandParent:true,//是否自动展开父节点
             draggable:true,//节点是否可拖拽
+            checkable:false,//是否显示多选框
+            showIcon:true,//是否显示图标，默认false
             expandedKeys: ["1","1.1"],//初始化时默认展开的树节点
             checkedKeys: [],//选中复选框的树节点
             selectedKeys: [],//设置选中的树节点
@@ -130,9 +133,10 @@ class ant_tree extends Component{
                 <h2>{this.state.name}</h2>
                 <Tree
                     style={{border:"1px solid red",width:"300px"}}
-                    checkable={true}
+                    checkable={this.state.checkable}
                     showLine={this.state.showLine}
                     draggable={this.state.draggable}
+                    showIcon={this.state.showIcon}
                     autoExpandParent={this.state.autoExpandParent}
                     expandedKeys={this.state.expandedKeys}
                     treeData={this.state.treeData}
