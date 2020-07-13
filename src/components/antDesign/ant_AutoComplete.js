@@ -31,7 +31,7 @@ class index extends Component{
     };
     //option列表数据过滤
     filterFun(inputValue,option){
-        var dd=21;
+        //var dd=21;
         return true;
     }
     render(){

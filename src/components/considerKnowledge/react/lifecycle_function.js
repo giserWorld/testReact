@@ -24,6 +24,18 @@ import { Redirect } from 'react-router-dom';
  *7.componentWillUnmount():当组件从 DOM 中移除时会调用
  *  1)componentWillUnmount() 会在组件卸载及销毁之前直接调用
  *  2)componentWillUnmount() 中不应调用 setState()，因为该组件将永远不会重新渲染
+ *8.组件初始化时调用顺序如下(react 17.0):
+    1)constructor
+    2)getDerivedStateFromProps
+    3)~~componentWillMount/UNSAVE_componentWillMount~~
+    4)render
+    5)componentDidMount(第一次render之后执行)
+ *9.当组件的 props 或 state 发生变化时会触发更新。组件更新的生命周期调用顺序如下(react 17.0)：
+    1)static getDerivedStateFromProps()
+    2)shouldComponentUpdate()
+    3)render()
+    4)getSnapshotBeforeUpdate()
+    5)componentDidUpdate()
  */
 class index extends Component{
     state={

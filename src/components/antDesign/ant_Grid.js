@@ -1,5 +1,5 @@
 import React ,{ Component }from 'react';
-import { Row, Col, Divider } from 'antd';
+import { Row, Col} from 'antd';
 import './css/my_ant.scss';
 /*****************************24栅格系统**********************************
  *1.栅格化系统基于 Flex 布局，允许子元素在父节点内的水平对齐方式 

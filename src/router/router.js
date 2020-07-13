@@ -2,20 +2,22 @@
 import React from 'react';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';//hash模式路由
 //import { BrowserRouter as Router} from "react-router-dom";//history模式路由
+import loadable from '@loadable/component';
 
 //react
-import reactViewer from '../components/react/reactViewer';
+const reactViewer=loadable(() => import('../components/react/reactViewer'));
 //antDesign
-import antViewer from '../components/antDesign/antViewer';
+const antViewer=loadable(() => import('../components/antDesign/antViewer'));
 //considerKnowledge
-import testViewer from '../components/considerKnowledge/testViewer';
+const testViewer=loadable(() => import('../components/considerKnowledge/testViewer'),{
+fallback: <div>正在加载...</div>//过程提示
+});
 //page
-import layout_main from '../viewer/layout_main/layout_main';
+const layout_main=loadable(() => import('../viewer/layout_main/layout_main'));
 //typeScript
-import tsViewer from '../components/typeScript/tsViewer';
+const tsViewer=loadable(() => import('../components/typeScript/tsViewer'));
 //redux
-import reduxViewer from '../components/redux/reduxViewer';
-
+const reduxViewer=loadable(() => import('../components/redux/reduxViewer'));
 //路由器组件
 const router=()=>(
     <Router>

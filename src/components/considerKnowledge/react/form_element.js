@@ -14,14 +14,14 @@ import React ,{ Component } from 'react';
  *9.通过给“handelChange”方法传递额外的参数即可实现原生表单元素和react组件的双向绑定的通用方法
  *
  */
-class formElement  extends Component{
-    state={//react
-        name:"formElement",
-        inputValue:"666",
-        selectValue:""
-    }
+class formElement extends Component{
     constructor(props){
         super(props);
+        this.state={//react
+            name:"formElement",
+            inputValue:"666",
+            selectValue:""
+        }
     }
     /*******************处理值改变函数******************
     *参数:name(String):表单元素绑定的状态属性

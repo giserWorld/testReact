@@ -1,6 +1,6 @@
 import React ,{ Component }from 'react';
 import ReactDOM from 'react-dom'
-import { Button, Radio } from 'antd';
+import { Button } from 'antd';
 /**************************reactDOM_render***********************
 *1.react-dom 的 package 提供了可在应用顶层使用的 DOM（DOM-specific）方法
 **************************函数*************************

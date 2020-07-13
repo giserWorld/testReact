@@ -1,14 +1,11 @@
 import React ,{ Component }from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { Anchor } from 'antd';
+import { Menu } from 'antd';
 import { 
-    UserOutlined, LaptopOutlined, NotificationOutlined,
     FundViewOutlined,BarChartOutlined,UserSwitchOutlined,
 } from '@ant-design/icons';
 import './left_menu.scss';
 //左边菜单
 const { SubMenu } = Menu;
-const { Link } = Anchor;
 class index extends Component{
     constructor(props){
         super(props);
