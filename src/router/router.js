@@ -20,6 +20,8 @@ const layout_main=loadable(() => import('../viewer/layout_main/layout_main'));
 const tsViewer=loadable(() => import('../components/typeScript/tsViewer'));
 //redux
 const reduxViewer=loadable(() => import('../components/redux/reduxViewer'));
+//echarts
+const echartsViewer=loadable(() => import('../components/echarts/echartsViewer'));
 //路由器组件
 const router=()=>(
     <Router>
@@ -38,6 +40,8 @@ const router=()=>(
             <Route exact path="/redux" component={reduxViewer}/>
             {/* es6 */}
             <Route exact path="/es6" component={es6Viewer}/>
+            {/* echarts */}
+            <Route exact path="/echart" component={echartsViewer}/>
         </Switch>
     </Router>
 );

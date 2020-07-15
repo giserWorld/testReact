@@ -5,6 +5,8 @@ import React,{ useState, useEffect }from 'react';
  *3.Hook 不能在 class 组件中使用，即这使得你不使用 class 也能使用 React
  *4.在函数组件中，没有 this
  *5.在函数退出后变量就会”消失”，而 state 中的变量会被 React保留
+ *6.函数式组件可以省略参数props,但必须要有返回值且返回值必须为jsx对象
+ *7.每次状态属性发生改变,该函数会重新执行
  **************************react库********************
  *1.react Hook:Hook是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性
  *2.useState(init):init不一定要是一个对象,init参数只有在第一次渲染时会被用到
@@ -21,11 +23,14 @@ import React,{ useState, useEffect }from 'react';
 function Component_function(props){
     let name="函数式组件";
     //状态变量，声明了一个叫 count 的 state 变量，然后把它设为 0,通过调用 setCount 来更新当前的 count
-    const [count, setCount] = useState(0);//[0,ƒ]
+    let [mc,setMc]=useState("初始mc");//["初始mc",ƒ]
+    const changeStateValue=()=>{
+        setMc("改变状态mc属性");
+    }
     return (
-        <div>
-            <h2>{name}</h2>
-            <button onClick={changeValue}>改变值</button>
+        <div className="function_component">
+            <h2>{mc}</h2>
+            <button onClick={changeStateValue}>修改状态属性mc</button>
         </div>
     );
     function changeValue(){
