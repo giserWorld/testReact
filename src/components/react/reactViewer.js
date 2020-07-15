@@ -4,6 +4,7 @@ import ReactDOM_render from './reactDOM_render';
 import React_createElement from './React_createElement';
 import Component_function from './component_function';
 import React_scss from './react_scss';
+import FunctionCom from './function_class';
 class reactViewer extends Component{
     constructor(props){
         super(props);
@@ -14,7 +15,11 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
+<<<<<<< .mine
               <Component_function name={this.state.name}/>
+=======
+              <FunctionCom name={this.state.name}/>
+>>>>>>> .theirs
             </div>
         )
     }
