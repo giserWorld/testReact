@@ -1,9 +1,11 @@
-/**************************组件************************/
-import React ,{ Component }from 'react';//核心组件类,每一个组件中必须包含该类
 
-import * as antd from 'antd';
-const { Cascader } = antd;
+import React ,{ Component }from 'react';
+import { Cascader } from 'antd';
+/**************************级联选择***********************
+ *1.
+*/
 
+//选项数据
 const options = [
     {
       value: 'zhejiang',
@@ -28,32 +30,49 @@ const options = [
         {
           value: 'nanjing',
           label: 'Nanjing',
-          children: [
-            {
-              value: 'zhonghuamen',
-              label: 'Zhong Hua Men',
-            },
-          ],
+          children: [],
         },
       ],
     },
   ];
   
-class cascader extends Component{
-    state={
-        name:""
-    }
+class ant_Cascader extends Component{
     constructor(props){//构造函数props组件传的值
         super(props);
+        this.state={
+          name:"ant_Cascader",
+          data:options
+        }
     }
-    onChange(value) {
-        console.log(value);
+    /*****************仅显示最新的选项********************
+     *参数:label(Array):需要显示标注的数组,例如:["Zhejiang", "Hangzhou"] 
+     ******selectedOptions(Array):选中的dataObj
+     * */
+    displayRender=(label,selectedOptions)=>{
+      console.log(label,selectedOptions);
+      return label[label.length-1];
+    }//e
+    //搜索过滤
+    filter=(inputValue, path)=>{
+      return path.some(option => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
     }
+    onChange=(value)=>{
+      console.log(value);
+  }
     render(){
         var Select=this.props.children;
         return(
             <div>
-               <Cascader options={options}  onChange={this.onChange}placeholder="请选择行政区划" />
+              <h2>{this.state.name}</h2>
+               <Cascader 
+                  changeOnSelect
+                  placeholder="请选择行政区划" 
+                  options={this.state.data}  
+                  expandTrigger="hover"
+                  displayRender={this.displayRender}
+                  showSearch={this.filter}
+                  onChange={this.onChange} 
+                />
             </div>
         )
     }
@@ -61,5 +80,5 @@ class cascader extends Component{
        
     }
 }
-export default cascader;//将组件暴露出去
+export default ant_Cascader;
 

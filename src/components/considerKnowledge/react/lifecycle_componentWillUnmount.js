@@ -1,9 +1,7 @@
 import React ,{ Component }from 'react';
 
-/***************************componentDidUpdate*******************************
- *1.在生命周期的第一次(组件初始化)时componentDidUpdate不会被调用,首次渲染不会执行此方法
- *2.当组件html dom更新完成后触发componentDidUpdate()
- *3.子组件的render()之前执行
+/***************************componentWillUnmount*******************************
+ *1.componentWillUnmount:当组件从dom树种移除后时执行(即组件卸载)
  */
 
 //react组件
@@ -14,20 +12,21 @@ class MyComponent extends Component{
             name:"MyComponent",
         }
     }
-    //组件更新render()后触发
-    componentDidUpdate(props,state){
-       console.log("***********componentDidUpdate**********");
+    //组件移除后触发
+    componentWillUnmount(){
+       console.log("***********componentWillUnmount**********");
     }//e
     render(){
         console.log("***********render**********");
         return(
             <div className="wrap">
-               {this.props.name}
+               {this.state.name}
+               
             </div>
         )
     }
 }
-class componentDidUpdate extends Component{
+class componentWillUnmount extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -56,16 +55,21 @@ class componentDidUpdate extends Component{
             <div className="wrap">
                <h2>{this.state.name}</h2>
                <input value={this.state.value} onChange={this.handelChange.bind(this,"value")}/><p/>
-               <MyComponent name={this.state.value}/>
+               {
+                this.status?
+                <MyComponent name={this.state.value}/>:""
+               }
                <button ref="btn1">改变state</button>
             </div>
         )
     }
     componentDidMount(){
         let _self=this;
+        this.status=true;
         _self.refs.btn1.onclick=function(){
+            _self.status=!_self.status;
             _self.setState({});
         }  
     }
 }
-export default componentDidUpdate;
+export default componentWillUnmount;
