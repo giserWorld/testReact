@@ -1,15 +1,14 @@
-/**************************函数类组件************************/
-import React ,{ Component }from 'react';//核心组件类,每一个组件中必须包含该类
+/**************************class组件************************/
+import React ,{ Component }from 'react';
 
 
 //通过class关键字定义组件，结构更类似于vue组件结构
-class NewsComponent extends Component{
-    name="新闻组件";//组件的名字
+class Component_class extends Component{
     //当浏览器加载该组件时，该组件就会被实例化，该组件实例化时调用
     constructor(props){//构造函数props组件传的值
         super(props);
         this.state={
-            name:"init",
+            name:"class组件",
         }
     }
     render(){
@@ -32,4 +31,4 @@ class NewsComponent extends Component{
         });
     }
 }
-export default NewsComponent;//将组件暴露出去
+export default Component_class;

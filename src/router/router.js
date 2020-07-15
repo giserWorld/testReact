@@ -4,6 +4,8 @@ import {HashRouter as Router, Route, Switch} from 'react-router-dom';//hash模�
 //import { BrowserRouter as Router} from "react-router-dom";//history模式路由
 import loadable from '@loadable/component';
 
+//es6
+const es6Viewer=loadable(() => import('../components/ES6/es6Viewer'));
 //react
 const reactViewer=loadable(() => import('../components/react/reactViewer'));
 //antDesign
@@ -34,6 +36,8 @@ const router=()=>(
             <Route exact path="/ts" component={tsViewer}/>
             {/* redux */}
             <Route exact path="/redux" component={reduxViewer}/>
+            {/* es6 */}
+            <Route exact path="/es6" component={es6Viewer}/>
         </Switch>
     </Router>
 );

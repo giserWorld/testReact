@@ -1,18 +1,18 @@
 import React ,{ Component }from 'react';
-/*****************************index**********************************
- *
- */
-class index extends Component{
+
+import Es6_array from './es6_array';
+import Es6_variable_assign from './es6_variable_assign';
+class es6Viewer extends Component{ 
     constructor(props){
         super(props);
         this.state={
-            name:"index"
+            name:"es6Viewer"
         }
     }
     render(){
         return(
             <div className="wrap">
-                <h2>{this.state.name}</h2>
+              <Es6_variable_assign name={this.state.name}/>
             </div>
         )
     }
@@ -20,4 +20,4 @@ class index extends Component{
         
     }
 }
-export default index;
+export default es6Viewer;

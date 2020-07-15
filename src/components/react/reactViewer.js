@@ -2,6 +2,7 @@ import React ,{ Component }from 'react';
 
 import ReactDOM_render from './reactDOM_render';
 import React_createElement from './React_createElement';
+import Component_function from './component_function';
 import React_scss from './react_scss';
 class reactViewer extends Component{
     constructor(props){
@@ -13,7 +14,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <React_scss/>
+              <Component_function name={this.state.name}/>
             </div>
         )
     }
