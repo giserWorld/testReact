@@ -20,6 +20,9 @@ import React,{ useState, useEffect }from 'react';
  *5.useEffect(function):dom渲染之后执行
  *  1)Effect Hook 可以让你在函数组件中执行副作用操作(类似于componentDidMount和componentDidUpdate:)
  *  2)useEffect会在第一次渲染之后和每次更新之后都会执行
+ *  3)如果useEffect()返回一个清除函数,则组件卸载的时候执行该清除函数,等同于"componentWillUnmount(子组件重新加载时也会触发该清除函数)
+ *  4)组件每次渲染时,会在执行当前 effect 之前对上一个 effect 进行清除
+ *  5)useEffect可以在组件渲染后实现各种不同的副作用。有些副作用可能需要清除
  **/
 //定义新闻组件
 function Component_function(props){
@@ -27,22 +30,41 @@ function Component_function(props){
     //状态变量，声明了一个叫 count 的 state 变量，然后把它设为 0,通过调用 setCount 来更新当前的 count
     let [mc,setMc]=useState("初始mc");//["初始mc",ƒ]
     const [count, setCount] = useState(0);
+    const [status, setStatus] = useState(true);
     const changeStateValue=()=>{
         setMc("改变状态mc属性");
+        setStatus(!status);
     }
     //html dom树渲染完成后触发(每次dom渲染之后之后执行)
     useEffect(()=>{
-        console.log("2.useEffect");
+        console.log("2.父组件:useEffect");
     });
-    console.log("1.render");
+    console.log("1.父组件:render");
     return (
         <div className="function_component">
             <h2>{mc}</h2>
+            <Component_function_child/>
             <button onClick={changeStateValue}>修改状态属性mc</button>
         </div>
     );
-    function changeValue(){
-
-    }
 }//e
+
+//子函数组件
+function Component_function_child(props){
+    let name="子函数组件";
+    useEffect(()=>{
+        name="name"; 
+        console.log("1-2子组件useEffect");
+        return ()=>{//组件卸载时触发
+            console.log("*****Component_function_child组件卸载*****");
+        }
+    });
+    console.log("1-1子组件:render");
+    return (
+       <div>
+           {name}
+       </div>
+    );
+}
+
 export default Component_function;

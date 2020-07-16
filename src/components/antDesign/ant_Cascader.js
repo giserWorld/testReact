@@ -8,15 +8,15 @@ import { Cascader } from 'antd';
 //选项数据
 const options = [
     {
-      value: 'zhejiang',
+      value: '1',
       label: 'Zhejiang',
       children: [
         {
-          value: 'hangzhou',
+          value: '2',
           label: 'Hangzhou',
           children: [
             {
-              value: 'xihu',
+              value: '5',
               label: 'West Lake',
             },
           ],
@@ -24,15 +24,9 @@ const options = [
       ],
     },
     {
-      value: 'jiangsu',
+      value: '3',
       label: 'Jiangsu',
-      children: [
-        {
-          value: 'nanjing',
-          label: 'Nanjing',
-          children: [],
-        },
-      ],
+      // children:[],
     },
   ];
   
@@ -49,7 +43,7 @@ class ant_Cascader extends Component{
      ******selectedOptions(Array):选中的dataObj
      * */
     displayRender=(label,selectedOptions)=>{
-      console.log(label,selectedOptions);
+      //console.log(label,selectedOptions);
       return label[label.length-1];
     }//e
     //搜索过滤
@@ -57,8 +51,8 @@ class ant_Cascader extends Component{
       return path.some(option => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
     }
     onChange=(value)=>{
-      console.log(value);
-  }
+      console.log(value);//["3","4"]
+    }
     render(){
         var Select=this.props.children;
         return(
