@@ -12,7 +12,7 @@ class index extends Component{
     render(){
         return(
             <div>
-                <h2>{this.state.name}</h2>
+                <h2>{this.state.name}</h2><hr/>
             </div>
         )
     }
