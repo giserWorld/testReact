@@ -1,6 +1,6 @@
 import React ,{ Component }from 'react';
 
-//rnd
+//rnd拖动组件
 import Rnd_index from '../rnd/index';
 //react
 import ReactDOM_render from './reactDOM_render';
@@ -19,7 +19,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Rnd_index name={this.state.name}/>
+              <Component_function name={this.state.name}/>
             </div>
         )
     }

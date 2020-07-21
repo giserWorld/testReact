@@ -1,7 +1,7 @@
 import React ,{ Component }from 'react';
 
 /***************************componentWillUnmount*******************************
- *1.componentWillUnmount:当组件从dom树种移除后时执行(即组件卸载)
+ *1.componentWillUnmount:当组件从dom树中移除后时执行(即组件卸载)
  */
 
 //react组件

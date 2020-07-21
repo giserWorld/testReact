@@ -17,9 +17,9 @@ import React ,{ Component }from 'react';
 
 //生命周期函数
 //import Lifecycle_componentWillReceiveProps from './react/lifecycle_componentWillReceiveProps';//componentWillReceiveProps
-//import Lifecycle_componentDidUpdate from './react/lifecycle_componentDidUpdate';//componentDidUpdate
+import Lifecycle_componentDidUpdate from './react/lifecycle_componentDidUpdate';//componentDidUpdate
 //import Lifecycle_componentWillMount from './react/lifecycle_componentWillMount';//componentWillMount
-import Lifecycle_componentWillUnmount from './react/lifecycle_componentWillUnmount';//componentWillMount
+//import Lifecycle_componentWillUnmount from './react/lifecycle_componentWillUnmount';//componentWillMount
 class testViewer extends Component{
     constructor(props){
         super(props);
@@ -30,7 +30,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Lifecycle_componentWillUnmount/>
+                <Lifecycle_componentDidUpdate/>
             </div>
         )
     }
