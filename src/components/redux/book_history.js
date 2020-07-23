@@ -25,10 +25,14 @@ class historybook extends Component{
     }
 }
 
+var calc_add=(value)=>{
+    return value?value+1:0;
+}
 
 /*******************reudx状态映射props*****************
  *1.redux状态数据映射到组件props属性中
  *2.该函数返回的对象数据会追加到组件的props中
+ *3.redux state状态数据每次发生变化都会调用该函数
 */
 const mapStateToProps=state=>{
     return{
@@ -41,10 +45,14 @@ const mapStateToProps=state=>{
 /*******************状态分发props*****************
  *1.该函数在"状态映射"后触发
  *2.该函数返回的对象数据会追加到组件的props中
+ *3."容器组件"初始化时触发，调用一次
 */
-const mapDispatchToProps=()=>{
+const mapDispatchToProps=(dispatch)=>{
     return{
         type2:"状态分发props",
+        increment: (param) =>{
+            var dd=21;
+        },
     }
 }//e
 //构建redux容器

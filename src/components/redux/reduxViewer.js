@@ -1,6 +1,7 @@
 import React ,{ Component }from 'react';
 
 import Book from './book';
+import Test_counter from './test_counter';
 class reduxViewer extends Component{
     constructor(props){
         super(props);
@@ -11,7 +12,7 @@ class reduxViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Book></Book>
+              <Test_counter/>
             </div>
         )
     }

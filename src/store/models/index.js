@@ -1,7 +1,9 @@
 
-import test from './test'
+import {count} from './test'
+import {counter} from './reducer_count'
 //数据模型
 const rootModels={
-  test,
+  count,
+  counter
 };
 export default rootModels;
