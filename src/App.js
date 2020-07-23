@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import Router from './router/router';
+import MainRouter from './router/router';
 import 'antd/dist/antd.css';
+import { Provider } from 'react-redux'
+import store from './store/store'
 // 根组件，挂载路由
 class App extends Component {
   render() {
-    return (
-      <div className="wrap">
-          <Router/>
-      </div>
-    );
+    return <Provider store={store}><MainRouter/></Provider>
   }
 }
 export default App;

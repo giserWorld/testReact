@@ -16,7 +16,7 @@ function todos(state = [], action) {
       return state;
     }
 }
-
+//展示组件
 class English extends Component{
     constructor(props){
         super(props);
