@@ -17,6 +17,7 @@ class Counter extends Component {
 
 //从外部获取数据
 function mapStateToProps(state) {
+    var reduxStatus=state;//获取redux所有维护的state数据
     return {
       value: state.counter
     }
@@ -25,8 +26,10 @@ function mapStateToProps(state) {
 //向外部传递action
 function mapDispatchToProps(dispatch) {
     console.dir(dispatch);
+    var action={type:"increate",data:"其他数据"};
     return {
-      onIncreaseClick: () => dispatch.counter.increase("ddd")
+      onIncreaseClick: (param) => dispatch.counter.increase("ddd"),//"@rematch/core"框架写法
+      //onIncreaseClick: (param) => dispatch(action)//原生redux写法
     }
 }//e
 

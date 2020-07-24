@@ -3,14 +3,27 @@ import React ,{ Component }from 'react';
  *1.Redux 是 JavaScript 状态容器，提供可预测化的状态管理
  *2.核心：store ->action ->reducer->state
  *3.三大原则：单一数据源，State 是只读，纯函数来执行
- *4.Action:通过dispatch传递数据到store
- *5.Reducer:描述如何响应action更新state
- *6.Store:
+ *4.Action:通过dispatch传递数据到store(将得到的数据进行处理（ajax等）后，触发reducer)
+ *5.Reducer:描述如何响应action更新state(用于编写更改store中数据的操作)
+ *6.Store(redux的主体，一般创建之后不需要改动):
     1)维持应用的 state；
     2)提供 getState() 方法获取 state；
     3)提供 dispatch(action) 方法更新 state；
     4)通过 subscribe(listener) 注册监听器;
     5)通过 subscribe(listener) 返回的函数注销监听器。
+ *7.Redux 应用只有一个单一的 store。当需要拆分数据处理逻辑时，你应该使用 reducer 组合 而不是创建多个 store
+ **************************state；***********************
+ *1.初始化state值可以任意类型，例如"object"、"string"
+ **************************Reducer***********************
+ *1.reducer 就是一个纯函数，接收旧的 state 和 action，返回新的 state
+    reducerFun(previousState, action) => newState;
+ *2.reducer 纯净非常重要。永远不要在 reducer 里做这些操作：
+    1)修改传入参数；
+    2)执行有副作用的操作，如 API 请求和路由跳转；
+    3)调用非纯函数，如 Date.now() 或 Math.random()。
+ *3.reducer 一定要保持纯净
+ *4.reducer函数只要传入参数相同，返回计算得到的下一个 state 就一定相同。没有特殊情况、没有副作用，没有 API 请求、没有变量修改，单纯执行计算。
+ *5.每个 reducer 只负责管理全局 state 中它负责的一部分。每个 reducer 的 state 参数都不同，分别对应它管理的那部分 state 数据
  **************************react-redux***********************
  *1.React-Redux 将所有组件分成两大类：UI 组件（presentational component）和容器组件（container component）
  *2.UI 组件有以下几个特征:

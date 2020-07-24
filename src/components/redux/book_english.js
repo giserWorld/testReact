@@ -1,21 +1,5 @@
 import React ,{ Component }from 'react';
-
-
-//reducer
-function todos(state = [], action) {
-    switch (action.type) {
-    case 'ADD_TODO':
-      return state.concat([{ text: action.text, completed: false }]);
-    case 'TOGGLE_TODO':
-      return state.map((todo, index) =>
-        action.index === index ?
-          { text: todo.text, completed: !todo.completed } :
-          todo
-     )
-    default:
-      return state;
-    }
-}
+import { connect } from 'react-redux'
 //展示组件
 class English extends Component{
     constructor(props){
@@ -28,6 +12,9 @@ class English extends Component{
         return(
             <div>
                 <h2>{this.state.name}</h2>
+                <div>
+                  {this.props.redux_value}
+                </div>
             </div>
         )
     }
@@ -35,4 +22,18 @@ class English extends Component{
 
     }
 }
-export default English;
+//从外部获取数据
+function mapStateToProps(state) {
+  return {
+    redux_value:state.bookData.redux_value
+  }
+}//e
+
+//向外部传递action
+function mapDispatchToProps(dispatch) {
+  return {
+    
+  }
+}//e
+
+export default connect(mapStateToProps,mapDispatchToProps)(English);

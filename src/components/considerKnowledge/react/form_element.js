@@ -24,19 +24,21 @@ class formElement extends Component{
         }
     }
     /*******************处理值改变函数******************
+    *更新时间:2020.07.24
     *参数:name(String):表单元素绑定的状态属性
-    ******evt(Event):"onChange"触发的事件对象
+    ******evt(Event):"onChange"触发的事件对象,可能为event或表单值
     *注解:
     *1.html元素、react组件绑定状态属性(单向、双向绑定属性方法),
     */
     handelChange(name,evt){
         let key=name || "";
-        let value=evt.target.value || "";//表单值
+        let value=(evt&&evt.target)?evt.target.value:evt;//表单值
         let state={};
         if(key)state[key]=value;
         if(key)this.setState(state);
         console.log(state);
-    }
+    }//e
+
     render(){
         return(
             <div className="wrap">

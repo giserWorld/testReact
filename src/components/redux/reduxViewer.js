@@ -12,7 +12,7 @@ class reduxViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Test_counter/>
+              <Book/>
             </div>
         )
     }

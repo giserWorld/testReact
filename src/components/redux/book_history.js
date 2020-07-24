@@ -14,8 +14,7 @@ class historybook extends Component{
             <div>
                 <h2>{this.state.name}</h2>
                 <div>
-                    {this.props.count}<p/>
-                    <button onClick={this.props.increment}>increment</button><p/>
+                    {this.props.redux_value}<p/>
                 </div>
             </div>
         )
@@ -25,9 +24,6 @@ class historybook extends Component{
     }
 }
 
-var calc_add=(value)=>{
-    return value?value+1:0;
-}
 
 /*******************reudx状态映射props*****************
  *1.redux状态数据映射到组件props属性中
@@ -36,9 +32,7 @@ var calc_add=(value)=>{
 */
 const mapStateToProps=state=>{
     return{
-        type:"reudx状态映射props",
-        count:state.count
-
+        redux_value:state.bookData.redux_value
     }
 }//e
 
@@ -49,10 +43,7 @@ const mapStateToProps=state=>{
 */
 const mapDispatchToProps=(dispatch)=>{
     return{
-        type2:"状态分发props",
-        increment: (param) =>{
-            var dd=21;
-        },
+        
     }
 }//e
 //构建redux容器
