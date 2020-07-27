@@ -12,6 +12,7 @@ import React ,{ Component }from 'react';
     4)通过 subscribe(listener) 注册监听器;
     5)通过 subscribe(listener) 返回的函数注销监听器。
  *7.Redux 应用只有一个单一的 store。当需要拆分数据处理逻辑时，你应该使用 reducer 组合 而不是创建多个 store
+ *8.react展示组件的状态属性数据没有发生,则展示组件不会重新渲染,除非状态属性发生变化
  **************************state；***********************
  *1.初始化state值可以任意类型，例如"object"、"string"
  **************************Reducer***********************

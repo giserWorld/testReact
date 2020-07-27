@@ -8,6 +8,7 @@ import React,{ useState, useEffect, useRef }from 'react';
  *6.函数式组件可以省略参数props,但必须要有返回值且返回值必须为jsx对象
  *7.每次状态属性发生改变,该函数会重新执行
  *8.react每次组件更新都会调用新的函数(每次刷新都不是同一函数，所以函数内的变量每次都是重新赋值，但是每次都保留原始的state属性)
+ *9.函数式组件中需要导入"React"包
  **************************react库********************
  *1.react Hook:Hook是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性
  *2.Hook 使用规则：

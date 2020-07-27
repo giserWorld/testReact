@@ -6,7 +6,7 @@ const bookData = {
     state:{
         name:"bookData",
         count:0,
-        redux_value:"book",
+        redux_value:"book初始化",
     },
     reducers: {
         //定义action

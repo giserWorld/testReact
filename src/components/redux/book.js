@@ -1,7 +1,10 @@
 import React ,{ Component }from 'react';
 import { connect } from 'react-redux'
-import History from './book_history';
-import English from './book_english';
+// import History from './book_history';
+// import English from './book_english';
+
+import History from './book_history_fun';
+import English from './book_english_fun';
 
 //展示组件
 class Book extends Component{
