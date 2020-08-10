@@ -9,8 +9,8 @@ import Ant_table_htfy from './ant_table_htfy';
 import Ant_DatePicker from './ant_DatePicker';
 import Ant_AutoComplete from './ant_AutoComplete';
 import Ant_Select from './ant_Select';
-import Ant_tree from './ant_tree_data';
-import Ant_icon from './ant_icon';
+import Ant_tree_data from './ant_tree_data';
+import Ant_Icon from './ant_Icon';
 import Ant_Cascader from './ant_Cascader';
 import Ant_form_Checkbox from './ant_form_Checkbox';
 //sample
@@ -25,7 +25,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_form_Checkbox/>
+              <Ant_Icon/>
             </ConfigProvider>
         )
     }

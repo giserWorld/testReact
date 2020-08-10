@@ -41,7 +41,7 @@ class ant_tree extends Component{
             showLine:false,//是否展示连接线
             autoExpandParent:true,//是否自动展开父节点
             draggable:true,//节点是否可拖拽
-            checkable:false,//是否显示多选框
+            checkable:true,//是否显示多选框
             showIcon:true,//是否显示图标，默认false
             expandedKeys: ["1","1.1"],//初始化时默认展开的树节点
             checkedKeys: [],//选中复选框的树节点
