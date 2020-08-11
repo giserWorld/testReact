@@ -17,14 +17,14 @@ import { ReactComponent as layer } from '../antDesign/icons/svg/layer.svg';
 //import './icons/iconfont/test1/iconfont.css';
 
 //创建IconFont字体图标对象
-// const MyIcon= createFromIconfontCN({
-//     scriptUrl: '//at.alicdn.com/t/font_1997618_40znixucugd.js',//在线生成fonticon.js脚本
-//     //scriptUrl:'./static/iconfont/fonticon_test/iconfont.js',
-// });
-//创建离线IconFont字体图标对(暂时有问题)
 const MyIcon= createFromIconfontCN({
-    scriptUrl:'./icons/iconfont/script/font_1997618_40znixucugd.js',//离线fonticon.js脚本
+    scriptUrl: '//at.alicdn.com/t/font_1997618_40znixucugd.js',//在线生成fonticon.js脚本
+    //scriptUrl:'./static/iconfont/fonticon_test/iconfont.js',
 });
+//创建离线IconFont字体图标对(暂时有问题)
+// const MyIcon= createFromIconfontCN({
+//     scriptUrl:'./icons/iconfont/script/font_1997618_40znixucugd.js',//离线fonticon.js脚本
+// });
 
 
 /*****************************Icon图标**********************************
@@ -56,7 +56,7 @@ class ant_icon extends Component{
                 
                 {/************3.阿里字体图标iconfont(Symbol方式,推荐)***********/}
                 <Divider orientation="left">3.阿里iconfont</Divider>
-                <MyIcon type="iconcaidan"/>
+                <MyIcon type="iconzhinanzhenfaxiandaohangdizhiweizhi"/>
                 
                 {/************4.阿里字体图标iconfont(font-class方式)***********/}
                 <Divider orientation="left">4.iconfont(font-class方式)</Divider>
