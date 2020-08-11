@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MainRouter from './router/router';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';//全局ant样式
 import { Provider } from 'react-redux';
 import store from './store/store';
 //import store from './store/store_redux';
