@@ -12,12 +12,13 @@ let treeData = [
     {//根节点
         title: '图层', 
         key:"1",
+        checkable:false,
         children:[
             {
                 title: '1.1',
                 key: '1.1',
                 children: [
-                  { title: '1.1.1', key: '1.1.1',icon: <BlockOutlined />},
+                  { title: '1.1.1', key: '1.1.1',checkable:true,icon: <BlockOutlined />},
                   { title: '1.1.2', key: '1.1.2' ,icon: <BlockOutlined />},
                   { title: '1.1.3', key: '1.1.3' ,icon: <BlockOutlined />},
                 ],
@@ -43,10 +44,10 @@ class ant_tree extends Component{
             draggable:true,//节点是否可拖拽
             checkable:true,//是否显示多选框
             showIcon:true,//是否显示图标，默认false
-            expandedKeys: ["1","1.1"],//初始化时默认展开的树节点
-            checkedKeys: [],//选中复选框的树节点
+            expandedKeys: ["1"],//初始化时默认展开的树节点
+            checkedKeys: ["1.1.2"],//选中复选框的树节点
             selectedKeys: [],//设置选中的树节点
-            treeData:treeData
+            treeData:[]
         }
     }
     //点击展开/收起节点时触发
@@ -133,6 +134,7 @@ class ant_tree extends Component{
                 <h2>{this.state.name}</h2>
                 <Tree
                     style={{border:"1px solid red",width:"300px"}}
+                    checkedKeys={this.state.checkedKeys}
                     checkable={this.state.checkable}
                     showLine={this.state.showLine}
                     draggable={this.state.draggable}
@@ -145,16 +147,20 @@ class ant_tree extends Component{
                     onSelect={this.onSelect}
                     onDrop={this.onDropFun}
                 />
+                <hr/>
+                <button onClick={this.addTreesj}>添加树节点数据</button>
             </div>
         )
     }
     componentDidMount(){
         
     }
-    addTreesj(sj){
-        if(sj){
-            this.setState({treeData:[sj]})
-        }
+    //更新树节点数据
+    addTreesj=()=>{
+        this.setState({
+            treeData:treeData,
+            expandedKeys:["1","1.1"],
+        })
     }
 }
 export default ant_tree;
