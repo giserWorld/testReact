@@ -13,6 +13,7 @@ let treeData = [
         title: '图层', 
         key:"1",
         checkable:false,
+        name:"'图层1",
         children:[
             {
                 title: '1.1',
@@ -26,6 +27,7 @@ let treeData = [
             {
                 title: '1.2',
                 key: '1.2',
+                name:"'图层1.2",
                 children:[
 
                 ]
@@ -47,7 +49,7 @@ class ant_tree extends Component{
             expandedKeys: ["1"],//初始化时默认展开的树节点
             checkedKeys: ["1.1.2"],//选中复选框的树节点
             selectedKeys: [],//设置选中的树节点
-            treeData:[]
+            treeData:treeData
         }
     }
     //点击展开/收起节点时触发
@@ -58,11 +60,22 @@ class ant_tree extends Component{
             autoExpandParent:false,
         });
     }
-    //点击复选框触发
-    onCheck=(checkedKeys) => {
+    /*****************点击复选框触发**************
+     *更新时间:2020.08.12
+     *参数:param(*):额外参数
+     *****checkedKeys(array):选中checkbox的节点key数组,如:["1","1.5"]
+     ******evt(Event):选中checkbox事件对象
+     *注解:
+     *1.如果该函数调用时带有参数,则参数按顺序放在前面
+     ***/
+    onCheck=(param,checkedKeys,evt) => {
+        let nodeProps=evt.node?evt.node.props:{};//获取当前Check节点属性
+        let checkStatus=nodeProps.checked==false?true:false;//checkbox状态
         console.log('onCheck', checkedKeys);
+        console.log('nodeProps', nodeProps);
         this.setState({ checkedKeys });
     }//e
+
     //点击树节点触发
     onSelect = (selectedKeys,info) => {
         console.log('onSelect', info);
@@ -134,7 +147,7 @@ class ant_tree extends Component{
                 <h2>{this.state.name}</h2>
                 <Tree
                     style={{border:"1px solid red",width:"300px"}}
-                    checkedKeys={this.state.checkedKeys}
+                    checkedKeys={this.state.checkedKeys}//checkbox选中的key
                     checkable={this.state.checkable}
                     showLine={this.state.showLine}
                     draggable={this.state.draggable}
@@ -143,7 +156,7 @@ class ant_tree extends Component{
                     expandedKeys={this.state.expandedKeys}
                     treeData={this.state.treeData}
                     onExpand={this.onExpand}
-                    onCheck={this.onCheck}
+                    onCheck={this.onCheck.bind(this,"ddd")}
                     onSelect={this.onSelect}
                     onDrop={this.onDropFun}
                 />
