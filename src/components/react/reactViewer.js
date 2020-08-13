@@ -8,6 +8,7 @@ import React_createElement from './React_createElement';
 import Component_function from './component_function';
 import React_scss from './react_scss';
 import React_props_children from './react_props_children';
+import AjaxRequest_data from './ajaxRequest_data';
 
 class reactViewer extends Component{
     constructor(props){
@@ -19,7 +20,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Component_function name={this.state.name}/>
+              <AjaxRequest_data name={this.state.name}/>
             </div>
         )
     }

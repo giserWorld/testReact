@@ -1,31 +1,33 @@
-/**************************请求接口数据(跨域请求数据)************************/
+
 import React ,{ Component }from 'react';
+import * as api from '../../api/api';
+import BackendURL from '../../api/BackendURL';
 
-import * as api from '@/api/api';
-import BackendURL from '@/api/BackendURL';
-
-
-class Com extends Component{
-    state={
-        name:"****ajax请求数据(跨域请求数据)****",
-        url:"http://112.74.196.156/DiseasesGISServer/wz/wz_find_Wz.action?dm=53&code_level=2",
-        url2:"http://d.l-try.com:8080/ly/TqUQrCz/getCzExceptionTotal.lt",
-        url_proxy:"/api/DiseasesGISServer/wz/wz_find_Wz.action",
-        url_proxy2:"/apc/YLZRBHQGISServer/Intro/getIntro.action",
-    }
+/*********************axios请求接口数据(跨域请求数据)********************
+ *1.如果直接请求非同源服务器数据时会报错跨域请求
+ *2.
+ **/
+class ajaxRequest_data extends Component{
     constructor(props){
         super(props);
+        this.state={
+            name:"ajax请求数据(跨域请求数据)",
+            url:"http://112.74.196.156/DiseasesGISServer/wz/wz_find_Wz.action?dm=53&code_level=2",
+            url2:"http://d.l-try.com:8080/ly/TqUQrCz/getCzExceptionTotal.lt",
+            url_proxy:"/api/DiseasesGISServer/wz/wz_find_Wz.action",
+            url_proxy2:"/apc/YLZRBHQGISServer/Intro/getIntro.action",
+        }
     }
     render(){
         return(
             <div>
-                <h1>{this.state.name}</h1>
+                <h1>{this.state.name}</h1><hr/>
                 <button onClick={this.requiestData.bind(this)}>1.直接请求(fetch get,报错跨域)</button><p/>
                 <button onClick={this.requiestData2.bind(this)}>2.直接请求(axios post,no token，没有token与跨域请求没有关系，只是请求数据失败)</button><p/>
                 <button onClick={this.requiestData3.bind(this)}>3.直接请求(axios post,token，没有token与跨域请求没有关系，只是请求数据失败)</button><p/>
                 <button onClick={this.ajaxRequest.bind(this)}>4.配置虚拟代理服务器(fetch get)</button><p/>
                 <button onClick={this.ajaxRequest2.bind(this)}>5.配置虚拟代理服务器(axios get)</button><p/>
-                <button onClick={this.ajaxRequest3.bind(this)}>6.配置虚拟代理服务器(axios post)</button><p/>
+                <button onClick={this.ajaxRequest3.bind(this)}>6.配置虚拟代理服务器(axios post,test)</button><p/>
             </div>
         )
     }
@@ -59,6 +61,7 @@ class Com extends Component{
             console.log(result);
         });
     }
+
     //1.通过配置虚拟代理服务器，解决跨域问题(fetch get,使用代理路径,请求路径不需要http)
     ajaxRequest(){
         var _self=this;
@@ -81,14 +84,15 @@ class Com extends Component{
     //3.通过配置虚拟代理服务器，解决跨域问题(axios post,使用代理路径,请求路径不需要http)
     ajaxRequest3(){
         var _self=this;
+        var url="/apc/YLZRBHQGISServer/Intro/getIntro.action";//代理接口
         var param={
             dm:53,
             code_level:2
         };
-        api.post(BackendURL.testApi1,param,function(result){
+        api.post(url,param,function(result){
             console.log(result);
         });
     }
     
 }
-export default Com;
+export default ajaxRequest_data;

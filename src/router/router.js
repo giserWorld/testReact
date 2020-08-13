@@ -22,6 +22,8 @@ const tsViewer=loadable(() => import('../components/typeScript/tsViewer'));
 const reduxViewer=loadable(() => import('../components/redux/reduxViewer'));
 //echarts
 const echartsViewer=loadable(() => import('../components/echarts/echartsViewer'));
+//testPage
+const testPageViewer=loadable(() => import('../components/testPage/testPageViewer'));
 //路由器组件
 const router=()=>(
     <Router>
@@ -42,6 +44,8 @@ const router=()=>(
             <Route exact path="/es6" component={es6Viewer}/>
             {/* echarts */}
             <Route exact path="/echart" component={echartsViewer}/>
+            {/* testPage */}
+            <Route exact path="/testPage" component={testPageViewer}/>
         </Switch>
     </Router>
 );
