@@ -16,6 +16,7 @@ import Ant_Cascader from './ant_Cascader';
 import Ant_form_Checkbox from './ant_form_Checkbox';
 import Ant_Layout from './ant_Layout';
 import Ant_Form from './ant_Form';
+import Ant_modal from './ant_modal';
 //sample
 import sample_Anchor from './sample/test_Anchor';
 class antViewer extends Component{
@@ -28,7 +29,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_Form/>
+              <Ant_modal/>
             </ConfigProvider>
         )
     }
