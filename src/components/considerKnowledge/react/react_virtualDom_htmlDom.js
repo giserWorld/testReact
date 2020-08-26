@@ -23,6 +23,24 @@ class index extends Component{
             name:"虚拟dom和真实dom",
         }
     }
+    
+    /***************react虚拟dom转真实的html dom*****************
+    *更新时间：2020.08.26 wxt
+    *参数:reactDom(reactDom):react虚拟节点,即jsx
+    *无返回值
+    *注解：
+    *1.推荐使用该方式，该方式兼容所有情况
+    *2.domUtilityFun.reactDom2HtmlDom()只能渲染jsx中只包含纯html,不能包含react组件,不推荐 
+    */
+    reactDom2HtmlDom(reactDom){
+        if(reactDom){
+            let divDom=document.createElement("div");
+            var dd=ReactDOM;
+            dd.render(reactDom,divDom);//异步
+            return divDom.childNodes[0];
+        }
+    }//e
+
     //react jsx
     jsx=(
         <div id="react_jsx">
@@ -30,6 +48,7 @@ class index extends Component{
             <span>tian</span>
         </div>
     );
+
     render(){
         return(
             <div className="wrap">
@@ -45,15 +64,6 @@ class index extends Component{
         //虚拟dom转html dom对象
         var htmldom=this.reactDom2HtmlDom(this.jsx);
     }
-    //react虚拟dom转为真实的html dom
-    reactDom2HtmlDom(reactDom){
-        if(reactDom){
-            let divDom=document.createElement("div");
-            var dd=ReactDOM;
-            dd.render(reactDom,divDom);//异步
-            return divDom.childNodes[0];
-        }
-    }//e
 
 }
 export default index;

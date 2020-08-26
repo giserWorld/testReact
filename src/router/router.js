@@ -14,6 +14,7 @@ const antViewer=loadable(() => import('../components/antDesign/antViewer'));
 const testViewer=loadable(() => import('../components/considerKnowledge/testViewer'),{
 fallback: <div>正在加载...</div>//过程提示
 });
+
 //page
 const layout_main=loadable(() => import('../viewer/layout_main/layout_main'));
 //typeScript
