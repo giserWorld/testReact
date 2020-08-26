@@ -1,21 +1,24 @@
 import React,{ Component }from 'react';
 
-import { Table, Divider, Tag} from 'antd';
+import { Table, Tag} from 'antd';
 import { Button } from 'antd';
+//工具类
+import { Divider } from 'antd';
+
 const { Column, ColumnGroup } = Table;
 
 /********************ant_table*********************
- *1.表格组件 
+ *1.表格组件(声明式)
+ *2.不推荐该方式，比较繁琐
  */
-class ant_table extends Component{
+class Ant_table_html extends Component{
     constructor(props){
         super(props);
         this.state={
-            name:"ant-table",
+            name:"Ant_table_html",
             data:[],//表格数据
             columns:[],//表格列数据
             selectedRowKeys:["2"],//控制表格选中的行key
-            type:"1",//创建table方式
         }
     }
     //表格列配置
@@ -92,29 +95,7 @@ class ant_table extends Component{
         },
         selectedRowKeys:[],//设置talble checkbox选中的数据key
     };
-    render(){
-        console.log("*******render()******");
-        this.row_checkbox.selectedRowKeys=this.state.selectedRowKeys;
-        return(
-            <div>
-                <h2>{this.state.name}</h2>
-                <Button type="primary" onClick={this.addTableData.bind(this)}>添加表格数据</Button>
-                <Button type="primary" onClick={this.clearTable.bind(this)}>清空表格数据</Button>
-                {this.state.type=="2"?this.table_columns_method2():this.table_columns_method1()}
-            </div>
-        )
-    }
-    //1.通过Table的columns属性创建列(简单实用，推荐)
-    table_columns_method1(){
-        return (
-            <Table 
-                rowSelection={this.row_checkbox}
-                columns={this.state.columns} 
-                dataSource={this.state.data}
-                bordered={true} 
-            />
-        );
-    }
+
     //1.通过手动编写Table的columns创建列(比较繁琐)
     table_columns_method2(){
         return (
@@ -126,6 +107,19 @@ class ant_table extends Component{
                 <Column title="操作" render={this.formatOperate.bind(this)}/>
             </Table>
         );
+    }//e
+
+    render(){
+        console.log("*******render()******");
+        this.row_checkbox.selectedRowKeys=this.state.selectedRowKeys;
+        return(
+            <div>
+                <h2>{this.state.name}</h2><Divider/>
+                <Button type="primary" onClick={this.addTableData.bind(this)}>添加表格数据</Button>
+                <Button type="primary" onClick={this.clearTable.bind(this)}>清空表格数据</Button><Divider/>
+                {this.table_columns_method2()}
+            </div>
+        )
     }
     //格式化列函数(this指向组件对象)
     formatOperate(row){
@@ -169,4 +163,4 @@ class ant_table extends Component{
         });
     }
 }
-export default ant_table;
+export default Ant_table_html;

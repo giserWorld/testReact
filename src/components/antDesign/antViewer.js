@@ -4,7 +4,8 @@ import zhCN from 'antd/es/locale/zh_CN';//目前的默认文字是英文,如果�
 //ant
 import Ant_Grid from './ant_Grid';
 import Test_Anchor from './ant_Anchor';
-import Ant_table from './ant_table';
+import Ant_table_html from './ant_table_html';
+import Ant_table_data from './ant_table_data';
 import Ant_table_qtfy from './ant_table_qtfy';
 import Ant_table_htfy from './ant_table_htfy';
 import Ant_DatePicker from './ant_DatePicker';
@@ -29,7 +30,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_table_htfy/>
+              <Ant_table_data/>
             </ConfigProvider>
         )
     }

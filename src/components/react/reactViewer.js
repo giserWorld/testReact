@@ -9,6 +9,10 @@ import Component_function from './component_function';
 import React_scss from './react_scss';
 import React_props_children from './react_props_children';
 import AjaxRequest_data from './ajaxRequest_data';
+//代码分割
+import LazyLoad_import from './react_lazyLoad/lazyLoad_import()';
+import React_lazy from './react_lazyLoad/react_lazy()';
+
 
 class reactViewer extends Component{
     constructor(props){
@@ -20,7 +24,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <AjaxRequest_data name={this.state.name}/>
+              <React_lazy name={this.state.name}/>
             </div>
         )
     }
