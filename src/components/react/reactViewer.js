@@ -12,6 +12,7 @@ import AjaxRequest_data from './ajaxRequest_data';
 //代码分割
 import LazyLoad_import from './react_lazyLoad/lazyLoad_import()';
 import React_lazy from './react_lazyLoad/react_lazy()';
+import React_loadable from './react_lazyLoad/react-loadable';
 
 
 class reactViewer extends Component{
@@ -24,7 +25,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <React_lazy name={this.state.name}/>
+              <React_loadable name={this.state.name}/>
             </div>
         )
     }
