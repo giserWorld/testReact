@@ -43,7 +43,7 @@ class testModal extends Component{
         return (
             <Modal
                 className="modal_login"
-                style={{width:"400px"}}
+                width="400px"
                 title={this.state.modalTitle}
                 visible={this.state.modalVisible}
                 zIndex={1000}
@@ -51,7 +51,7 @@ class testModal extends Component{
                 footer={null}
                 maskClosable={false}
             >
-                <div>
+                <div className="modal_content">
                     这个是模态框显示的内容！
                 </div>
             </Modal>

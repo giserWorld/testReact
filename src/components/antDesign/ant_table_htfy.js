@@ -25,11 +25,19 @@ class ant_table_ht extends Component{
             dataIndex:"key",//字段
             title:"序号",//字段标题
             align:"center",//列的对齐方式
+            defaultSortOrder:'ascend',//默认排序,可选值:"descend"(降序)、"ascend"(升序)
+            sorter:(data2,data1)=>{//本地排序规则函数,设置该属性后字段列默认开启"升序"、"降序"切换
+                return data2.key-data1.key;
+            }
         },
         {
             dataIndex:'tbr',
             title:'填报人',
             align:"center",//列的对齐方式
+            sortDirections:["descend"],//支持的排序方式,默认为[''ascend','descend']
+            sorter:(data2,data1)=>{
+                return data2.tbr.length - data1.tbr.length;//根据字符串长度进行排序
+            }
         },
         {
             dataIndex: 'jlsj',
@@ -40,6 +48,13 @@ class ant_table_ht extends Component{
             dataIndex: 'szdq',
             title: '地址',
             align:"center",//列的对齐方式
+            filters:[//表头的筛选菜单项	
+                {text:"北京",value:"北京"},
+                {text:"上海",value:"上海"},
+            ],
+            onFilter:(value,data)=>{//本地模式下(对当前页面数据进行过滤)，点击确定筛选的运行函数
+                return data.szdq.indexOf(value)=== 0;
+            } 
         },
         //操作列
         {

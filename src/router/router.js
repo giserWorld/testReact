@@ -8,6 +8,7 @@ import loadable from '@loadable/component';
 const es6Viewer=loadable(() => import('../components/ES6/es6Viewer'));
 //react
 const reactViewer=loadable(() => import('../components/react/reactViewer'));
+const linkTo_viewer=loadable(() => import('../viewer/linkTo_viewer'));
 //antDesign
 const antViewer=loadable(() => import('../components/antDesign/antViewer'));
 //considerKnowledge
@@ -25,12 +26,14 @@ const reduxViewer=loadable(() => import('../components/redux/reduxViewer'));
 const echartsViewer=loadable(() => import('../components/echarts/echartsViewer'));
 //testPage
 const testPageViewer=loadable(() => import('../components/testPage/testPageViewer'));
+//router
+const router_param=loadable(() => import('../components/considerKnowledge/react/react-router-dom/router_param'));
 //路由器组件
 const router=()=>(
     <Router>
         <Switch>
             {/* react */}
-            <Route exact path="/" component={reactViewer}/>
+            <Route exact path="/" component={linkTo_viewer}/>
             <Route exact path="/index" component={layout_main}/>
             <Route exact path="/react" component={reactViewer}/>
             {/* antDesign */}
@@ -47,6 +50,17 @@ const router=()=>(
             <Route exact path="/echart" component={echartsViewer}/>
             {/* testPage */}
             <Route exact path="/testPage" component={testPageViewer}/>
+            {/* router */}
+
+            {/* 1.param路由传参,路由需要特殊格式 */}
+            <Route exact path="/router_param/:param" component={router_param}/>{/* 单个路由参数,参数值为字符串，params */}
+            <Route exact path="/router_param_multi/:name:username" component={router_param}/>{/* 多个路由参数,参数值为字符串，params */}
+            {/* 2.query路由传参 */}
+            <Route exact path="/router_query" component={router_param}/>{/* 带有参数的路由,query为对象，query */}
+            {/* 3.state路由传参 */}
+            <Route exact path="/router_state" component={router_param}/>{/* 带有参数的路由,state为对象，state */}
+            {/* 4.search路由传参 */}
+            <Route exact path="/router_search" component={router_param}/>{/* 带有参数的路由,search为对象，search */}
         </Switch>
     </Router>
 );

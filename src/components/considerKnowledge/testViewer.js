@@ -11,9 +11,10 @@ import React ,{ Component }from 'react';
 // import Test_define_jsx_variable from './react/test_define_jsx_variable';
 //import React_optimization_Loadable from './react/react_optimization_Loadable()';
 
-//router
+//router路由
 // import Test_basic_Routing from './react/react-router-dom/basic_Routing';
 // import Test_nested_routing from './react/react-router-dom/nested_routing';
+import Router_param from './react/react-router-dom/router_param';
 
 //生命周期函数
 //import Lifecycle_componentWillReceiveProps from './react/lifecycle_componentWillReceiveProps';//componentWillReceiveProps
@@ -30,7 +31,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Lifecycle_componentDidUpdate/>
+                <Router_param/>
             </div>
         )
     }
