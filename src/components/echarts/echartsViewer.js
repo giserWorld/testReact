@@ -2,6 +2,9 @@ import React ,{ Component }from 'react';
 
 import EchartsTest from './test';
 import Rreact_line from './react_line';
+//test
+import Test_line from './test_line';
+import Test_pie from './test_pie';
 class echartsViewer extends Component{
     constructor(props){
         super(props);
@@ -12,7 +15,7 @@ class echartsViewer extends Component{
     render(){
         return(
             <div className="wrap">
-                <Rreact_line/>
+                <Test_pie/>
             </div>
         )
     }

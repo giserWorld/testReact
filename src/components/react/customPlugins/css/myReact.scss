@@ -1,0 +1,24 @@
+// 1.左右滚动列表
+.ul_scroll_div{
+    .ul_arrow{
+        padding: 0 8px;
+        cursor: pointer;
+    }
+    .ul_scroll{
+        list-style-type: none;
+        border: 0px solid red;
+        margin: 0px;
+        padding: 0px;
+        display: inline-flex;
+        .li_scroll{
+            border: 0px solid blue;
+            margin: 0 2px;
+            cursor: pointer;
+            padding: 2px 15px;
+            border-radius: 20px;
+        }
+        .selectli{
+            background:red;
+        }
+    }
+}

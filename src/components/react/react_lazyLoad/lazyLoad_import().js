@@ -1,7 +1,7 @@
 import React ,{ Component }from 'react';
 
 import('./test_math').then(function(math){
-    console.log(math);
+    //console.log(math);
 });
 
 /**************************lazyLoad_import**********************
