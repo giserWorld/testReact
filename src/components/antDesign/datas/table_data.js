@@ -1,3 +1,4 @@
+//--------------------------表格字段配置-----------------------//
 //表格列配置(单字段列)
 export const table_columns=[
     {
@@ -139,19 +140,19 @@ export const data_tree = [
       address: 'New York No. 1 Lake Park',
       children: [
         {
-          key: 11,
+         key: 3,
           name: 'John Brown',
           age: 42,
           address: 'New York No. 2 Lake Park',
         },
         {
-          key: 12,
+          key: 4,
           name: 'John Brown jr.',
           age: 30,
           address: 'New York No. 3 Lake Park',
           children: [
             {
-              key: 121,
+             key: 5,
               name: 'Jimmy Brown',
               age: 16,
               address: 'New York No. 3 Lake Park',
@@ -159,25 +160,25 @@ export const data_tree = [
           ],
         },
         {
-          key: 13,
+          key: 6,
           name: 'Jim Green sr.',
           age: 72,
           address: 'London No. 1 Lake Park',
           children: [
             {
-              key: 131,
+              key: 7,
               name: 'Jim Green',
               age: 42,
               address: 'London No. 2 Lake Park',
               children: [
                 {
-                  key: 1311,
+                  key: 888,
                   name: 'Jim Green jr.',
                   age: 25,
                   address: 'London No. 3 Lake Park',
                 },
                 {
-                  key: 1312,
+                  key: 666,
                   name: 'Jimmy Green sr.',
                   age: 18,
                   address: 'London No. 4 Lake Park',

@@ -16,13 +16,13 @@ const EnglishFun=(props)=>{
 }//e
 
 //从外部获取数据
-function mapStateToProps(state) {
+const mapStateToProps=(state)=>{
   return {
     redux_value:"ssss"
   }
 }//e
 //向外部传递action
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps=(dispatch)=>{
   return {
     
   }

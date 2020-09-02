@@ -2,44 +2,57 @@ import React ,{ Component }from 'react';
 import { LeftOutlined,RightOutlined } from '@ant-design/icons';
 import './css/myReact.scss'
 /****************************横向滚动Ul列表********************************
- *更新时间:2020.08.29 wxt
+ *更新时间:2020.09.01 wxt
  *1.组件可选属性:
-    1)data
-    2)maxNum
+    1)data(Array):滚动列表数据
+    2)maxNum(Number):最大展示数
+    3)select_li(any):选中的数据
  *2.组件可选事件:
-    1)onSelect
+    1)onSelect(function):选中回调函数
  */
 class Widget_scroll_ul_leftRight extends Component{
     constructor(props){
         super(props);
+        this.scrollIdx=0;//滚动索引
         this.state={
             data:props.data||[],//滚动列表数据
             maxNum:props.maxNum||5,//最大展示数
-            scrollIdx:0,//滚动索引
             scrollUl_list:props.data?props.data.slice(0,eval(props.maxNum||5)):[],
-            select_li:"",//选中选项
+            select_li:props.select_li||"",//选中选项
         }
     }
+    // componentWillReceiveProps(nextProps){
+    //     if(nextProps.data){
+    //         this.setState({
+    //             data:nextProps.data||[],//滚动列表数据
+    //             maxNum:nextProps.maxNum||5,//最大展示数
+    //             scrollIdx:0,//滚动索引
+    //             scrollUl_list:nextProps.data?nextProps.data.slice(0,eval(nextProps.maxNum||5)):[],
+    //             select_li:nextProps.select_li||"",//选中选项
+    //         });
+    //     }
+    //     //console.log("nextProps",nextProps);
+    // }//e
     //滚动切换
     scrollSwitch=(operate)=>{
         let state=undefined;
         let startIdx=0;
         if(operate==="pre"){
-            startIdx=this.state.scrollIdx-eval(this.state.maxNum);
+            startIdx=this.state.scrollIdx-eval(this.props.maxNum);
             if(startIdx>=0){
                 state={
                     scrollIdx:startIdx,
-                    scrollUl_list:this.state.data.slice(startIdx,this.state.scrollIdx)
+                    scrollUl_list:this.props.data.slice(startIdx,this.state.scrollIdx)
                 }
             }
         }
         else{
-            let len=this.state.data.length;
-            startIdx=this.state.scrollIdx+eval(this.state.maxNum);
+            let len=this.props.data.length;
+            startIdx=this.state.scrollIdx+eval(this.props.maxNum);
             if(startIdx<len){
                 state={
                     scrollIdx:startIdx,
-                    scrollUl_list:this.state.data.slice(startIdx,startIdx+eval(this.state.maxNum))
+                    scrollUl_list:this.props.data.slice(startIdx,startIdx+eval(this.props.maxNum))
                 }
             }
         }
@@ -65,7 +78,7 @@ class Widget_scroll_ul_leftRight extends Component{
                         }
                     </ul>
                     {
-                        (this.state.scrollUl_list.length>0&&this.state.scrollIdx+5<this.state.data.length)?
+                        (this.state.scrollUl_list.length>0&&this.state.scrollIdx+5<this.props.data.length)?
                         <span className="ul_arrow" onClick={()=>{this.scrollSwitch('next')}}><RightOutlined /></span>:null}
                 </div>
             </div>

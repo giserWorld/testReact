@@ -20,6 +20,7 @@ import Ant_Form from './ant_Form';
 import Ant_modal from './ant_modal';
 import Ant_Tabs from './ant_Tabs';
 import Ant_Card from './ant_Card';
+import Ant_Dropdown from './ant_Dropdown';
 //sample
 import sample_Anchor from './sample/test_Anchor';
 class antViewer extends Component{
@@ -32,7 +33,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_Card/>
+              <Ant_table_htfy/>
             </ConfigProvider>
         )
     }

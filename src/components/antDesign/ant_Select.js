@@ -23,13 +23,15 @@ class ant_Select extends Component{
             ]
         }
     }
-    handleSelectChange(value) {
+    /**************select值发生改变**************
+    *参数:value(String):select选中的值
+    ******option(Object):选中的数据对象
+    **/
+    handleChange_select=(value,option)=>{
         console.log(`selected ${value}`);
-    }
-    //值改变
-    onChange(value) {
-        console.log(`selected ${value}`);
-    }
+        console.log(`option ${option}`);
+    }//e
+
     onSearch(val) {
         console.log('search:', val);
     }
@@ -46,7 +48,7 @@ class ant_Select extends Component{
                     showSearch
                     allowClear={true}
                     optionFilterProp="children"
-                    onChange={this.onChange}
+                    onChange={this.handleChange_select}
                     onSearch={this.onSearch}
                     onSelect={this.onSelect}
                     placeholder="请选择数据"

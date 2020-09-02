@@ -8,35 +8,39 @@ import 'echarts/lib/component/title'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/markPoint'
 /**************************折线图**********************
- *更新时间:2020.08.29
+ *更新时间:2020.09.02 wxt
  *1.EchartLine_base:基础折线图
- *2.EchartLine_stack:折线图堆叠
- **/
-//*********************2.折线图堆叠***********************//
-export class EchartLine_stack extends Component{
+ *2.EchartLine_multi:折线图多条折线
+
+ 
+/*********************2.折线图多条折线**********************
+ *更新时间:2020.09.02 
+ *属性:title(String):图表标题
+ ******data_legend(Array):图例数据
+ ******data_x(Array):x轴数据
+ ******data_series(Array):折线数据
+ ******echarts_w(String):宽度
+ ******echarts_h(String):高度
+ ******param(Object):[opt] 其他参数
+*/
+export class EchartLine_multi extends Component{
     constructor(props){
         super(props);
         this.state={
-            name:"折线图堆叠",
-            title:props.title||"",//图标标题
-            data_legend:props.data_legend||[],//图例数据
-            data_x:props.data_x||[],//x轴数据
-            data_series:props.data_series||[],//折线数据
-            echarts_w:props.echarts_w||"600px",
-            echarts_h:props.echarts_h||"600px"
+            name:"折线图多条折线",
         }
     }
     //图标配置option
     getOption=()=>{
         let option={
             title: {
-                text:this.state.title
+                text:this.props.title||""
             },
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data: this.state.data_legend
+                data: this.props.data_legend||[]
             },
             grid: {
                 top: '5%',
@@ -48,17 +52,17 @@ export class EchartLine_stack extends Component{
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data:this.state.data_x
+                data:this.props.data_x||[]
             },
             yAxis: {
                 type: 'value'
             },
-            series:this.state.data_series
+            series:this.props.data_series||[]
         };
         return option;
     }//e
     render(){
-        let echartsStyle={width:this.state.echarts_w,height:this.state.echarts_h};
+        let echartsStyle={width:this.props.echarts_w||"500px",height:this.props.echarts_h||"500px"};
         return(
             <ReactEchartsCore
                 echarts={echarts}

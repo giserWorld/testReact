@@ -27,8 +27,18 @@ class plugin_left_right_switch extends Component{
                     maxNum={6}
                     onSelect={this.clickUl_li}
                 />
+                <p>
+                    <button onClick={this.updateData}>更新数据</button>
+                </p>
             </div>
         )
+    }
+    updateData=()=>{
+        this.setState({
+            data:[
+                "2020-08-26","2020-08-27","2020-08-28"
+            ]
+        });
     }
     componentDidMount(){
 

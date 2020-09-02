@@ -4,19 +4,20 @@ import { Table, Divider, Tag} from 'antd';
 import { Button } from 'antd';
 
 
-/********************table前台分页*********************
- *1.前台分页:前台一次性请求所有数据，表格显示时以分页形式显示
+/********************table后台分页*********************
+ *1.
  *2. 
  */
 class ant_table_ht extends Component{
     constructor(props){
         super(props);
         this.state={
-            name:"ant_table(前台分页)",
+            name:"ant_table(后台分页)",
             data:[],//表格数据
             columns:[],//表格列数据
             pagination:this.pagination,//分页组件
             selectedRowKeys:[],//控制表格选中的行key
+            filterDropdownVisible:false,//自定义下拉框
         }
     }
     //表格列配置对象
@@ -25,8 +26,8 @@ class ant_table_ht extends Component{
             dataIndex:"key",//字段
             title:"序号",//字段标题
             align:"center",//列的对齐方式
-            defaultSortOrder:'ascend',//默认排序,可选值:"descend"(降序)、"ascend"(升序)
-            sorter:(data2,data1)=>{//本地排序规则函数,设置该属性后字段列默认开启"升序"、"降序"切换
+            //defaultSortOrder:'ascend',//默认排序,可选值:"descend"(降序)、"ascend"(升序)
+            sorter:(data2,data1,fieldOrder)=>{//本地排序规则函数,设置该属性后字段列默认开启"升序"、"降序"切换
                 return data2.key-data1.key;
             }
         },
@@ -43,6 +44,9 @@ class ant_table_ht extends Component{
             dataIndex: 'jlsj',
             title: '时间',
             align:"center",//列的对齐方式
+            sorter:(data2,data1)=>{
+                return data2.tbr.length - data1.tbr.length;//根据字符串长度进行排序
+            }
         },
         {
             dataIndex: 'szdq',
@@ -55,6 +59,19 @@ class ant_table_ht extends Component{
             onFilter:(value,data)=>{//本地模式下(对当前页面数据进行过滤)，点击确定筛选的运行函数
                 return data.szdq.indexOf(value)=== 0;
             } 
+        },
+        {
+            dataIndex: 'zl',//自定义下拉字段过滤菜单
+            title: '种类',
+            align:"center",//列的对齐方式
+            filterDropdown:(FilterDropdownProp)=>{
+                return (
+                    <div>
+                        dsdad
+                    </div>
+                );
+            },
+            
         },
         //操作列
         {
@@ -72,6 +89,11 @@ class ant_table_ht extends Component{
             }
         },
     ]
+    //时间字段排序
+    sorterFun_time=(data2,data1,fieldOrder)=>{
+        
+    }//e
+
     //选中行checkbox配置
     row_checkbox={
         onChange:(selectedRowKeys,selectedRows)=>{//表格checkbox状态改变时触发

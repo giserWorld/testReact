@@ -11,36 +11,51 @@ class ant_Form extends Component{
         super(props);
         this.state={
             name:"ant_Form",
+            input_name:"ddd"
         }
+    }
+    handelChange(name,evt){
+        let key=name || "";
+        let value=evt.target?evt.target.value:evt;//表单值
+        let state={};
+        if(key)state[key]=value;
+        if(key)this.setState(state);
+        console.log(state);
     }
     render(){
         return(
             <div className="wrap">
                 <h2>{this.state.name}</h2><Divider/>
-                <div>
+                <div style={{width:"500px"}}>
                     <Form
                         labelCol={{ span:8 }}
                         wrapperCol={{ span: 16 }}
                     >
-                        {/* 定义一个表单字段 */}
                         <Form.Item 
                             label="用户名" 
                             name="username" 
                             rules={[{ required: true, message: '请输入用户名!' }]}
                         >
-                            <Input />
+                            <Input value={this.state.input_name} onChange={this.handelChange.bind(this,"input_name")}/>
                         </Form.Item>  
 
                         <Form.Item
                             wrapperCol={{ offset: 8, span: 16 }}
                         >
-                            <Button type="primary" htmlType="submit">Submit</Button>
+                            <Button type="primary" onClick={this.btnFun}>提交</Button>
                         </Form.Item>
                     </Form>
                 </div>
             </div>
         )
     }
+
+    btnFun=()=>{
+        this.setState({
+            input_name:"改变input值"  
+        });
+    }//e
+
     componentDidMount(){
           
     }

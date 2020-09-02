@@ -13,6 +13,7 @@ const { Column, ColumnGroup } = Table;
  *2.推荐使用该方式，简单实用
  *3.如果表格字段配置包含子列，常规数据结构，则会出现列字段的嵌套
  *4.如果表格字段配置为常规列，嵌套数据结构，则会出现树形表格
+ *5.树形表格的每条数据必须包含key属性,并且有唯一的属性值，否则会有问题
  */
 class ant_table_data extends Component{
     constructor(props){
@@ -52,6 +53,9 @@ class ant_table_data extends Component{
                     columns={columns}//表格列配置
                     dataSource={dataSource}//表格数据
                     bordered={true}//是否显示单元格边框
+                    expandable={{
+                        defaultExpandAllRows:true
+                    }}
                 />
             </>
         );
@@ -73,7 +77,9 @@ class ant_table_data extends Component{
             </>
         );
     }//e
-
+    control_filter=()=>{
+        
+    }//e
 
     render(){
         console.log("*******render()******");
@@ -81,6 +87,7 @@ class ant_table_data extends Component{
         return(
             <div>
                 <h2>{this.state.name}</h2><Divider/>
+                <Button type="primary" onClick={this.control_filter}>控制表格字段</Button><p/>
                 <Button type="primary" onClick={this.addTableData.bind(this)}>添加表格数据</Button><p/>
                 <Button type="primary" onClick={this.clearTable.bind(this)}>清空表格数据</Button><Divider/>
                 {this.table_tree()}

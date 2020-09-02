@@ -32,7 +32,7 @@ class form_select extends Component{
     */
     handelChange(name,evt){
         let key=name || "";
-        let value=evt.target?evt.target.value:evt;//表单值
+        let value=evt&&evt.target?evt.target.value:evt;//表单值
         let state={};
         if(key)state[key]=value;
         if(key)this.setState(state);

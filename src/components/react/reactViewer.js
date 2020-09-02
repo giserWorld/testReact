@@ -15,6 +15,8 @@ import React_scss from './react_scss';
 import React_props_children from './react_props_children';
 import AjaxRequest_data from './ajaxRequest_data';
 import Plugin_left_right_switch from './plugin_left_right_switch';
+import Form_input from './form_input';
+import Test_props_update from './test_props_update';
 
 
 
@@ -28,7 +30,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Plugin_left_right_switch name={this.state.name}/>
+              <Test_props_update name={this.state.name}/>
             </div>
         )
     }
