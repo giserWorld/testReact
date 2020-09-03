@@ -37,6 +37,7 @@ export class EchartBar_stack extends Component{
     }
     //图标配置option
     getOption=()=>{
+        let param=this.props.param||{};
         let option={
             title: {
                 text:this.props.title||""

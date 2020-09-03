@@ -128,66 +128,59 @@ export const columns_tree = [
 //嵌套数据
 export const data_tree = [
     {//无子数据
-        key: 2,
+        key: "1",
         name: 'Joe Black',
         age: 32,
         address: 'Sidney No. 1 Lake Park',
+        children:null
     },
-    {//有子数据
-      key: 1,
+    {//有子数据,树型结构数据
+      key: "2",
       name: 'John Brown sr.',
       age: 60,
       address: 'New York No. 1 Lake Park',
       children: [
         {
-         key: 3,
+         key: "3",
           name: 'John Brown',
           age: 42,
           address: 'New York No. 2 Lake Park',
         },
         {
-          key: 4,
+          key: "4",
           name: 'John Brown jr.',
           age: 30,
           address: 'New York No. 3 Lake Park',
           children: [
             {
-             key: 5,
+             key: "5",
               name: 'Jimmy Brown',
               age: 16,
               address: 'New York No. 3 Lake Park',
             },
           ],
         },
-        {
-          key: 6,
-          name: 'Jim Green sr.',
-          age: 72,
-          address: 'London No. 1 Lake Park',
-          children: [
-            {
-              key: 7,
-              name: 'Jim Green',
-              age: 42,
-              address: 'London No. 2 Lake Park',
-              children: [
-                {
-                  key: 888,
-                  name: 'Jim Green jr.',
-                  age: 25,
-                  address: 'London No. 3 Lake Park',
-                },
-                {
-                  key: 666,
-                  name: 'Jimmy Green sr.',
-                  age: 18,
-                  address: 'London No. 4 Lake Park',
-                },
-              ],
-            },
-          ],
-        },
       ],
+    },
+    {
+      key: "10",
+      name: '四川省',
+      age: 32,
+      address: 'Sidney No. 1 Lake Park',
+      children:[
+        {
+          key: "11",
+          name: '成都市',
+          age: 32,
+          address: 'Sidney No. 1 Lake Park',
+        }
+      ]
+    },
+    {
+      key: "12",
+      name: '北京',
+      age: 32,
+      address: 'Sidney No. 1 Lake Park',
     },
   ];
 

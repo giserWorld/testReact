@@ -64,14 +64,6 @@ class ant_table_ht extends Component{
             dataIndex: 'zl',//自定义下拉字段过滤菜单
             title: '种类',
             align:"center",//列的对齐方式
-            filterDropdown:(FilterDropdownProp)=>{
-                return (
-                    <div>
-                        dsdad
-                    </div>
-                );
-            },
-            
         },
         //操作列
         {
@@ -89,10 +81,6 @@ class ant_table_ht extends Component{
             }
         },
     ]
-    //时间字段排序
-    sorterFun_time=(data2,data1,fieldOrder)=>{
-        
-    }//e
 
     //选中行checkbox配置
     row_checkbox={
@@ -147,7 +135,7 @@ class ant_table_ht extends Component{
                     dataSource={this.state.data}
                     bordered={true} 
                     size="middle"
-                    pagination={this.state.pagination}
+                    //pagination={this.state.pagination}
                     onChange={this.handleTableChange}
                 />
             </div>
@@ -172,7 +160,7 @@ class ant_table_ht extends Component{
     //ajax请求数据
     addTableData(){
         let _self=this;
-        this.setState({ loading: true });//数据刷新
+        //this.setState({ loading: true });//数据刷新
         //ajax请求远程数据
         var url="http://localhost:9000/static/datas/table_data.json";
         var param={
@@ -180,9 +168,9 @@ class ant_table_ht extends Component{
             currentPage:this.state.pagination.current||this.state.pagination.defaultCurrent,
         };
         api.get(url,param,(result) =>{
-            console.log(result);
+            //console.log(result);
             _self.setState({
-              loading:false,//停止数据刷新
+              //loading:false,//停止数据刷新
               columns:_self.table_columns,//设置表格列
               data:result.returnData.rows||[],//设置表格数据
               selectedRowKeys:[]//清空选中行key

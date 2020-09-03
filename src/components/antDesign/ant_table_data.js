@@ -14,6 +14,9 @@ const { Column, ColumnGroup } = Table;
  *3.如果表格字段配置包含子列，常规数据结构，则会出现列字段的嵌套
  *4.如果表格字段配置为常规列，嵌套数据结构，则会出现树形表格
  *5.树形表格的每条数据必须包含key属性,并且有唯一的属性值，否则会有问题
+ ********************tableTypeFun*********************
+ *1.table_custom():
+ *2.table_tree():
  */
 class ant_table_data extends Component{
     constructor(props){
@@ -23,9 +26,20 @@ class ant_table_data extends Component{
             data:[],//表格数据
             columns:[],//表格列数据
             selectedRowKeys:["2"],//控制表格选中的行key
+            expandedRowKeys:[],
+        }
+        this.tableTypeFun=this.table_tree;//表格类型
+    }
+    //点击回调函数
+    clickFun=(type)=>{
+        if(type==="添加树形数据"){
+            this.setState({
+               columns:data.columns_tree,
+               data:data.data_tree,
+               expandedRowKeys:[]
+            });
         }
     }
-    
     //行checkbox配置
     row_checkbox={
         onChange:(selectedRowKeys,selectedRows)=>{//表格checkbox状态改变时触发
@@ -40,9 +54,38 @@ class ant_table_data extends Component{
         },
         selectedRowKeys:[],//设置talble checkbox选中的数据key
     };
+    rowExpandable=(record)=>{
+        return true;
+    }//e
+    //*****************2.树形表格******************//
+    table_tree=()=>{
+        let columns=data.columns_tree;
+        let dataSource=data.data_tree;
+        console.log("columns:",columns);
+        console.log("rows:",dataSource);
+        return (
+            <>
+                <div>
+                    <button onClick={()=>{this.clickFun("添加树形数据")}}>添加树形数据</button>
+                </div>
+                <Table 
+                    style={{width:"1000px"}}
+                    //rowSelection={this.row_checkbox}//行checkbox配置
+                    columns={columns}//表格列配置
+                    dataSource={dataSource}//表格数据
+                    bordered={true}//是否显示单元格边框
+                    expandable={{//配置展开属性
+                        //defaultExpandAllRows:true,//初始时，是否展开所有行
+                        //expandedRowKeys:this.state.expandedRowKeys//展开的行key
+                        defaultExpandedRowKeys:["10"],
+                    }}
+                />
+            </>
+        );
+    }//e
 
-    //*****************1.基础表格******************//
-    table_base=()=>{
+    //*****************1.自定义表头******************//
+    table_custom=()=>{
         let columns=data.table_columns_multiField;
         let dataSource=data.table_data2;
         return (
@@ -61,22 +104,6 @@ class ant_table_data extends Component{
         );
     }//e
 
-    //*****************2.树形表格******************//
-    table_tree=()=>{
-        let columns=data.columns_tree;
-        let dataSource=data.data_tree;
-        return (
-            <>
-                <Table 
-                    style={{width:"1000px"}}
-                    //rowSelection={this.row_checkbox}//行checkbox配置
-                    columns={columns}//表格列配置
-                    dataSource={dataSource}//表格数据
-                    bordered={true}//是否显示单元格边框
-                />
-            </>
-        );
-    }//e
     control_filter=()=>{
         
     }//e
@@ -90,7 +117,7 @@ class ant_table_data extends Component{
                 <Button type="primary" onClick={this.control_filter}>控制表格字段</Button><p/>
                 <Button type="primary" onClick={this.addTableData.bind(this)}>添加表格数据</Button><p/>
                 <Button type="primary" onClick={this.clearTable.bind(this)}>清空表格数据</Button><Divider/>
-                {this.table_tree()}
+                {this.tableTypeFun()}
             </div>
         )
     }
@@ -107,10 +134,7 @@ class ant_table_data extends Component{
         )
     }
     componentDidMount(){
-        this.setState({
-            data:this.table_data,//表格数据
-            columns:this.table_columns//表格列
-        });
+
     }
     //添加表格数据
     addTableData(){

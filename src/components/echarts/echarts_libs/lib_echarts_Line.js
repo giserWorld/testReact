@@ -32,6 +32,7 @@ export class EchartLine_multi extends Component{
     }
     //图标配置option
     getOption=()=>{
+        let param=this.props.param||{};
         let option={
             title: {
                 text:this.props.title||""
@@ -52,7 +53,10 @@ export class EchartLine_multi extends Component{
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data:this.props.data_x||[]
+                data:this.props.data_x||[],
+                axisLabel:{
+                    rotate:param.rotate?param.rotate:0
+                }
             },
             yAxis: {
                 type: 'value'

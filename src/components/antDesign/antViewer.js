@@ -8,13 +8,14 @@ import Ant_table_html from './ant_table_html';
 import Ant_table_data from './ant_table_data';
 import Ant_table_qtfy from './ant_table_qtfy';
 import Ant_table_htfy from './ant_table_htfy';
+import Ant_table_config from './ant_table_config';
 import Ant_DatePicker from './ant_DatePicker';
 import Ant_AutoComplete from './ant_AutoComplete';
 import Ant_Select from './ant_Select';
 import Ant_tree_data from './ant_tree_data';
 import Ant_Icon from './ant_Icon';
 import Ant_Cascader from './ant_Cascader';
-import Ant_form_Checkbox from './ant_form_Checkbox';
+import Ant_Checkbox from './ant_Checkbox';
 import Ant_Layout from './ant_Layout';
 import Ant_Form from './ant_Form';
 import Ant_modal from './ant_modal';
@@ -33,7 +34,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_table_htfy/>
+              <Ant_table_data/>
             </ConfigProvider>
         )
     }

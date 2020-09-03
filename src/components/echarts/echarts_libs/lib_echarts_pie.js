@@ -29,6 +29,7 @@ export class EchartPie_doughnut_text extends Component{
     //图标配置option
     getOption=()=>{
         let _self=this;
+        let param=this.props.param||{};
         let option={
             title: {
                 text:this.state.title,
