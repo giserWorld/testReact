@@ -14,7 +14,7 @@ import 'echarts/lib/component/markPoint'
 
  
 /*********************2.折线图多条折线**********************
- *更新时间:2020.09.02 
+ *更新时间:2020.09.03 
  *属性:title(String):图表标题
  ******data_legend(Array):图例数据
  ******data_x(Array):x轴数据
@@ -22,6 +22,12 @@ import 'echarts/lib/component/markPoint'
  ******echarts_w(String):宽度
  ******echarts_h(String):高度
  ******param(Object):[opt] 其他参数
+*注解:
+ *1.param可选属性：
+ var param={
+    rotate:0,//刻度标签旋转的角度
+    y_type:y轴类型
+ };
 */
 export class EchartLine_multi extends Component{
     constructor(props){
@@ -59,7 +65,8 @@ export class EchartLine_multi extends Component{
                 }
             },
             yAxis: {
-                type: 'value'
+                type: param.y_type?param.y_type:'value',
+                min:1
             },
             series:this.props.data_series||[]
         };

@@ -1,27 +1,46 @@
-/**************************textarea ************************/
-import React ,{ Component }from 'react';//核心组件类,每一个组件中必须包含该类
 
-//地图组件
-class textarea  extends Component{
-    name="textarea";
-    state={
-        msg:"textarea",
-        content:this.props.parent_value
-    }
+import React ,{ Component }from 'react';
+
+/**************************textarea**********************
+ *1.
+ **/
+class form_textarea extends Component{
     constructor(props){
         super(props);
+        this.state={
+            name:"textarea",
+            inputValue:""
+        }
     }
+//改变值
+handelChange_form(name,evt){
+    let _self=this;
+    let key=name || "";
+    let value=evt&&evt.target?evt.target.value:evt;//表单值
+    let state={};
+    if(key)state[key]=value;
+    if(key)_self.setState(state);
+    console.log(state);
+}//e
+
     render(){
         return(
             <div className="wrap">
+              <h2>{this.state.name}</h2>
               <div>
-                <textarea onChange={this.state.content}/>
+                <textarea value={this.state.inputValue} onChange={this.handelChange_form.bind(this,"inputValue")} rows="4"/><p/>
+                <button onClick={this.changeValue}>改变值</button>
               </div>
             </div>
         )
     }
+    changeValue=()=>{
+        this.setState({
+            inputValue:"dasdad"
+        });
+    }
     componentDidMount(){
-         console.log(this.props); 
+        console.log(this.props); 
     }
 }
-export default textarea;
+export default form_textarea;

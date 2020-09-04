@@ -34,7 +34,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_table_data/>
+              <Ant_Form/>
             </ConfigProvider>
         )
     }

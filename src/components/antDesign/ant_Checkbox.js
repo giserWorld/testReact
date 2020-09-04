@@ -21,8 +21,7 @@ class ant_Checkbox extends Component{
             ],
            
         }
-        //组件类型
-        this.typeFun=this.checkbox_one;
+        this.typeFun=this.checkbox_one;//组件类型
     }
     //选中项(箭头函数)
     checkboxGroupFun=(checkedValues)=>{

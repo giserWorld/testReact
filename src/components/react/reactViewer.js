@@ -15,9 +15,10 @@ import React_scss from './react_scss';
 import React_props_children from './react_props_children';
 import AjaxRequest_data from './ajaxRequest_data';
 import Plugin_left_right_switch from './plugin_left_right_switch';
-import Form_input from './form_input';
 import Test_props_update from './test_props_update';
-
+import Form_input from './form_input';
+import Form_select from './form_select';
+import Form_textarea from './form_textarea';
 
 
 class reactViewer extends Component{
@@ -30,7 +31,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Test_props_update name={this.state.name}/>
+              <Form_textarea name={this.state.name}/>
             </div>
         )
     }
