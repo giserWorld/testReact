@@ -19,6 +19,7 @@ import Test_props_update from './test_props_update';
 import Form_input from './form_input';
 import Form_select from './form_select';
 import Form_textarea from './form_textarea';
+import Ract_withRouter from './react_withRouter';
 
 
 class reactViewer extends Component{
@@ -31,7 +32,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Form_textarea name={this.state.name}/>
+              <Ract_withRouter name={this.state.name}/>
             </div>
         )
     }
