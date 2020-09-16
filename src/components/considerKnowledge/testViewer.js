@@ -8,7 +8,8 @@ import React ,{ Component }from 'react';
 import Router_param from './react/react-router-dom/router_param';
 
 //生命周期函数
-//import Lifecycle_componentWillReceiveProps from './react/lifecycle_componentWillReceiveProps';//componentWillReceiveProps
+import Lifecycle_componentWillReceiveProps from './react/lifecycle_componentWillReceiveProps';//componentWillReceiveProps
+import Lifecycle_componentWillReceiveProps_new from './react/lifecycle_componentWillReceiveProps_new';
 import Lifecycle_componentDidUpdate from './react/lifecycle_componentDidUpdate';//componentDidUpdate
 //import Lifecycle_componentWillMount from './react/lifecycle_componentWillMount';//componentWillMount
 //import Lifecycle_componentWillUnmount from './react/lifecycle_componentWillUnmount';//componentWillMount
@@ -33,7 +34,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Router_param/>
+                <Lifecycle_componentWillReceiveProps/>
             </div>
         )
     }

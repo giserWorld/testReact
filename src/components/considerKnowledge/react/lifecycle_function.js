@@ -37,7 +37,7 @@ import { Redirect } from 'react-router-dom';
     4)getSnapshotBeforeUpdate()
     5)componentDidUpdate()
  */
-class index extends Component{
+class lifecycle_function extends Component{
     state={
         name:"react生命周期函数",
     }
@@ -53,6 +53,15 @@ class index extends Component{
         console.log("生命周期函数-getSnapshotBeforeUpdate()"); 
         return "getSnapshotBeforeUpdate";
     }
+    componentDidUpdate(prevProps, prevState, snapshot){
+        console.log("生命周期函数-componentDidUpdate()"); 
+    }
+    componentDidMount(){
+        console.log("3.生命周期函数-componentDidMount()");
+    }
+    componentWillUnmount(){
+        console.log("生命周期函数-componentWillUnmount()");
+    }
     render(){
         console.log("2.生命周期函数-render()");
         return(
@@ -65,15 +74,6 @@ class index extends Component{
             </div>
         )
     }
-    componentDidUpdate(prevProps, prevState, snapshot){
-        console.log("生命周期函数-componentDidUpdate()"); 
-    }
-    componentDidMount(){
-        console.log("3.生命周期函数-componentDidMount()");
-    }
-    componentWillUnmount(){
-        console.log("生命周期函数-componentWillUnmount()");
-    }
     toPage(){
         window.location.href="#/jquery";
     }
@@ -83,4 +83,4 @@ class index extends Component{
         });
     }
 }
-export default index;
+export default lifecycle_function;
