@@ -20,6 +20,7 @@ import Form_input from './form_input';
 import Form_select from './form_select';
 import Form_textarea from './form_textarea';
 import Ract_withRouter from './react_withRouter';
+import React_refs from './react_refs';
 
 
 class reactViewer extends Component{
@@ -32,7 +33,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Ract_withRouter name={this.state.name}/>
+              <React_refs name={this.state.name}/>
             </div>
         )
     }
