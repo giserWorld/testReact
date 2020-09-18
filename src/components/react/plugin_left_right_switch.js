@@ -1,44 +1,71 @@
 import React ,{ Component }from 'react';
-import Widget_scroll_ul_leftRight from './customPlugins/Widget_scroll_ul_leftRight';
+import Widget_scroll_ul_leftRight from './customPlugins/Widget_scroll_ul_leftRight';//左右切换数据
 class plugin_left_right_switch extends Component{
     constructor(props){
         super(props);
         this.state={
             name:"plugin_left_right_switch",
-            data:[
-                "北京1","北京2","北京3","北京4","北京5",
-                "北京6","北京7","北京8","北京9","北京10",
-                "北京11","北京12","北京13","北京14","北京15",
-                "北京16","北京17",
+            selectKeys:["2"],
+            ulData:[
+                {key:"1",name:"北京1",value:"1"},
+                {key:"2",name:"北京2",value:"2"},
+                {key:"3",name:"北京3",value:"3"},
+                {key:"4",name:"北京4",value:"4"},
+                {key:"5",name:"北京5",value:"5"},
+                {key:"6",name:"北京6",value:"6"},
+                {key:"7",name:"北京7",value:"7"},
+                {key:"8",name:"北京8",value:"8"},
+                {key:"9",name:"北京9",value:"9"},
+                {key:"10",name:"北京10",value:"10"},
+                {key:"11",name:"北京11",value:"11"},
+                {key:"12",name:"北京12",value:"12"},
             ],
         }
     }
     //点击列表选项li
-    clickUl_li=(item_li)=>{
-        console.log("click选中选项：",item_li);
+    onClickSelect=(item)=>{
+        //this.state.selectKeys.push(item.key);
+        this.setState({
+            selectKeys:[item.key]
+        });
+        console.log("click选中选项：",item);
     }//e
     render(){
         return(
             <div className="wrap">
                 <h2>{this.state.name}</h2>
                 <span>横向滚动:</span>
-                <Widget_scroll_ul_leftRight
-                    data={this.state.data}
-                    maxNum={6}
-                    onSelect={this.clickUl_li}
-                />
-                <p>
-                    <button onClick={this.updateData}>更新数据</button>
-                </p>
+                <div className="divContainer" style={{border:"1px solid blue",width:"800px"}}>
+                    <Widget_scroll_ul_leftRight
+                        dataList={this.state.ulData}
+                        maxNum={5}
+                        selectKeys={this.state.selectKeys}//可控选中key
+                        onClickSelect={this.onClickSelect}
+                    />
+                </div>
+                <button onClick={()=>{this.clickFun("更新数据")}}>更新数据</button><p/>
+                <button onClick={()=>{this.clickFun("选中项")}}>获取选中项</button><p/>
             </div>
         )
     }
-    updateData=()=>{
-        this.setState({
-            data:[
-                "2020-08-26","2020-08-27","2020-08-28"
-            ]
-        });
+    clickFun=(type)=>{
+        let state=null;
+        if(type==="更新数据"){
+            state={
+                selectKeys:[], 
+                ulData:[
+                    {key:"1",name:"2020-08-26",value:"1"},
+                    {key:"2",name:"2020-08-27",value:"2"},
+                    {key:"3",name:"2020-08-27",value:"3"},
+                    {key:"4",name:"2020-08-27",value:"4"},
+                    {key:"5",name:"2020-08-27",value:"5"},
+                ]
+            };
+        }
+        else if(type==="选中项"){
+            console.log("selectKeys:",this.state.selectKeys);
+        }
+        this.setState(state);
     }
     componentDidMount(){
 

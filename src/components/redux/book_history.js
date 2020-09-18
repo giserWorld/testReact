@@ -2,53 +2,56 @@ import React ,{ Component }from 'react';
 import { connect } from 'react-redux'
 
 //展示组件
-class historybook extends Component{
+class book_history extends Component{
     constructor(props){
         super(props);
         this.state={
-            name:"historybook",
+            name:"book_history",
         }
     }
     render(){
         return(
             <div>
                 <h2>{this.state.name}</h2>
-                <div>
-                    {this.props.redux_value}<p/>
-                </div>
+                <p>codeName:{this.props.codeName}</p>
             </div>
         )
     }
     componentDidMount(){
-        console.log("_self:",this);
+        //console.log("_self:",this);
     }
+    //组件将要接受Props函数(组件初始化时不会触发)
+    componentWillReceiveProps(nextProps){ 
+        let _self=this;
+        _self.nextProps=nextProps;//新属性
+        if(nextProps.redux_value){//redux属性更新
+            
+        }
+        else{//父组件属性更新
+    
+        }
+        console.log("book_history:",nextProps);
+    }//e
 }
 
-
-/*******************reudx状态映射props*****************
- *1.redux状态数据映射到组件props属性中
- *2.该函数返回的对象数据会追加到组件的props中
- *3.redux state状态数据每次发生变化都会调用该函数
-*/
-const mapStateToProps=state=>{
-    return{
-        redux_value:state.bookData.redux_value
+const mapStateToProps=(state)=>{
+    return {
+      redux_value:"reduxProps",
+      codeName:state.bookData.codeName,
+      //code:state.bookData.code
     }
 }//e
 
-/*******************状态分发props*****************
- *1.该函数在"状态映射"后触发
- *2.该函数返回的对象数据会追加到组件的props中
- *3."容器组件"初始化时触发，调用一次
-*/
+
 const mapDispatchToProps=(dispatch)=>{
-    return{
-        
+    return {
+        changeCodeName:(param)=>{dispatch.bookData.changeCodeName(param)},
+        changeCode:(param)=>{dispatch.bookData.changeCode2(param)}
     }
 }//e
-//构建redux容器
-var reduxContainer=connect(mapStateToProps,mapDispatchToProps)(historybook);
 
-//console.log("react组件:",historybook);
+//构建redux容器
+var reduxContainer=connect(mapStateToProps,mapDispatchToProps)(book_history);
+//console.log("react组件:",book_history);
 //console.log("readux容器:",reduxContainer);
 export default reduxContainer;

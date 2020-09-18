@@ -1,16 +1,23 @@
 // 更新时间2020.09.03 wxt
 // 1.左右滚动列表 
 .ul_scroll_div{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 0px;
     .ul_arrow{
         padding: 0 8px;
         cursor: pointer;
+        display: flex;
     }
     .ul_scroll{
         list-style-type: none;
         border: 0px solid red;
         margin: 0px;
-        padding: 0px;
+        padding: 0px 10px;
         display: inline-flex;
+        width: 100%;
+        justify-content: space-around;
         .li_scroll{
             border: 0px solid blue;
             margin: 0 2px;
@@ -19,7 +26,8 @@
             border-radius: 20px;
         }
         .selectli{
-            background:red;
+            background:#1890ff;
+            color: white;
         }
     }
 }
