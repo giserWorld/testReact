@@ -1,5 +1,6 @@
 import React ,{ Component }from 'react';
-import Widget_scroll_ul_leftRight from './customPlugins/Widget_scroll_ul_leftRight';//左右切换数据
+import Widget_ul_scroll from './customPlugins/widget_ul_scroll';//左右切换数据
+import './css/testReact.scss';
 class plugin_left_right_switch extends Component{
     constructor(props){
         super(props);
@@ -35,8 +36,8 @@ class plugin_left_right_switch extends Component{
             <div className="wrap">
                 <h2>{this.state.name}</h2>
                 <span>横向滚动:</span>
-                <div className="divContainer" style={{border:"1px solid blue",width:"800px"}}>
-                    <Widget_scroll_ul_leftRight
+                <div className="test_ul_scroll">
+                    <Widget_ul_scroll
                         dataList={this.state.ulData}
                         maxNum={5}
                         selectKeys={this.state.selectKeys}//可控选中key
@@ -59,6 +60,8 @@ class plugin_left_right_switch extends Component{
                     {key:"3",name:"2020-08-27",value:"3"},
                     {key:"4",name:"2020-08-27",value:"4"},
                     {key:"5",name:"2020-08-27",value:"5"},
+                    {key:"6",name:"2020-08-27",value:"6"},
+                    {key:"7",name:"2020-08-27",value:"7"},
                 ]
             };
         }

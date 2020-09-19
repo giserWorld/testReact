@@ -34,7 +34,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Plugin_left_right_switch name={this.state.name}/>
+              <React_EventEmitter name={this.state.name}/>
             </div>
         )
     }
