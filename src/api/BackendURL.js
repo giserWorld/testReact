@@ -2,11 +2,11 @@
 //mockJS基础路径
 var mockJSUrl="http://localhost:3005";
 //var mockJSUrl="http://192.168.167.129:3005";
-//后台api接口基础路径
+let baseUrl="";//后台api接口基础路径
 if(process.env.NODE_ENV ==="development"){
-    var baseUrl="http://192.168.167.129:3005";
+    baseUrl="http://192.168.167.129:3005";
 }else {
-    var baseUrl="http://192.168.167.229:8188";
+    baseUrl="http://192.168.167.229:8188";
 }
 //baseUrl=mockJSUrl;
 export let BackendBaseUrl=baseUrl;//后台接口基础路径
