@@ -19,6 +19,7 @@ import React ,{ Component }from 'react';
  *9.props属性对于自身的组件来说是只读的,不能自己修改本身的props属性，只能通过外部修改组件的属性:
     1)通过父组件修改组件props值
     2)通过redux修改组件props值
+ *10.父组组件的重新render会导致子组件componentWillReceiveProps()和render()函数的触发
  */
 class componentWillReceiveProps extends Component{
     constructor(props){

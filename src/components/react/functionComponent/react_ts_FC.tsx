@@ -13,11 +13,11 @@ const react_ts_FC:React.FC<typeProps>=(props)=>{
     let name:any="react_ts_FC";
     
     console.log("react_props:",props);
+    //console.log("react核心库：",React);
     return (
         <div className="react_ts_FC">
             <h2>{name}</h2>
         </div>
     );
 }//e
-console.log("react核心库：",React);
 export default react_ts_FC;

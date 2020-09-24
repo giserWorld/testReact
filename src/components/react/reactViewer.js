@@ -9,6 +9,7 @@ import React_loadable from './react_lazyLoad/react-loadable';
 //函数式组件
 import React_ts_FC from './functionComponent/react_ts_FC';
 import Component_function from './functionComponent/component_function';
+import Parent_book from './functionComponent/parent_book';
 //react
 import ReactDOM_render from './reactDOM_render';
 import React_createElement from './React_createElement';
@@ -35,7 +36,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <React_ts_FC name={this.state.name}/>
+              <Parent_book name={this.state.name}/>
             </div>
         )
     }
