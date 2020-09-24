@@ -1,7 +1,8 @@
 import React ,{ Component }from 'react';
 import { Rnd } from 'react-rnd'
 /**************************rnd**********************
- *一个可调整大小且可拖动的React组件。
+ *1.一个可调整大小且可拖动的React组件。
+ *2.rnd全称为"resizable and draggable"
  **************************属性**********************
  *1.position(object):显示位置,例如:{ x: number, y: number }
  **/

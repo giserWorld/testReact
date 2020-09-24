@@ -10,7 +10,7 @@ interface State {
     name?: string,
     age?: number,
 }
-class index extends Component<Props,State>{
+class index extends Component<Props,State>{  
     constructor(props:any){
         super(props);
         this.state={
