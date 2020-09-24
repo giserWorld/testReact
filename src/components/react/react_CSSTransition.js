@@ -21,6 +21,8 @@ import {CSSTransition} from 'react-transition-group';//导入css过渡组件
     1).xxx-appear —— 第一次渲染动画的第一帧，一般css和.fade-enter一样
     2).xxx-appear-active —— 第一次渲染动画的第二帧到动画结束，一般css和.fade-enter-active一样
   *7.通过react-transition-group里面的CSSTransition实现动画过渡
+  *8."react-transition-group"是一个官网提供的动画过度库
+  *9.CSSTransition组件是在转换的出现、进入、退出阶段应用一对类名(也就是className),靠这个来激活CSS动画
  **/
 class react_CSSTransition extends Component{
     constructor(props){
