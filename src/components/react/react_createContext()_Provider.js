@@ -1,5 +1,7 @@
 import React ,{ Component }from 'react';
-import Child_mathBook from './children/child_mathBook';
+import Child_mathBook_Consumer from './children/child_mathBook_Consumer';
+import Child_mathBook_contextType from './children/child_mathBook_contextType';
+import {MyContext} from './customPlugins/utils/context';
 /**************************react_createContext()**********************
  *1.React.createContext属于React的高级API
  *2.当你不想在组件树中通过逐层传递 props 或者 state 方法来传递数据时，可以使用Context来实现跨层级的组件数据传递
@@ -17,35 +19,58 @@ import Child_mathBook from './children/child_mathBook';
   *9.可以使用 public class fields 的 static 这个类属性来初始化你的 contextType
   *10.使用Context，可以跨越组件进行数据传递
   *11.通过静态方法React.createContext()创建一个Context对象，这个Context对象包含两个组件，<Provider />和<Consumer />
-  *12.
+  *12.Context 提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法
+  *13.只有当组件所处的树中没有匹配到 Provider 时，其 defaultValue 参数才会生效。这有助于在不使用 Provider 包装组件的情况下对组件进行测试
+  *14.应用场景:
+      1)组件嵌套层级很深的情况
+      2)方便祖先组件与后代组件（中间隔了好多层组件）传值
+  *15.Context提供了一种方式，能够让数据在组件树中传递，而不必一级一级手动传递
+  *16.Provider包裹组件并且传递属性值value
   **/
 
- //创建一个context对象(向下兼容的环境对象)
-const MyContext = React.createContext({//初始化环境数据
-    background: 'red',
-    color: 'white'
-});
-console.log("MyContext对象:",MyContext);
 
 class react_createContext extends Component{
     constructor(props){
         super(props);
         this.state={
-            name:"react_createContext",
+            name:"react_createContext_Provider",
+            providerValue:{
+                name:"Context传值",
+                username:"小李",
+                code:"51"
+            }
         }
+        console.log("===========1.react_createContext==========");
+        console.log("上级组件MyContext:",MyContext);
     }
     render(){
+        console.log("provider_value:",this.state.providerValue);
         return(
             //使用一个 Provider 来将当前的 theme 传递给以下的组件树,无论多深，任何组件都能读取这个值
-            <MyContext.Provider value={{something: 'something'}}>
-                 <h2>{this.state.name}</h2><hr/>
-                <Child_mathBook/>
+            <MyContext.Provider value={this.state.providerValue}>{/* value放置共享的数据 */}
+                <h2>{this.state.name}</h2><hr/>
+                <div>
+                    <Child_mathBook_Consumer/>
+                </div>
+                <div>
+                    <button onClick={this.clickFun}>更新Provider数据</button>
+                </div>
+                <div>
+                    <Child_mathBook_contextType/>
+                </div>
             </MyContext.Provider>
         )
     }
+    clickFun=()=>{
+        this.setState({
+            providerValue:{
+                username:"改变provider共享数据"  
+            }
+        });
+    }//e
     componentDidMount(){
 
-        console.log("react_createContext:",this);
+        //console.log("上级组件MyContext:",this);
         //console.log("react_lib:",React);
     }
 }

@@ -24,7 +24,7 @@ import Form_textarea from './form_textarea';
 import Ract_withRouter from './react_withRouter';
 import React_refs from './react_refs';
 import React_EventEmitter from './react_EventEmitter';
-import React_createContext from './react_createContext()';
+import React_createContext from './react_createContext()_Provider';
 import React_CSSTransition from './react_CSSTransition';
 
 
@@ -38,7 +38,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <React_CSSTransition name={this.state.name}/>
+              <React_createContext name={this.state.name}/>
             </div>
         )
     }
