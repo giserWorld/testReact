@@ -16,8 +16,11 @@ class test_htmlTag_a extends Component{
     render(){
         return(
             <div className="wrap">
-              <a href="#" onClick={(e)=>{e.preventDefault();}}>
+              <a href="#" onClick={(e)=>{e.preventDefault()}}>
                   这是a标签
+              </a><p/>
+              <a onClick={(e)=>{e.preventDefault()}}>
+                  这是a标签2
               </a>
             </div>
         )

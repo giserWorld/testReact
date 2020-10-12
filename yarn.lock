@@ -10264,6 +10264,13 @@ react-scripts@3.4.1:
   optionalDependencies:
     fsevents "2.1.2"
 
+react-to-print@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.npm.taobao.org/react-to-print/download/react-to-print-2.10.0.tgz#b45c3dd37341848c1b42f3d9a00cecbe83785f61"
+  integrity sha1-tFw903NBhIwbQvPZoAzsvoN4X2E=
+  dependencies:
+    prop-types "^15.7.2"
+
 react-transition-group@^4.4.1:
   version "4.4.1"
   resolved "https://registry.npm.taobao.org/react-transition-group/download/react-transition-group-4.4.1.tgz#63868f9325a38ea5ee9535d828327f85773345c9"

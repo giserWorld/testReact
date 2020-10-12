@@ -27,12 +27,12 @@ class form_input  extends Component{
     }
 
 /*******************处理值改变函数(表单元素)******************
-*更新时间:2020.09.03
+*更新时间:2020.10.12
 *参数:name(String):表单元素绑定的状态属性
 ******evt(Event):"onChange"触发的事件对象,可能为event或表单值
 *注解:
 *1.html元素、react组件绑定状态属性(单向、双向绑定属性方法),
-*2.该方法支持的表单元素:"input"、"select"、"textarea"
+*2.该方法支持的表单元素:"input"、"select"、"textarea"、"radio"、"InputNumber"
 *3.不要使用箭头函数
 */
 handelChange_form(name,evt){

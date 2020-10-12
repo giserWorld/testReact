@@ -23,6 +23,8 @@ import Ant_Tabs from './ant_Tabs';
 import Ant_Card from './ant_Card';
 import Ant_Dropdown from './ant_Dropdown';
 import Ant_Pagination from './ant_Pagination';
+import Ant_Radio from './ant_Radio';
+import Ant_InputNumber from './ant_InputNumber';
 //sample
 import sample_Anchor from './sample/test_Anchor';
 class antViewer extends Component{
@@ -35,7 +37,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_Pagination name="antViewer"/>
+              <Ant_InputNumber name="antViewer"/>
             </ConfigProvider>
         )
     }

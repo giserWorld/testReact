@@ -16,7 +16,7 @@ import Lifecycle_componentDidUpdate from './react/lifecycle_componentDidUpdate';
 
 //react
 // import Test_Component_Fun from './react/test_Component_Fun';
-// import Test_htmlTag_a from './react/test_htmlTag_a';
+import Test_htmlTag_a from './react/test_htmlTag_a';
 // import Test_react_Fragment from './react/react_Fragment';
 // import Test_router_to_url from './react/router_to_url';
 // import React_jsx_htmlDom from './react/react_virtualDom_htmlDom';
@@ -34,7 +34,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Lifecycle_componentWillReceiveProps/>
+                <Test_htmlTag_a/>
             </div>
         )
     }

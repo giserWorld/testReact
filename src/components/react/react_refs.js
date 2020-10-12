@@ -1,11 +1,13 @@
 import React ,{ Component }from 'react';
 import ChinaBook from './children/chinaBook_withRouter';
 import HistoryBook from './children/historyBook_redux';
+import EnglishBook from './children/englishBook';
 /**************************react_refs**********************
  *1.redux会影响react组件的ref的使用,即通过refs获取不到react dom节点
  *2.withRouter会影响react组件的ref的使用,即通过refs获取不到react dom节点
  *3.通过"wrappedComponentRef"属性给withRouter包裹组件添加回调函数,将Component放到refs中即可
     <ChinaBook wrappedComponentRef={c=>(this.refs.ChinaBook=c)}/>
+ *4.ref属性值可以为一个回调函数(官方推荐)
  **/
 class react_refs extends Component{
     constructor(props){
@@ -26,10 +28,16 @@ class react_refs extends Component{
         }
         this.setState(state);
     }
+    //ref函数值
+    refFun=(comInstance)=>{
+        this.ref_EnglishBook=comInstance;
+    }//e
     render(){
         return(
             <div>
                 <h2>{this.state.name}</h2><hr/>
+                {/* 1.ref值为函数 */}
+                <EnglishBook ref={this.refFun}/>
                 <div>
                     <button onClick={()=>{this.clickFun("切换")}}>切换组件类型</button><p/>
                     <button onClick={()=>{this.clickFun("获取ref")}}>获取ref</button><p/>
@@ -44,6 +52,9 @@ class react_refs extends Component{
                 
             </div>
         )
+    }
+    componentDidMount(){
+        console.log("_self:",this);
     }
 }
 
