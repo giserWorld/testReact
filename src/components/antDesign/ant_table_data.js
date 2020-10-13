@@ -2,6 +2,7 @@ import React,{ Component }from 'react';
 
 import { Table, Tag} from 'antd';
 import { Button } from 'antd';
+import { Resizable } from 'react-resizable';
 //工具类
 import { Divider } from 'antd';
 
@@ -15,9 +16,11 @@ const { Column, ColumnGroup } = Table;
  *4.如果表格字段配置为常规列，嵌套数据结构，则会出现树形表格
  *5.树形表格的每条数据必须包含key属性,并且有唯一的属性值，否则会有问题
  ********************tableTypeFun*********************
- *1.table_custom():
- *2.table_tree():
+ *1.table_custom():自定义表头
+ *2.table_tree():树形表格
  */
+
+
 class ant_table_data extends Component{
     constructor(props){
         super(props);
@@ -57,6 +60,8 @@ class ant_table_data extends Component{
     rowExpandable=(record)=>{
         return true;
     }//e
+
+
     //*****************2.树形表格******************//
     table_tree=()=>{
         let columns=data.columns_tree;

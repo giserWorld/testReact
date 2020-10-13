@@ -2,6 +2,8 @@ import React ,{ Component }from 'react';
 
 //rnd拖动组件
 import Rnd_index from '../rnd/index';
+//resizable组件
+import React_resizable from '../react_resizable';
 //代码分割
 import LazyLoad_import from './react_lazyLoad/lazyLoad_import()';
 import React_lazy from './react_lazyLoad/react_lazy()';
@@ -27,7 +29,7 @@ import React_EventEmitter from './react_EventEmitter';
 import React_createContext from './react_createContext()_Provider';
 import React_CSSTransition from './react_CSSTransition';
 import ReactToPrint from './reactToPrint';
-
+import React_setState from './react_setState()';
 
 class reactViewer extends Component{
     constructor(props){
@@ -39,7 +41,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <ReactToPrint name={this.state.name}/>
+              <React_setState name={this.state.name}/>
             </div>
         )
     }

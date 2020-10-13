@@ -4,22 +4,26 @@ export const table_columns=[
     {
         dataIndex:"key",//字段
         title:"序号",//字段标题
-        align:"center",//列的对齐方式
+        //align:"center",//列的对齐方式
+        width:100,//字段宽度
     },
     {
         dataIndex: 'name',
         title:'姓名',
-        align:"center",//列的对齐方式
+        //align:"center",//列的对齐方式
+        width:200,//字段宽度
     },
     {
         dataIndex: 'age',
         title: '年龄',
-        align:"center",//列的对齐方式
+        //align:"center",//列的对齐方式
+        width:100,//字段宽度
     },
     {
         dataIndex: 'address',
         title: '住址',
-        align:"center",//列的对齐方式
+        //align:"center",//列的对齐方式
+        width:300,//字段宽度
     }
 ];
 

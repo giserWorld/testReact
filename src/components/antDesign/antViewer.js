@@ -9,6 +9,7 @@ import Ant_table_data from './ant_table_data';
 import Ant_table_qtfy from './ant_table_qtfy';
 import Ant_table_htfy from './ant_table_htfy';
 import Ant_table_config from './ant_table_config';
+import Ant_table_resizable from './ant_table_resizable';
 import Ant_DatePicker from './ant_DatePicker';
 import Ant_AutoComplete from './ant_AutoComplete';
 import Ant_Select from './ant_Select';
@@ -25,8 +26,9 @@ import Ant_Dropdown from './ant_Dropdown';
 import Ant_Pagination from './ant_Pagination';
 import Ant_Radio from './ant_Radio';
 import Ant_InputNumber from './ant_InputNumber';
-//sample
+//sample demo
 import sample_Anchor from './sample/test_Anchor';
+import Table_Resizable from './sample/table_Resizable';
 class antViewer extends Component{
     constructor(props){
         super(props);
@@ -37,7 +39,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_InputNumber name="antViewer"/>
+              <Ant_table_resizable name="antViewer"/>
             </ConfigProvider>
         )
     }
