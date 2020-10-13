@@ -16,14 +16,20 @@
         background: white;
         border: 0px solid blue;
         margin: 5px;
-        padding: 10px;
+        padding: 15px;
         text-align: center;
+        .printPage_head{
+            font-size: 18px;
+            color: black;
+            padding-bottom: 10px;
+        }
     }
 }
-// 打印布局
-.printPageDiv{
+// 打印页面设置
+.printPageSeting{
     .printPage_left{
         background:white;
+        width:200px
     }
     .printPage_right{
         overflow-y: auto;

@@ -27151,7 +27151,12 @@ div.ant-typography-edit-content.ant-typography-rtl {
 
 /*# sourceMappingURL=antd.css.map*/
 
-/* 修改 wxt*/
+/* ******************修改 wxt**********************/
+.onePrintPage .printPage_head{
+  font-size: 18px;
+  color: black;
+  padding-bottom: 10px;
+}
 .printPage_table .ant-table thead > tr > th{
   background: #ffffff;
 }
