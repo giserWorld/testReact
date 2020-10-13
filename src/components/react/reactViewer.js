@@ -27,6 +27,7 @@ import React_EventEmitter from './react_EventEmitter';
 import React_createContext from './react_createContext()_Provider';
 import React_CSSTransition from './react_CSSTransition';
 import ReactToPrint from './reactToPrint';
+import ReactToPrint_js from './reactToPrint_js';
 
 
 class reactViewer extends Component{
@@ -39,7 +40,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <ReactToPrint name={this.state.name}/>
+              <ReactToPrint_js name={this.state.name}/>
             </div>
         )
     }
