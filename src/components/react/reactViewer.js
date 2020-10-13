@@ -29,8 +29,7 @@ import React_EventEmitter from './react_EventEmitter';
 import React_createContext from './react_createContext()_Provider';
 import React_CSSTransition from './react_CSSTransition';
 import ReactToPrint from './reactToPrint';
-import React_setState from './react_setState()';
-
+import React_setState from './react_setState()';import ReactToPrint_js from './reactToPrint_js';
 class reactViewer extends Component{
     constructor(props){
         super(props);
@@ -41,8 +40,8 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <React_setState name={this.state.name}/>
-            </div>
+<				<React_setState name={this.state.name}/>
+				<ReactToPrint_js name={this.state.name}/>            </div>
         )
     }
     componentDidMount(){

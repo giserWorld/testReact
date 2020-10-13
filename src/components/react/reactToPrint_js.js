@@ -2,7 +2,7 @@ import React ,{ Component }from 'react';
 import ReactToPrint from 'react-to-print';
 import { Input,Radio,InputNumber,Table } from 'antd';
 import './css/testReact.scss';
-/**************************react打印组件**********************
+/**************************js打印**********************
  *1.通过使用style={{pageBreakAfter:‘always’}} 实现样式分页打印
  **/
 
@@ -49,34 +49,22 @@ class ComponentToPrint extends Component {
     let pageStyle=this.props.printDirection==="横向"?{width:"296mm",height:"200mm",pageBreakAfter:"always"}
     :{width:"210mm",height:"296mm",pageBreakAfter:"always"};
     return (
-      <div className="printContentDiv">
+      <div className="printContentDiv" id="printContentDiv">
           {/* 分页 */}
           <div className="onePrintPage" style={pageStyle}>
               <div className="printPage_head">
-                松材线虫病发生情况汇总统计表(2019年秋季普查)
+                松材线虫病发生情况汇总统计表(2019年秋季普查1)
               </div>
               <div className="printPage_table">
-                <Table 
-                  columns={this.table_columns} 
-                  dataSource={this.data}
-                  bordered={true} 
-                  size="middle"
-                  pagination={false}
-                />
+                sssss
               </div>
           </div>
           <div className="onePrintPage" style={pageStyle}>
               <div className="printPage_head">
-                松材线虫病发生情况汇总统计表(2019年秋季普查)
+                松材线虫病发生情况汇总统计表(2019年秋季普查2)
               </div>
               <div className="printPage_table">
-                <Table 
-                  columns={this.table_columns} 
-                  dataSource={this.data}
-                  bordered={true} 
-                  size="middle"
-                  pagination={false}
-                />
+               ssss
               </div>
           </div>
       </div>
@@ -100,16 +88,33 @@ class reactToPrint extends Component{
         printDirection:type
       });
     }//e
+
+    //打印页面
+    printPage_js=()=>{
+        var newWindow = window.open('','printwindow');//打开新窗口
+        if(newWindow){
+            newWindow.document.write(window.document.getElementById('printContentDiv').innerHTML);//新页面写入数据
+            var head = newWindow.document.getElementsByTagName('head')[0];
+            var link = newWindow.document.createElement('link');
+            link.href = "./static/lib/css/antd.css";
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            head.appendChild(link);
+            link.onload=function(evt){
+                newWindow.setTimeout(function(){
+                    newWindow.print();
+                    newWindow.close();
+                },1000);
+            }
+        }
+    }
     render(){
         return(
             <div className="printPageDiv" style={{display:"flex",height:"100%"}}>
                 <div className="printPage_left" style={{width:"350px"}}>
                   <button onClick={()=>{this.clickFun("纵向")}}>纵向</button><p/>
                   <button onClick={()=>{this.clickFun("横向")}}>横向</button><p/>
-                  <ReactToPrint
-                      trigger={() => <a onClick={(e)=>{e.preventDefault()}}>打印数据</a>}
-                      content={() => this.componentRef}
-                  />
+                  <a onClick={this.printPage_js}>打印</a>
                 </div>
                 <div className="printPage_right">
                   <ComponentToPrint 

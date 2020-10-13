@@ -5,3 +5,56 @@
     background: #f2f2f2;
     border-radius: 20px;
 }
+#root{
+    overflow-y: hidden;
+}
+
+// 打印内容容器
+.printContentDiv{
+    // 单页样式
+    .onePrintPage{
+        background: white;
+        border: 0px solid blue;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+    }
+}
+// 打印布局
+.printPageDiv{
+    .printPage_left{
+        background:white;
+    }
+    .printPage_right{
+        overflow-y: auto;
+        background: #F2F2F2;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.printPage_table{
+    .ant-table thead > tr > th{
+        background: #ffffff;
+    }
+    .ant-table tbody > tr.ant-table-row:hover > td{
+        background: #ffffff; 
+    }
+    .ant-table tbody > tr > td{
+        border-bottom: 1px solid black!important;
+    }
+    .ant-table thead > tr > th{
+        border-bottom: 1px solid black!important;
+    }
+    .ant-table.ant-table-bordered thead > tr > th, .ant-table.ant-table-bordered tbody > tr > td, .ant-table.ant-table-bordered tfoot > tr > th, .ant-table.ant-table-bordered tfoot > tr > td{
+        border-right: 1px solid black!important;
+    }
+    .ant-table.ant-table-bordered .ant-table-container{
+        border: 1px solid black;
+        border-bottom: 0px;
+        border-right: 0px;
+    }
+}
+
