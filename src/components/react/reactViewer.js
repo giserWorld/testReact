@@ -23,7 +23,7 @@ import Test_props_update from './test_props_update';
 import Form_input from './form_input';
 import Form_select from './form_select';
 import Form_textarea from './form_textarea';
-import Ract_withRouter from './react_withRouter';
+import Ract_withRouter from './react_withRouter()';
 import React_refs from './react_refs';
 import React_EventEmitter from './react_EventEmitter';
 import React_createContext from './react_createContext()_Provider';
@@ -31,6 +31,7 @@ import React_CSSTransition from './react_CSSTransition';
 import ReactToPrint from './reactToPrint';
 import ReactToPrint_js from './reactToPrint_js';
 import React_setState from './react_setState()';
+import React_newWindow from './react_newWindow';
 class reactViewer extends Component{
     constructor(props){
         super(props);

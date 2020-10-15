@@ -5,7 +5,7 @@ export const table_columns=[
         dataIndex:"key",//字段
         title:"序号",//字段标题
         //align:"center",//列的对齐方式
-        width:100,//字段宽度
+        width:50,//字段宽度
     },
     {
         dataIndex: 'name',

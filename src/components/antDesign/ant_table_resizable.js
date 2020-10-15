@@ -38,7 +38,7 @@ class ant_table_resizable extends Component{
                 newColumns.push({
                     ...column,
                     onHeaderCell:(column)=>({//标题单元格
-                        width:column.width,
+                        width:column.width||100,
                         onResize: this.handleResize(idx),
                     }),
                 }); 

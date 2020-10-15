@@ -1,6 +1,6 @@
 import React ,{ Component }from 'react';
-import ChinaBook from './children/chinaBook_withRouter';
-import HistoryBook from './children/historyBook_redux';
+import ChinaBook_withRouter from './children/chinaBook_withRouter';
+import HistoryBook_redux from './children/historyBook_redux';
 import EnglishBook from './children/englishBook';
 /**************************react_refs**********************
  *1.redux会影响react组件的ref的使用,即通过refs获取不到react dom节点
@@ -45,8 +45,8 @@ class react_refs extends Component{
                 <div ref="div_container">
                     {
                         this.state.type==="1"?
-                        <ChinaBook wrappedComponentRef={c=>(this.refs.ChinaBook=c)}/>:
-                        <HistoryBook ref="HistoryBook"/>
+                        <ChinaBook_withRouter wrappedComponentRef={c=>(this.refs.ChinaBook_withRouter=c)}/>:
+                        <HistoryBook_redux ref="HistoryBook_redux"/>
                     }
                 </div>
                 
