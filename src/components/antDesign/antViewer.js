@@ -10,6 +10,7 @@ import Ant_table_qtfy from './ant_table_qtfy';
 import Ant_table_htfy from './ant_table_htfy';
 import Ant_table_config from './ant_table_config';
 import Ant_table_resizable from './ant_table_resizable';
+import Ant_table_A4 from './ant_table_A4';
 import Ant_DatePicker from './ant_DatePicker';
 import Ant_AutoComplete from './ant_AutoComplete';
 import Ant_Select from './ant_Select';
@@ -39,7 +40,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_table_resizable name="antViewer"/>
+              <Ant_table_A4 name="antViewer"/>
             </ConfigProvider>
         )
     }
