@@ -30,11 +30,14 @@ class es6_object extends Component{
         var obj2={};
         var obj3=1;
         var obj4=null;
+        var obj5={type:"人员",username:"用户名"};
+
         var copyObj={type:"new",...obj1};//{type: "new", name: "xiaoli", age: 20}
         var copyObj2={type:"new2",...obj2};//{type: "new2"}
         var copyObj3={...obj3};//{}
         var copyObj4={...obj4};//{}
-
+        var result5={...obj1,...obj5};//两个对象合并,{age: 20,name: "xiaoli",type: "人员",username: "用户名"}
+        
         console.log("对象扩展运算:",copyObj4);
 
         //****************1.对象的解构赋值****************//
