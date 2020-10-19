@@ -1,4 +1,4 @@
-//--------------------------表格字段配置-----------------------//
+//--------------------------1.表格字段配置-----------------------//
 //表格列配置(单字段列)
 export const table_columns=[
     {
@@ -127,7 +127,7 @@ export const columns_tree = [
 ];
 
 
-//--------------------------表格数据-----------------------//
+//--------------------------2.表格数据-----------------------//
 
 //嵌套数据
 export const data_tree = [
@@ -145,7 +145,7 @@ export const data_tree = [
       address: 'New York No. 1 Lake Park',
       children: [
         {
-         key: "3",
+          key: "3",
           name: 'John Brown',
           age: 42,
           address: 'New York No. 2 Lake Park',
@@ -157,7 +157,7 @@ export const data_tree = [
           address: 'New York No. 3 Lake Park',
           children: [
             {
-             key: "5",
+              key: "5",
               name: 'Jimmy Brown',
               age: 16,
               address: 'New York No. 3 Lake Park',
