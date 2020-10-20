@@ -41,7 +41,7 @@ import React_qrcode from './react_qrcode';import React_newWindow from './react_n
     render(){
         return(
             <div className="wrap">
-				<ReactToPrint_js name={this.state.name}/>                      
+				<Test_props_update name={this.state.name}/>                      
             </div>
         )
     }
