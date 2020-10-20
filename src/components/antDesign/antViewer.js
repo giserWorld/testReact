@@ -28,6 +28,7 @@ import Ant_Dropdown from './ant_Dropdown';
 import Ant_Pagination from './ant_Pagination';
 import Ant_Radio from './ant_Radio';
 import Ant_InputNumber from './ant_InputNumber';
+import Ant_Spin from './ant_Spin';
 //sample demo
 import sample_Anchor from './sample/test_Anchor';
 import Table_Resizable from './sample/table_Resizable';
@@ -41,7 +42,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_table_data name="antViewer"/>
+              <Ant_Spin name="antViewer"/>
             </ConfigProvider>
         )
     }
