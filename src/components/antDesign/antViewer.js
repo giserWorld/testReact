@@ -29,6 +29,7 @@ import Ant_Pagination from './ant_Pagination';
 import Ant_Radio from './ant_Radio';
 import Ant_InputNumber from './ant_InputNumber';
 import Ant_Spin from './ant_Spin';
+import Ant_Image from './ant_Image';
 //sample demo
 import sample_Anchor from './sample/test_Anchor';
 import Table_Resizable from './sample/table_Resizable';
