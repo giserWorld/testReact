@@ -1,0 +1,17 @@
+.widgetDiv{
+    border:1px solid red;
+    width:600px;
+    margin: 50px;
+    .listImg{
+        height: 250px;
+    }
+    .slick-slide img{
+        display: initial;
+    }
+    .widget_slick div{
+        text-align: center;
+    }
+    .slick-prev, .slick-next{
+        background: rgb(126, 127, 130);
+    }
+}

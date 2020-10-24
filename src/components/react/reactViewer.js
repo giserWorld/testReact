@@ -4,6 +4,8 @@ import React ,{ Component }from 'react';
 import Rnd_index from '../rnd/index';
 //resizable组件
 import React_resizable from '../react_resizable';
+//react-slick组件
+import React_slick from '../react_slick';
 //代码分割
 import LazyLoad_import from './react_lazyLoad/lazyLoad_import()';
 import React_lazy from './react_lazyLoad/react_lazy()';
@@ -41,7 +43,7 @@ import React_qrcode from './react_qrcode';import React_newWindow from './react_n
     render(){
         return(
             <div className="wrap">
-				<Test_props_update name={this.state.name}/>                      
+				<React_slick name={this.state.name}/>                      
             </div>
         )
     }
