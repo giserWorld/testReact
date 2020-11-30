@@ -1,5 +1,5 @@
 import React ,{ Component }from 'react';
-import {MyContext} from '../customPlugins/utils/context';
+import {MyContext} from '../customPlugins/modulesES6/utils/context';
 import Child_eventBook from './child_eventBook_Consumer';
 
 //常规react组件

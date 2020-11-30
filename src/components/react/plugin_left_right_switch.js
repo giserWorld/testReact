@@ -1,5 +1,5 @@
 import React ,{ Component }from 'react';
-import Widget_ul_scroll from './customPlugins/widget_ul_scroll';//左右切换数据
+import Widget_ul_scroll from './customPlugins/modulesES6/widget_ul_scroll';//左右切换数据
 import './css/testReact.scss';
 class plugin_left_right_switch extends Component{
     constructor(props){

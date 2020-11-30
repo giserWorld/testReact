@@ -1,5 +1,5 @@
 import React ,{ Component }from 'react';
-import {MyContext} from '../customPlugins/utils/context';
+import {MyContext} from '../customPlugins/modulesES6/utils/context';
 /**************************react_contextType**********************
  *1.react组件指定contextType属性时,该组件会往上找到最近的Context Provider,然后使用它的值到组件的"context"属性中
  *2.contextType使用方法:

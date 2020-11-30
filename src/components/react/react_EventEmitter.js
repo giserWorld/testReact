@@ -1,6 +1,6 @@
 import React ,{ Component }from 'react';
 //import {EventEmitter} from 'events';//事件总线机制(react内置模块)
-import bus from './customPlugins/eventBus';//导入事件总线对象
+import bus from './customPlugins/modulesES6/eventBus';//导入事件总线对象
 import Child_EventEmitter from './children/child_EventEmitter';
 
 /**************************EventEmitter自定义事件**********************

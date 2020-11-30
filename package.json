@@ -25,6 +25,7 @@
     "core-js": "^3.6.5",
     "echarts": "^4.8.0",
     "echarts-for-react": "^2.0.16",
+    "jquery": "^3.5.1",
     "qrcode.react": "^1.0.0",
     "query-string": "^6.12.1",
     "react": "^16.13.1",

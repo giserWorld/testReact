@@ -1,6 +1,6 @@
 import React,{ Component }from 'react';
 import { Resizable } from 'react-resizable';
-import './css/myReact.scss';
+import '../css/myReact.scss';
 /********************配置可调整的单元格td*********************
  *更新时间:2020.10.13 wxt
  *1.直接使用组件可伸缩列没有效果，需要添加特定的样式到该组件上

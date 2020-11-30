@@ -5,7 +5,7 @@ import { Table, Tag} from 'antd';
 //工具类
 import { Divider } from 'antd';
 import * as data from './datas/table_data';
-import ResizableTd from '../react/customPlugins/resizableTd';
+import ResizableTd from '../react/customPlugins/modulesES6/resizableTd';
 import './css/antStyle_my.scss';
 /********************可伸缩列表格*********************
  *1.直接使用组件可伸缩列没有效果，需要添加特定的样式到该组件上

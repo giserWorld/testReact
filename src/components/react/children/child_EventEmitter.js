@@ -1,5 +1,5 @@
 import React ,{ Component }from 'react';
-import bus from '../customPlugins/eventBus';//导入事件总线对象
+import bus from '../customPlugins/modulesES6/eventBus';//导入事件总线对象
 /**************************EventEmitter自定义事件**********************
  *
  **/

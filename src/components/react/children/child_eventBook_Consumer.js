@@ -1,5 +1,5 @@
 import React ,{ Component }from 'react';
-import {MyContext} from '../customPlugins/utils/context';
+import {MyContext} from '../customPlugins/modulesES6/utils/context';
 //常规react组件
 class child_eventBook extends Component{
     name="child_eventBook";

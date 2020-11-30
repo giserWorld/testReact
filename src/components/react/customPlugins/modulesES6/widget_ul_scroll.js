@@ -1,6 +1,6 @@
 import React ,{ Component }from 'react';
 import { LeftOutlined,RightOutlined } from '@ant-design/icons';
-import './css/myReact.scss'
+import '../css/myReact.scss'
 /****************************横向滚动Ul列表********************************
  *更新时间:2020.09.19 wxt
  *1.组件可选属性:

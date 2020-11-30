@@ -9,6 +9,8 @@ const es6Viewer=loadable(() => import('../components/ES6/es6Viewer'));
 //react
 const reactViewer=loadable(() => import('../components/react/reactViewer'));
 const linkTo_viewer=loadable(() => import('../viewer/linkTo_viewer'));
+//jquery
+const jqueryViewer=loadable(() => import('../components/react/jquery/jqueryViewer'));
 //antDesign
 const antViewer=loadable(() => import('../components/antDesign/antViewer'));
 //considerKnowledge
@@ -50,6 +52,8 @@ const router=()=>(
             <Route exact path="/echart" component={echartsViewer}/>
             {/* testPage */}
             <Route exact path="/testPage" component={testPageViewer}/>
+            {/* jquery */}
+            <Route exact path="/jquery" component={jqueryViewer}/>
             {/* router */}
 
             {/* 1.param路由传参,路由需要特殊格式 */}

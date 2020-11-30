@@ -1,7 +1,7 @@
 import React ,{ Component }from 'react';
 import Child_mathBook_Consumer from './children/child_mathBook_Consumer';
 import Child_mathBook_contextType from './children/child_mathBook_contextType';
-import {MyContext} from './customPlugins/utils/context';
+import {MyContext} from './customPlugins/modulesES6/utils/context';
 /**************************react_createContext()**********************
  *1.React.createContext属于React的高级API
  *2.当你不想在组件树中通过逐层传递 props 或者 state 方法来传递数据时，可以使用Context来实现跨层级的组件数据传递
