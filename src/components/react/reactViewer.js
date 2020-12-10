@@ -45,7 +45,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-				<React_slick name={this.state.name}/>                      
+				<Component_function name={this.state.name}/>                      
             </div>
         )
     }
