@@ -68,7 +68,8 @@ class Child_component1 extends Component{
         console.log(this);
     }
     componentDidMount(){
-          
+        let _self=this;
+        console.log("_self.props.children:",_self); 
     }
 }
 

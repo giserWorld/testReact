@@ -45,7 +45,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-				<Component_function name={this.state.name}/>                      
+				<React_props_children name={this.state.name}/>                      
             </div>
         )
     }

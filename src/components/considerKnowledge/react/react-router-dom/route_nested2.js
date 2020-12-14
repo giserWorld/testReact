@@ -1,11 +1,8 @@
 import React ,{ Component }from 'react';
 import {Switch,Route,Link} from "react-router-dom";
-import { 
-    BrowserRouter as Router,//history模式路由
-    useRouteMatch,
-} from "react-router-dom";
+import { BrowserRouter as Router,useRouteMatch} from "react-router-dom";//history模式路由
 /*****************************嵌套路由**********************************
- *1.嵌套路由:一个路由组件中又包含一个路由器
+ *1.嵌套路由
  *2.
  *****************************路由实用函数**********************************
  *1.useRouteMatch():

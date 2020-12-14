@@ -4,8 +4,11 @@ import React ,{ Component }from 'react';
 
 //router路由
 // import Test_basic_Routing from './react/react-router-dom/basic_Routing';
-// import Test_nested_routing from './react/react-router-dom/nested_routing';
+import Route_nested from './react/react-router-dom/route_nested';
 import Router_param from './react/react-router-dom/router_param';
+import Tab_route_props from './react/react-router-dom/tab_route_props';//<router>标签属性
+import Tab_router_config from './react/react-router-dom/tab_router_config';//Router路由器配置说明
+import Router_secRouter from './react/react-router-dom/router_secRouter';//二级路由配置
 
 //生命周期函数
 import Lifecycle_componentWillReceiveProps from './react/lifecycle_componentWillReceiveProps';//componentWillReceiveProps
@@ -23,7 +26,7 @@ import Test_htmlTag_a from './react/test_htmlTag_a';
 // import Test_define_jsx_variable from './react/test_define_jsx_variable';
 //import React_optimization_Loadable from './react/react_optimization_Loadable()';
 
-
+//route:"/test"
 class testViewer extends Component{
     constructor(props){
         super(props);
@@ -34,7 +37,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Test_htmlTag_a/>
+                <Route_nested name={this.state.name}/>
             </div>
         )
     }

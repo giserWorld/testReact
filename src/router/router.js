@@ -13,9 +13,10 @@ const linkTo_viewer=loadable(() => import('../viewer/linkTo_viewer'));
 const jqueryViewer=loadable(() => import('../components/react/jquery/jqueryViewer'));
 //antDesign
 const antViewer=loadable(() => import('../components/antDesign/antViewer'));
+
 //considerKnowledge
 const testViewer=loadable(() => import('../components/considerKnowledge/testViewer'),{
-fallback: <div>正在加载...</div>//过程提示
+    fallback: <div>正在加载...</div>//过程提示
 });
 
 //page
@@ -31,7 +32,7 @@ const testPageViewer=loadable(() => import('../components/testPage/testPageViewe
 //router
 const router_param=loadable(() => import('../components/considerKnowledge/react/react-router-dom/router_param'));
 //路由器组件
-const router=()=>(
+const mainRouter=()=>(
     <Router>
         <Switch>
             {/* react */}
@@ -41,7 +42,7 @@ const router=()=>(
             {/* antDesign */}
             <Route exact path="/ant" component={antViewer}/>
             {/* considerKnowledge */}
-            <Route exact path="/test" component={testViewer}/>
+            <Route path="/test" component={testViewer}/>
             {/* typeScript */}
             <Route exact path="/ts" component={tsViewer}/>
             {/* redux */}
@@ -68,4 +69,4 @@ const router=()=>(
         </Switch>
     </Router>
 );
-export default router;
+export default mainRouter;
