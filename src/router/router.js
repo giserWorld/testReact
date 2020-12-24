@@ -29,6 +29,8 @@ const reduxViewer=loadable(() => import('../components/redux/reduxViewer'));
 const echartsViewer=loadable(() => import('../components/echarts/echartsViewer'));
 //testPage
 const testPageViewer=loadable(() => import('../components/testPage/testPageViewer'));
+//scss
+const scssViewer=loadable(() => import('../components/style_scss/scssViewer'));
 //router
 const router_param=loadable(() => import('../components/considerKnowledge/react/react-router-dom/router_param'));
 //路由器组件
@@ -55,6 +57,8 @@ const mainRouter=()=>(
             <Route exact path="/testPage" component={testPageViewer}/>
             {/* jquery */}
             <Route exact path="/jquery" component={jqueryViewer}/>
+            {/* scss */}
+            <Route exact path="/scss" component={scssViewer}/>
             {/* router */}
 
             {/* 1.param路由传参,路由需要特殊格式 */}
