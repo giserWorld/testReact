@@ -4,3 +4,12 @@ $fs:20px;
     color: blue;
     font-size: $fs;
 }
+//定义一个混合可重复使用样式
+@mixin style_mixin {
+    font:{
+      family: Arial;
+      size: 20px;
+      weight: bold;
+    }
+    color: #ff0000;
+}

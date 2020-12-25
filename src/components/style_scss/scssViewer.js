@@ -1,6 +1,6 @@
 import React ,{ Component }from 'react';
 
-import Scss_import from './scss_order_@import';
+import Scss_mixin from './scss_order_@mixin';
 
 //router:"/scss"
 class scssViewer extends Component{
@@ -13,7 +13,7 @@ class scssViewer extends Component{
     render(){
         return(
             <div className="wrap">
-				<Scss_import name={this.state.name}/>
+				<Scss_mixin name={this.state.name}/>
             </div>
         )
     }

@@ -1,0 +1,13 @@
+/**********************@mixin**********************
+*1.混合指令（Mixin）用于定义可重复使用的样式，避免了使用无语意的 class，
+   比如 .float-left。混合指令可以包含所有的 CSS 规则，绝大部分 Sass 规则，甚至通过参数功能引入变量，输出多样化的样式
+*2.使用 @include 指令引用混合样式，格式是在其后添加混合名称
+*/
+@import './commonStyle.scss';
+
+.scss_mixin{
+  .box_div2{
+    @include style_mixin;//引用混合指令
+    margin-top: 10px;
+  }
+}
