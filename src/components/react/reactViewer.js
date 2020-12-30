@@ -33,8 +33,11 @@ import React_CSSTransition from './react_CSSTransition';
 import ReactToPrint from './reactToPrint';
 import ReactToPrint_js from './reactToPrint_js';
 import React_setState from './react_setState()';
-import React_qrcode from './react_qrcode';import React_newWindow from './react_newWindow';
+import React_qrcode from './react_qrcode';
+import React_newWindow from './react_newWindow';
+import React_withRouter_redux from './react_withRouter_redux';
 
+//router:"/react"
 class reactViewer extends Component{
     constructor(props){
         super(props);
@@ -45,7 +48,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-				<React_props_children name={this.state.name}/>                      
+				<React_withRouter_redux name={this.state.name}/>                      
             </div>
         )
     }

@@ -1,6 +1,7 @@
 import React ,{ Component }from 'react';
-
 import Redux_book from './redux_book';
+
+//router:"/redux"
 class reduxViewer extends Component{
     constructor(props){
         super(props);
@@ -10,8 +11,8 @@ class reduxViewer extends Component{
     }
     render(){
         return(
-            <div className="wrap">
-              <Redux_book/>
+            <div className="wrap reduxViewer">
+              <Redux_book name={this.state.name}/>
             </div>
         )
     }

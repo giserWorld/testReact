@@ -4,13 +4,13 @@ import React ,{ Component }from 'react';
  *1.params路由传参：
     1)刷新地址栏，参数依然存在 
     2)路由传参只能传字符串，并且，如果传的值太多的话，url会变得长而丑陋
- *2.query路由传参：
+ *2.search路由传参：(推荐,跟常规get请求参数类似)
+    1)优缺点同params
+ *3.query路由传参：
     1)传参优雅，传递参数可传对象
     2)刷新地址栏，参数丢失
- *3.state路由传参：
+ *4.state路由传参：
     1)优缺点同query
- *4.search路由传参：(推荐,跟常规get请求参数类似)
-    1)优缺点同params
  */
 class router_param extends Component{
     constructor(props){

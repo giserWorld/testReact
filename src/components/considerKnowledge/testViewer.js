@@ -25,6 +25,7 @@ import Test_htmlTag_a from './react/test_htmlTag_a';
 // import React_jsx_htmlDom from './react/react_virtualDom_htmlDom';
 // import Test_define_jsx_variable from './react/test_define_jsx_variable';
 //import React_optimization_Loadable from './react/react_optimization_Loadable()';
+import Redux_page from './react/redux_page';
 
 //route:"/test"
 class testViewer extends Component{
@@ -37,7 +38,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Route_nested name={this.state.name}/>
+                <Redux_page name={this.state.name}/>
             </div>
         )
     }

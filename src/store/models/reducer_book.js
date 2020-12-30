@@ -32,6 +32,14 @@ const bookData = {
                 codeName:name,
             }
         },
+        //初始化数据
+        initRedux(state){
+            return {
+                ...state,
+                codeName:"initdata",
+                code:"initdata",
+            }
+        },
         //payload为参数
         test_action(state, payload){
             return state + payload

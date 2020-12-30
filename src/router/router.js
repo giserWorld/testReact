@@ -13,7 +13,6 @@ const linkTo_viewer=loadable(() => import('../viewer/linkTo_viewer'));
 const jqueryViewer=loadable(() => import('../components/react/jquery/jqueryViewer'));
 //antDesign
 const antViewer=loadable(() => import('../components/antDesign/antViewer'));
-
 //considerKnowledge
 const testViewer=loadable(() => import('../components/considerKnowledge/testViewer'),{
     fallback: <div>正在加载...</div>//过程提示
@@ -31,6 +30,8 @@ const echartsViewer=loadable(() => import('../components/echarts/echartsViewer')
 const testPageViewer=loadable(() => import('../components/testPage/testPageViewer'));
 //scss
 const scssViewer=loadable(() => import('../components/style_scss/scssViewer'));
+//test
+const reactTestViewer=loadable(() => import('../components/react/reactTest/reactTestViewer'));
 //router
 const router_param=loadable(() => import('../components/considerKnowledge/react/react-router-dom/router_param'));
 //路由器组件
@@ -59,6 +60,8 @@ const mainRouter=()=>(
             <Route exact path="/jquery" component={jqueryViewer}/>
             {/* scss */}
             <Route exact path="/scss" component={scssViewer}/>
+            {/* test */}
+            <Route exact path="/reactTest" component={reactTestViewer}/>
             {/* router */}
 
             {/* 1.param路由传参,路由需要特殊格式 */}

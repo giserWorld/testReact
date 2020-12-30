@@ -4,7 +4,7 @@ import React ,{ Component }from 'react';
  *1.当组件初始化(第一次装载)时componentWillReceiveProps()不会被触发
  *2.当父组件重新渲染(render非第一次执行,即state值发生变化)时，子组件会触发componentWillReceiveProps函数(不管子组件的props属性值改变与否或父组件没有给子组件传值)
  *3.子组件的render函数执行前通过componentWillReceiveProps函数获取新的props，从而更新子组件自己的state
- *4.componentWillReceiveProps()将会在子组件的render()之前触发
+ *4.子组件的componentWillReceiveProps()将会在子组件的render()之前触发
  *5.子组件props值发生改变时componentWillReceiveProps()函数会触发,然后会调用render()函数,重新渲染子组件
  *6.优化子组件数据刷新的方法:
     Component{

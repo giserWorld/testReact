@@ -10,7 +10,7 @@ class index extends Component{
     }
     render(){
         return(
-            <div>
+            <div className={this.state.name}>
                 <h2>{this.state.name}</h2>
             </div>
         )

@@ -1,22 +1,22 @@
 import React ,{ Component }from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { withRouter } from "react-router";
+import ChineseBook from './book_chinese';
 import HistoryBook from './book_history';
 import EnglishBook from './book_english';
 
 // import HistoryBook from './book_history_fun';
 // import EnglishBook from './book_english_fun';
 
-/**************************redux**********************
- *1.当redux中的状态属性值改变时,不是所有相关的react组件都会触发componentWillReceiveProps()方法
-    只有与改变的redux属性相关的react组件，才会触发componentWillReceiveProps()方法,即react组件中
-    "mapStateToProps"中是否包含redux变化的变量属性,与"mapDispatchToProps"无关
- *2.当redux状态变量变化的值是相同的，则不会触发componentWillReceiveProps方法
- *3.使用redux状态机制,如果不关闭应用,则redux仓库的属性值不会发生变化,如果想回到初始状态时，主要进行页面时手动改变其值即可
- *4.使用redux管理状态数据时，注意恢复初始状态数据
+/**************************redux_book**********************
+ *
  **/
 class redux_book extends Component{
-    state={
-        inputValue:"dd"
+    constructor(props){
+        super(props);
+        this.state={
+            inputValue:"dd"
+        }
     }
     /*******************处理值改变函数******************
     *更新时间:2020.07.24
@@ -40,6 +40,11 @@ class redux_book extends Component{
     clickFun2=()=>{
         this.props.changeCodeName(this.state.inputValue);
     }
+    clickFun3=()=>{
+        let url="/test";
+        let paramStr="name=router_search";
+        this.props.history.push({pathname:url,search:paramStr});
+    }
     render(){
         return(
             <div>
@@ -47,10 +52,16 @@ class redux_book extends Component{
                 <input type="text" value={this.state.inputValue} onChange={this.handelChange.bind(this,"inputValue")}></input>
                 <button onClick={this.clickFun}>改变redux容器code</button><p/>
                 <button onClick={this.clickFun2}>改变redux容器codeName</button><p/>
+                <button onClick={this.clickFun3}>跳转页面路由</button><p/>
                 <HistoryBook></HistoryBook><p/>
                 <EnglishBook></EnglishBook><p/>
+                <ChineseBook></ChineseBook><p/>
             </div>
         )
+    }
+    //组件卸载
+    componentWillUnmount(){
+       this.props.initRedux();//初始化redux 
     }
     componentDidMount(){
 
@@ -77,7 +88,8 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps=(dispatch)=>{
     return {
         changeCode:(param)=>{dispatch.bookData.changeCode2(param)},
-        changeCodeName:(param)=>{dispatch.bookData.changeCodeName(param)}
+        changeCodeName:(param)=>{dispatch.bookData.changeCodeName(param)},
+        initRedux:()=>{dispatch.bookData.initRedux()},
     }
 }//e
-export default connect(null,mapDispatchToProps)(redux_book);
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(redux_book));
