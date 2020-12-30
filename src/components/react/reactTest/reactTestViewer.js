@@ -1,7 +1,8 @@
 import React ,{ Component }from 'react';
 
-//rnd拖动组件
+//test
 import Test_render_parent from './test_render_parent';
+import Test_urlParamToObject from './test_urlParamToObject';
 
 //router:"/reactTest"
 class reactViewer extends Component{
@@ -13,13 +14,10 @@ class reactViewer extends Component{
     }
     render(){
         return(
-            <div className="wrap">
-				<Test_render_parent name={this.state.name}/>                      
+            <div className="wrap" name={this.state.name}>
+				<Test_urlParamToObject name={this.state.name}/>                      
             </div>
         )
-    }
-    componentDidMount(){
-        
     }
 }
 export default reactViewer;

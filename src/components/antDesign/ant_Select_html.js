@@ -1,10 +1,12 @@
 import React ,{ Component }from 'react';
 import { Select } from 'antd';
 const { Option } = Select;
-/*****************************Select下拉框**********************************
- *1.
+/*****************************ant_Select下拉选择框**********************************
+ *1.下拉选择器
+ *2.表格组件(声明式)
+ *3.不推荐该方式，比较繁琐
  */
-class ant_Select extends Component{
+class ant_Select_html extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -67,4 +69,4 @@ class ant_Select extends Component{
           
     }
 }
-export default ant_Select;
+export default ant_Select_html;

@@ -14,7 +14,7 @@ import Ant_table_A4 from './ant_table_A4';
 import Ant_table_tree from './ant_table_tree';
 import Ant_DatePicker from './ant_DatePicker';
 import Ant_AutoComplete from './ant_AutoComplete';
-import Ant_Select from './ant_Select';
+import Ant_Select_data from './ant_Select_data';
 import Ant_tree_data from './ant_tree_data';
 import Ant_Icon from './ant_Icon';
 import Ant_Cascader from './ant_Cascader';
@@ -33,6 +33,8 @@ import Ant_Image from './ant_Image';
 //sample demo
 import sample_Anchor from './sample/test_Anchor';
 import Table_Resizable from './sample/table_Resizable';
+
+//router:"/ant"
 class antViewer extends Component{
     constructor(props){
         super(props);
@@ -43,13 +45,9 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_Spin name="antViewer"/>
+              <Ant_Select_data name="antViewer"/>
             </ConfigProvider>
         )
     }
-    componentDidMount(){
-        
-    }
-    
 }
 export default antViewer;

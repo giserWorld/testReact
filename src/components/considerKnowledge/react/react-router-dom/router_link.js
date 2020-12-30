@@ -44,18 +44,18 @@ class router_link extends Component{
             var paramStr="name=xiaohong&id=2&code=51";
             _self.props.history.push({pathname:"/router_param/"+paramStr});
         }
+        else if(type=="router_search"){
+            //2.js动态路由跳转(pathname + search),推荐
+            var paramStr="type=search&name=xiaowang";
+            this.props.history.push({pathname:"/router_search",search:paramStr});
+        }
         else if(type=="router_query"){
-            //2.js动态路由跳转
+            //3.js动态路由跳转
             this.props.history.push({pathname:"/router_query",query:{param1:'sunny',age:"25"}});
         }
         else if(type=="router_state"){
-            //3.js动态路由跳转(pathname + state)
+            //4.js动态路由跳转(pathname + state)
             this.props.history.push({pathname:"/router_state",state:{type:'state',age:"25"}});
-        }
-        else if(type=="router_search"){
-            //4.js动态路由跳转(pathname + search)
-            var paramStr="type=search&name=xiaowang";
-            this.props.history.push({pathname:"/router_search",search:paramStr});
         }
         else if(type=="router_js"){
             //5.js动态路由跳转,拼接search参数

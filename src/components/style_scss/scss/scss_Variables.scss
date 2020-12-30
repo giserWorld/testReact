@@ -1,17 +1,26 @@
 /**********************scss变量**********************
 *1.SassScript 最普遍的用法就是变量，变量以美元符号开头，赋值方法与 CSS 属性的写法一样
 *2.变量支持块级作用域，嵌套规则内定义的变量只能在嵌套规则内使用（局部变量），不在嵌套规则内定义的变量则可在任何地方使用（全局变量）。将局部变量转换为全局变量可以添加 !global
+*3.sass可以将反复使用的css属性值 定义成变量，然后通过变量名来引用它们，而无需重复书写这一属性值
+*4.sass使用$符号来标识变量
 */
-//声明变量
+
+/*声明变量*/
 $my_width:100px;
 $fontSize:16px;
+$var_color: #F90;//单变量值
+$var_border: 1px solid blue;//多变量值
+$var_textSize: 20px;//多变量值
 
 .scss_Variables{
     .box_div1{
         width: $my_width;
-        border: 1px solid red;
+        border: 1px solid $var_color;
     }
     .box_div2{
         font-size: $fontSize;
+        color: $var_color;//使用变量
+        border: $var_border;
+        font-size: $var_textSize;
     }
 }

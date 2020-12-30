@@ -38,7 +38,7 @@ class router_param extends Component{
            pathParam=_self.props.match&&_self.props.match.params?_self.props.match.params:{};//获取路由参数
         }
         else if(type==="search"){
-            //结果为字符串,例如:"?type=search"
+            //结果为字符串,例如:"?type=search",推荐
             pathParam=_self.props.location&&_self.props.location.search?_self.props.location.search:{};//获取路由参数
         }
         else if(type==="query"){

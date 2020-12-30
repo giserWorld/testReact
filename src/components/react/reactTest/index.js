@@ -1,25 +1,23 @@
 import React ,{ Component }from 'react';
-
+/**************************test-index**********************
+ *
+ **/
 class index extends Component{
     constructor(props){
         super(props);
         this.state={
-            name:"index组件",
+            name:"index",
         }
     }
     render(){
         return(
-            <div>
-                <h1>{this.state.name}</h1>
+            <div name={this.state.name}>
+                <h2>{this.state.name}</h2><hr/>
             </div>
         )
     }
     componentDidMount(){
-       
-    }
-    componentWillUnmount(){
 
     }
-    
 }
 export default index;

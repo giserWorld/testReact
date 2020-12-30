@@ -12,7 +12,7 @@ class index extends Component{
     }
     render(){
         return(
-            <div className="wrap">
+            <div className="wrap" name={this.state.name}>
                 <h2>{this.state.name}</h2><Divider/>
             </div>
         )
