@@ -1,5 +1,6 @@
 import React ,{ Component }from 'react';
-import { withRouter } from "react-router";//带有路由属性的高阶组件
+//带有路由属性的高阶组件
+import { withRouter } from "react-router";
 /**************************react_withRouter(高阶组件)**********************
  *1.高阶组件是参数为组件，返回值为新组件(包裹组件)的函数
  *2.组件是将 props 转换为 UI，而高阶组件是将组件转换为另一个组件

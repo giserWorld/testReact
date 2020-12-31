@@ -1,7 +1,8 @@
 import React ,{ Component }from 'react';
 
 /*****************************router_doc**********************************
- *1.
+ *1.location.push(pathname,search):跳转路由url
+    
  */
 class index extends Component{
     constructor(props){

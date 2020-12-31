@@ -9,6 +9,7 @@ import Router_param from './react/react-router-dom/router_param';
 import Tab_route_props from './react/react-router-dom/tab_route_props';//<router>标签属性
 import Tab_router_config from './react/react-router-dom/tab_router_config';//Router路由器配置说明
 import Router_secRouter from './react/react-router-dom/router_secRouter';//二级路由配置
+import Router_link from './react/react-router-dom/router_link';
 
 //生命周期函数
 import Lifecycle_componentWillReceiveProps from './react/lifecycle_componentWillReceiveProps';//componentWillReceiveProps
@@ -38,7 +39,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Redux_page name={this.state.name}/>
+                <Router_link name={this.state.name}/>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 /**************************路由器组件************************/
 import React from 'react';
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';//hash模式路由
+import {HashRouter as Router, Route, Switch,Redirect} from 'react-router-dom';//hash模式路由
 //import { BrowserRouter as Router} from "react-router-dom";//history模式路由
 import loadable from '@loadable/component';
 
@@ -67,12 +67,14 @@ const mainRouter=()=>(
             {/* 1.param路由传参,路由需要特殊格式 */}
             <Route exact path="/router_param/:param" component={router_param}/>{/* 单个路由参数,参数值为字符串，params */}
             <Route exact path="/router_param_multi/:name:username" component={router_param}/>{/* 多个路由参数,参数值为字符串，params */}
-            {/* 2.query路由传参 */}
-            <Route exact path="/router_query" component={router_param}/>{/* 带有参数的路由,query为对象，query */}
-            {/* 3.state路由传参 */}
-            <Route exact path="/router_state" component={router_param}/>{/* 带有参数的路由,state为对象，state */}
-            {/* 4.search路由传参 */}
+            {/* 2.search路由传参 */}
             <Route exact path="/router_search" component={router_param}/>{/* 带有参数的路由,search为对象，search */}
+            {/* 3.query路由传参 */}
+            <Route exact path="/router_query" component={router_param}/>{/* 带有参数的路由,query为对象，query */}
+            {/* 4.state路由传参 */}
+            <Route exact path="/router_state" component={router_param}/>{/* 带有参数的路由,state为对象，state */}
+            {/* 路由重定向 */}
+            <Redirect exact path="/null" to="/test" />
         </Switch>
     </Router>
 );

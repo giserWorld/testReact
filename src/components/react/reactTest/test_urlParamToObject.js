@@ -13,6 +13,7 @@ class test_urlParamToObject extends Component{
     }
     clickFun=()=>{
         let _self=this;
+        //http://localhost:9000/#/test?name=router_search
         //获取类似get请求的参数:"?name=ddd&type=21"
         let pathParam=_self.props.location&&_self.props.location.search?_self.props.location.search:"";
         console.log("pathParam:",pathParam);

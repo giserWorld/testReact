@@ -54,7 +54,7 @@ class router_param extends Component{
 
     componentDidMount(){
       let _self=this;
-      console.log("component",_self)    
+      console.log("_self:",_self);   
     }
 }
 export default router_param;
