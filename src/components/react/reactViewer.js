@@ -17,11 +17,9 @@ import Parent_book from './functionComponent/parent_book';
 //react
 import ReactDOM_render from './reactDOM_render';
 import React_createElement from './React_createElement()';
-import React_scss from './react_scss';
 import React_props_children from './react_props_children';
 import AjaxRequest_data from './ajaxRequest_data';
 import Plugin_left_right_switch from './plugin_left_right_switch';
-import Test_props_update from './test_props_update';
 import Form_input from './form_input';
 import Form_select from './form_select';
 import Form_textarea from './form_textarea';

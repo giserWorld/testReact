@@ -3,6 +3,7 @@ import React ,{ Component }from 'react';
 //test
 import Test_render_parent from './test_render_parent';
 import Test_urlParamToObject from './test_urlParamToObject';
+import Test_router_diff_param from './test_router_diff_param';
 
 //router:"/reactTest"
 class reactViewer extends Component{
@@ -15,7 +16,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap" name={this.state.name}>
-				<Test_urlParamToObject name={this.state.name}/>                      
+				<Test_router_diff_param name={this.state.name}/>                      
             </div>
         )
     }

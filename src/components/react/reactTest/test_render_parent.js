@@ -2,6 +2,8 @@ import React ,{ Component }from 'react';
 import Test_render_children from './test_render_children';
 /**************************react父组件**********************
  *1.父组组件的重新render会导致子组件的componentWillReceiveProps()和render()函数的触发
+  于父组件有没有给子组件传递属性无关,都会触发componentWillReceiveProps()和render()函数
+ *2.
  **/
 class react_render_parent extends Component{
     constructor(props){

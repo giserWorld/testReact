@@ -4,6 +4,9 @@ import {Link} from "react-router-dom";//跳转链接
 
 /**************************router_link**********************
  *1.search路由传参：(推荐,跟常规get请求参数类似)
+ *2.如果react路由地址中带参数，则需要使用"window.location.hash"方式进行跳转，
+  通过"props.history.push()"方式会造成页面空白
+ *3.
  **/
 class router_link extends Component{
     constructor(props){
@@ -48,21 +51,21 @@ class router_link extends Component{
     clickFun=(type)=>{
         let _self=this;
         if(type=="router_param"){
-            //1.js动态路由跳转
+            //1.js动态路由跳转,显性参数
             var paramStr="name=xiaohong&id=2&code=51";
             _self.props.history.push({pathname:"/router_param/"+paramStr});
         }
         else if(type=="router_search"){
-            //2.js动态路由跳转(pathname + search),推荐
+            //2.js动态路由跳转(pathname + search),显性参数,推荐
             var paramStr="type=search&name=xiaowang";
             this.props.history.push({pathname:"/router_search",search:paramStr});
         }
         else if(type=="router_query"){
-            //3.js动态路由跳转
+            //3.js动态路由跳转,隐性参数
             this.props.history.push({pathname:"/router_query",query:{param1:'sunny',age:"25"}});
         }
         else if(type=="router_state"){
-            //4.js动态路由跳转(pathname + state)
+            //4.js动态路由跳转(pathname + state),隐性参数
             this.props.history.push({pathname:"/router_state",state:{type:'state',age:"25"}});
         }
         else if(type=="router_js"){
@@ -70,12 +73,18 @@ class router_link extends Component{
             window.location.hash='/router_search?a=1';
         }
         else if(type=="router_custom"){
+            //带参数路由地址
             let url="/router_search?type=search&name=xiaowang";
             let url2="/router_search/?type=search&name=xiaowang";
+            //无参数路由地址
             let url3="/router_search";
             let paramStr="type=search&name=xiaowang";
-            this.props.history.push({pathname:url});
-            //this.props.history.push({pathname:url3,search:paramStr});
+            //错误，页面空白
+            //this.props.history.push({pathname:url});
+            //正确
+            this.props.history.push({pathname:url3,search:paramStr});
+            //正确
+            //window.location.hash=url;
         }
     }//e
     componentDidMount(){
