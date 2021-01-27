@@ -11,6 +11,10 @@ import React ,{ Component }from 'react';
  *7.不会自动清理。如果要清理，需要手动在 componentWillUnmount 处理
  *8.redux仓库状态属性值发生改变后，redux会一直保留该状态数据，除非刷新页面或手动重置状态数据(componentWillUnmount)
  *9.页面刷新后redux状态仓库会重新构建,数据变为初始状态
+ *10.reducer函数接收两个参数，第一个是初始化State，另一个是发送过来的Action,可以
+    1)reducerFun(state,action):支持
+    2)reducerFun(state,action,param1):支持
+    3)reducerFun(state,action,param1,param2):不支持
  **/
 class index extends Component{
     constructor(props){

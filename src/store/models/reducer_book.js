@@ -7,7 +7,8 @@ const bookData = {
         name:"bookData",
         count:0,
         code:"51",
-        codeName:"四川省"
+        codeName:"四川省",
+        date:"",
     },
     reducers: {
         //定义action
@@ -18,18 +19,20 @@ const bookData = {
                 count:state.count+1 
             }});
         },
-        changeCode2(state,code){
+        changeCode2(state,code){//一般都是两个参数(state,action)),推荐
             // 从第二个变量开始为调用increment时传递进来的参数，后面依次类推，例如：dispatch.count.increment(10, 20)时， num1 = 10 , num2 = 20.
             return {
                 ...state,
                 code:code,
             }
         },
-        changeCodeName(state,name){
+        changeCodeName(state,name,code,dateStr){//dateStr接受不到参数,包含state参数最多三个参数
             // 从第二个变量开始为调用increment时传递进来的参数，后面依次类推，例如：dispatch.count.increment(10, 20)时， num1 = 10 , num2 = 20.
             return {
                 ...state,
                 codeName:name,
+                code:code,
+                date:dateStr
             }
         },
         //初始化数据

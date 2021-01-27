@@ -38,7 +38,7 @@ class redux_book extends Component{
         this.props.changeCode(this.state.inputValue);
     }
     clickFun2=()=>{
-        this.props.changeCodeName(this.state.inputValue);
+        this.props.changeCodeName(this.state.inputValue,"51024","2020-01-27");
     }
     clickFun3=()=>{
         let url="/test";
@@ -88,7 +88,7 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps=(dispatch)=>{
     return {
         changeCode:(param)=>{dispatch.bookData.changeCode2(param)},
-        changeCodeName:(param)=>{dispatch.bookData.changeCodeName(param)},
+        changeCodeName:dispatch.bookData.changeCodeName,
         initRedux:()=>{dispatch.bookData.initRedux()},
     }
 }//e
