@@ -1,7 +1,4 @@
 import React ,{ Component }from 'react';
-//组件jsx
-import baseDefinition from './component/baseDefinition';
-import ts_interface from './component/ts_interface';
 
 //router:"/ts"
 class tsViewer extends Component{
