@@ -11,27 +11,41 @@
     3)async异步加载,async是下载完就执行<script src="path/to/myMethod.js" async></script>
  *7.es6-module加载机制等同于"defer异步加载",即等到整个页面渲染完，再执行模块脚本
  *8.ES6 是在编译时就完成模块加载,确定模块的依赖关系,CommonJS是在运行时加载模块
+ *9.一个模块(即.js文件)就是一个独立封闭的模块系统
+ *9.ES6暴露接口方式：
+   1)export let firstName = 'Michael'=> import { firstName } from module
+   2)export {firstName} => import { firstName } from module
+   2)export default firstName = 'Michael'=> import firstName from module
  ******************************export命令**********************************
  *1.export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能
  *2.一个模块(即.js文件)就是一个独立的文件。该文件内部的所有变量，外部无法获取，可通过export关键字输出该变量
  *3.export命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系
+
  ******************************export default命令**********************************
  *1.export default命令用于指定模块的默认输出
  *2.export default时，对应的import语句不需要使用大括号；使用export时，对应的import语句需要使用大括号。
  *3.一个模块只能有一个默认输出，因此export default命令只能使用一次
  *4.export default就是输出一个叫做default的变量或方法，然后系统允许你为它取任意名字
  *5.export default命令其实只是输出一个叫做default的变量，所以它后面不能跟变量声明语句
+ ******************************样例demo**********************************
+ *1.export命令对外输出变量
+ *2.export default命令
  */
 
-    //1.export对外输出变量
-    export var firstName = 'Michael';
-    var lastName="xiaohong";
-    export {lastName};//使用大括号指定所要输出的一组变量,等同于上面一种写法
+/***************1.export命令对外输出变量***************/
+   //一次暴露一个接口 
+   export let firstName = 'Michael';
+   //使用大括号指定所要输出的一组变量,等同于上面一种写法,一次暴露多个接口 
+   let lastName="xiaohong";
+   let age=21;
+   export {lastName,age};
 
     //2.export对外输出函数或类
     export function fun(x,y) {
         return x * y;
     };
 
+/***************2.export default命令对外输出变量***************/
     //2.export default对外输出变量
-    export default firstName = 'Michael';
+    let firstName2 = 'Michael';//声明一个变量
+    export default firstName2;//将firstName2变量赋值给default变量

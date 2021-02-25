@@ -5,6 +5,9 @@ import Es6_class from './es6_class';
 import Js_logic_operation from './js_logic_operation';
 import Calculate_spread from './calculate_spread';
 import Es6_jsonObject from './es6_jsonObject';
+import Es6_module_import from './es6_module_import';
+
+//router:"/es6"
 class es6Viewer extends Component{ 
     constructor(props){
         super(props);
@@ -15,7 +18,7 @@ class es6Viewer extends Component{
     render(){
         return(
             <div className="wrap">
-              <Es6_jsonObject name={this.state.name}/>
+              <Es6_module_import name={this.state.name}/>
             </div>
         )
     }
