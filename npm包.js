@@ -3,7 +3,7 @@ let package={
     //工具库
     "jquery": "^3.5.1",
     "@loadable/component": "^5.13.1",
-
+    "axios": "^0.19.2",
     //react家族
     "react-router-dom": "^5.2.0",
 
