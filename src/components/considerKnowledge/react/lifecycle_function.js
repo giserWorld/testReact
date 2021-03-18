@@ -1,6 +1,6 @@
 /*************************react生命周期函数************************/
 import React ,{ Component }from 'react';
-import { Redirect } from 'react-router-dom';
+//import { Redirect } from 'react-router-dom';
 /******************************react生命周期函数**********************************
  *1.constructor():组件实例化时调用
  *  1)在 constructor() 函数中不要调用 setState() 方法

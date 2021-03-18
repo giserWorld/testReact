@@ -17,6 +17,7 @@ import Lifecycle_componentWillReceiveProps_new from './react/lifecycle_component
 import Lifecycle_componentDidUpdate from './react/lifecycle_componentDidUpdate';//componentDidUpdate
 //import Lifecycle_componentWillMount from './react/lifecycle_componentWillMount';//componentWillMount
 //import Lifecycle_componentWillUnmount from './react/lifecycle_componentWillUnmount';//componentWillMount
+import Lifecycle_function from './react/lifecycle_function';//componentWillMount
 
 //react
 // import Test_Component_Fun from './react/test_Component_Fun';
@@ -39,7 +40,7 @@ class testViewer extends Component{
     render(){
         return(
             <div className="considerKnowledge">
-                <Router_link name={this.state.name}/>
+                <Lifecycle_function name={this.state.name}/>
             </div>
         )
     }
