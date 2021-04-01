@@ -9,7 +9,8 @@ class ant_Select_data extends Component{
     constructor(props){
         super(props);
         this.state={
-            name:"ant_Select_data", 
+            name:"ant_Select_data",
+            selectValue:"",
             options:[
                 {label:"dd",value:"123"},
                 {label:"dd2",value:"dd"},
@@ -29,8 +30,11 @@ class ant_Select_data extends Component{
     ******option(Object):选中的数据对象
     **/
     handleChange_select=(value,option)=>{
-        console.log(`selected ${value}`);
-        console.log(`option ${option}`);
+        this.setState({
+            selectValue:value 
+        });
+        console.log("selected:",value);
+        console.log("option:",option);
     }//e
 
     onSearch(val) {
@@ -41,10 +45,16 @@ class ant_Select_data extends Component{
         console.log('value:', value);
         console.log('option:', option);
     }
+    clickFun=()=>{
+        this.setState({
+            selectValue:"qq"
+        });
+    }
     render(){
         return(
             <div className="wrap">
                 <h2>{this.state.name}</h2><hr/>
+                <button onClick={this.clickFun}>选中option值</button><p/>
                 <Select
                     style={{ width: 200 }}
                     options={this.state.options} //数据化配置选项内容
@@ -52,7 +62,8 @@ class ant_Select_data extends Component{
                     // showSearch
                     // allowClear={true}
                     // optionFilterProp="children"
-                    // onChange={this.handleChange_select}
+                    onChange={this.handleChange_select}
+                    value={this.state.selectValue}
                     // onSearch={this.onSearch}
                     // onSelect={this.onSelect}
                 />
