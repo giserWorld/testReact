@@ -1,31 +1,106 @@
 import React ,{ Component }from 'react';
 import { Modal, Button } from 'antd';
 
-/**************************基础模态框**********************
- *1.motal_basic:模态框(底部按钮)
+/**************************模态框**********************
+ *1.模态框
+ *2.常用属性:
+    <Modal
+       footer={null}//是否显示底部内容 
+    />
+ ********************typeFun*********************
+ *1.motal_basic:基础模态框
+ *2.motal_noFoot:模态框(无底部按钮)
+ *3.motal_noFoot:模态框(无底部按钮,点击蒙版不关闭)
  **/
-class testModal extends Component{
+class ant_modal extends Component{  
     constructor(props){
         super(props);
         this.state={
-            name:"模态框组件",
-            modalVisible:false,//显示状态
-            modalTitle:"标题",//标题
+            name:"模态框",
+            modalVisible:true,//显示状态
+            modalTitle:"模态框标题",//模态框标题
             modalType:""
         }
-    }
+        this.typeFun=this.motal_basic;//组件类型
+    }//e
+
+    /*********************3.模态框(无底部按钮,点击蒙版不关闭)*******************
+    *1.模态框(无底部按钮,点击蒙版不关闭) 
+    */
+   motal_noAutoClose=()=>{
+        return (
+            <>
+                <Modal
+                    className="motal_noFoot"
+                    title={this.state.modalTitle}
+                    visible={this.state.modalVisible}
+                    zIndex={1000}
+                    onCancel={()=>{this.modalCancel("modalVisible")}}
+                    footer={null}
+                >
+                    <div>
+                        这个是模态框显示的内容！
+                    </div>
+                </Modal>
+            </>
+        );
+    }//e
+
+    /*********************2.模态框(无底部按钮)*******************
+    *1.模态框无底部按钮
+    *2. 
+    */
+   motal_noFoot=()=>{
+        return (
+            <>
+                <Modal
+                    className="motal_noFoot"
+                    title={this.state.modalTitle}
+                    visible={this.state.modalVisible}
+                    zIndex={1000}
+                    onCancel={()=>{this.modalCancel("modalVisible")}}
+                    footer={null}
+                >
+                    <div>
+                        这个是模态框显示的内容！
+                    </div>
+                </Modal>
+            </>
+        );
+    }//e
+
+
+    /*********************1.基础模态框*******************
+    *1.模态框包含"底部按钮"、
+    */
+    motal_basic=()=>{
+        return (
+            <>
+                <Modal
+                    className="motal_basic"
+                    title={this.state.modalTitle}
+                    visible={this.state.modalVisible}
+                    zIndex={1000}
+                    onOk={this.modalOK.bind(this)}
+                    onCancel={()=>{this.modalCancel("modalVisible")}}
+                >
+                    <div>
+                        这个是模态框显示的内容！
+                    </div>
+                </Modal>
+            </>
+        );
+    }//e
+
     render(){
-        let modelFun=this[this.state.modalType]||"";
         return(
             <div className="wrap myModal">
                 <h1>{this.state.name}</h1>
-                {modelFun?modelFun():""}
-                <Button type="primary" onClick={this.showModal.bind(this,"motal_basic")}>1.模态框(底部按钮)</Button><p/>
-                <Button type="primary" onClick={this.showModal.bind(this,"motal_noFoot")}>2.模态框(无底部按钮)</Button><p/>
-                <Button type="primary" onClick={this.showModal.bind(this,"motal_noAutoClose")}>3.模态框(无底部按钮,点击蒙版不关闭)</Button><p/>
+                {this.typeFun()}
             </div>
         )
-    }
+    }//e
+
     /**************关闭模态框(通用方法)*************
      *更新时间:2020.08.24
      *参数:modalField(String):控制modal可视字段
@@ -57,44 +132,6 @@ class testModal extends Component{
             </Modal>
         )
     }
-    /*********************2.模态框(不无底部按钮)*******************/
-    motal_noFoot=()=>{
-        return (
-            <Modal
-                className="motal_noFoot"
-                title={this.state.modalTitle}
-                visible={this.state.modalVisible}
-                zIndex={1000}
-                onCancel={()=>{this.modalCancel("modalVisible")}}
-                footer={null}
-            >
-                <div>
-                    这个是模态框显示的内容！
-                </div>
-            </Modal>
-        )
-    }
-
-    /*********************1.模态框(包含底部按钮)*******************/
-    motal_basic=()=>{
-        return (
-            <Modal
-                className="motal_basic"
-                title={this.state.modalTitle}
-                visible={this.state.modalVisible}
-                zIndex={1000}
-                onOk={this.modalOK.bind(this)}
-                onCancel={()=>{this.modalCancel("modalVisible")}}
-            >
-                <div>
-                    这个是模态框显示的内容！
-                </div>
-            </Modal>
-        )
-    }
-    componentDidMount(){
-        
-    }
     //显示模态框
     showModal(type){
         this.setState({
@@ -108,4 +145,4 @@ class testModal extends Component{
         alert("点击确定按钮！");
     }
 }
-export default testModal;
+export default ant_modal;

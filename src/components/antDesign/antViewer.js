@@ -30,6 +30,7 @@ import Ant_Radio from './ant_Radio';
 import Ant_InputNumber from './ant_InputNumber';
 import Ant_Spin from './ant_Spin';
 import Ant_Image from './ant_Image';
+import Ant_Message from './ant_Message';
 //sample demo
 import sample_Anchor from './sample/test_Anchor';
 import Table_Resizable from './sample/table_Resizable';
@@ -45,7 +46,7 @@ class antViewer extends Component{
     render(){
         return(
             <ConfigProvider locale={zhCN}>
-              <Ant_Select_data name="antViewer"/>
+              <Ant_Message name="antViewer"/>
             </ConfigProvider>
         )
     }

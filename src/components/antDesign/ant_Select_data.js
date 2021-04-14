@@ -4,6 +4,11 @@ const { Option } = Select;
 /*****************************ant_Select下拉选择框**********************************
  *1.下拉选择器
  *2.组件(编程式),推荐使用该方式，简单实用 
+ *3.Select常用属性:
+    <Select
+        placeholder="请选择区划"//选择框默认文本
+        defaultValue={""}//指定默认选中的条目
+    />
  */
 class ant_Select_data extends Component{
     constructor(props){

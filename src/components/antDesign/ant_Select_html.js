@@ -42,6 +42,7 @@ class ant_Select_html extends Component{
         console.log('value:', value);
         console.log('option:', option);
     }
+
     render(){
         return(
             <div className="wrap">
@@ -64,7 +65,7 @@ class ant_Select_html extends Component{
                 </Select>
             </div>
         )
-    }
+    }//e
     componentDidMount(){
           
     }
