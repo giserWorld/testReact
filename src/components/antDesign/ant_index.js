@@ -1,6 +1,6 @@
 import React ,{ Component }from 'react';
 import { Divider } from 'antd';
-/*****************************index**********************************
+/**********************index************************
  *1.
  */
 class index extends Component{
