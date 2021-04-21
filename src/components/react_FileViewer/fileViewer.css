@@ -1,0 +1,40 @@
+//****************文件查看器******************//
+.fileViewer-div{
+
+}
+.fileViewer-div{
+    overflow: hidden;
+    height: 100%;
+    /* border: 1px solid red;  */
+}
+.fileViewer-div .pg-viewer-wrapper table{
+    width: 100%;
+}
+.fileViewer-div .pg-viewer-wrapper p{
+    margin: 0.3em 0;
+}
+.fileViewer-div .pg-viewer-wrapper tbody{
+    border-top: 1px solid #ccc;
+}
+.fileViewer-div .pg-viewer-wrapper td{
+    border-left: 1px solid #ccc;
+}
+.fileViewer-div .pg-viewer-wrapper #docx{
+    overflow-y: auto;
+}
+.fileViewer-div .spreadsheet-viewer{
+    /* display: flex;
+    flex-direction: column-reverse; */
+}
+.fileViewer-div .pg-viewer-wrapper{
+    overflow-y: hidden;
+}
+.fileViewer-div .pg-viewer-wrapper #pg-viewer{
+    overflow-y: auto;
+}
+.fileViewer-div .pdf-canvas{
+    text-align: center;
+}
+.fileViewer-div .pdf-canvas canvas{
+    border: 1px solid #e8e1e1;
+}

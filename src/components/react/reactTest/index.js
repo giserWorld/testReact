@@ -1,4 +1,5 @@
 import React ,{ Component }from 'react';
+import '../css/testReact.scss';
 /**************************test-index**********************
  *
  **/

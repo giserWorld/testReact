@@ -4,6 +4,8 @@ let package={
     "jquery": "^3.5.1",
     "@loadable/component": "^5.13.1",
     "axios": "^0.19.2",
+    "react-file-viewer": "^1.2.1",//文件查看器
+
     //react家族
     "react-router-dom": "^5.2.0",
 

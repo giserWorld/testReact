@@ -32,8 +32,12 @@ const testPageViewer=loadable(() => import('../components/testPage/testPageViewe
 const scssViewer=loadable(() => import('../components/style_scss/scssViewer'));
 //test
 const reactTestViewer=loadable(() => import('../components/react/reactTest/reactTestViewer'));
+//文件预览
+const fileViewer=loadable(() => import('../components/react/reactTest/plugin_widget_filePreview'));
 //router
 const router_param=loadable(() => import('../components/considerKnowledge/react/react-router-dom/router_param'));
+//router
+const PluginViewer=loadable(() => import('../components/pluginViewer'));
 //路由器组件
 const mainRouter=()=>(
     <Router>
@@ -62,6 +66,10 @@ const mainRouter=()=>(
             <Route exact path="/scss" component={scssViewer}/>
             {/* test */}
             <Route exact path="/reactTest" component={reactTestViewer}/>
+            {/* plugin */}
+            <Route exact path="/plugin" component={PluginViewer}/>
+            {/* fileViewer */}
+            <Route exact path="/fileViewer" component={fileViewer}/>
             {/* router */}
 
             {/* 1.param路由传参,路由需要特殊格式 */}

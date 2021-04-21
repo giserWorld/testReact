@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";//跳转链接
  *1.search路由传参：(推荐,跟常规get请求参数类似)
  *2.如果react路由地址中带参数，则需要使用"window.location.hash"方式进行跳转，
   通过"props.history.push()"方式会造成页面空白
- *3.
+ *3.通过"props.history.push(url)"方式可实现js动态路由跳转
  **/
 class router_link extends Component{
     constructor(props){
