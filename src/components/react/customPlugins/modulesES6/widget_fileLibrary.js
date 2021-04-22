@@ -63,6 +63,53 @@ class widget_fileList extends Component{
             _self.historyLog=_self.historyLog.slice(0,_self.historyLog.length-1);
         }
     }//e
+    //下载文件
+    downFile=(item,e)=>{
+        let _self=this;
+        //(e)=>{e.preventDefault()}
+        if(item.type==="png"&&item.url){
+            _self.img2base64(item.url,function(base64){
+                //图片保存到本地的方法
+                var a=document.createElement("a");
+                var eventClick=new MouseEvent("click");
+                a.download=item.name||"图片";
+                a.href=base64;
+                a.dispatchEvent(eventClick);//触发a的单击事件
+                //console.log("base64：",base64);
+            })
+        }
+        else if(item.url){
+            //图片保存到本地的方法
+            var a=document.createElement("a");
+            var eventClick=new MouseEvent("click");
+            a.download="";
+            a.href=item.url;
+            a.dispatchEvent(eventClick);//触发a的单击事件
+        }
+    }//e
+    img2base64(imgUrl,callback){
+        if(imgUrl){
+            let img=new Image();  
+            img.src=imgUrl;  
+            img.setAttribute("crossOrigin","anonymous");
+            //img.crossOrigin='*'
+            img.onload=function(){  
+                let base64=getBase64Image(img);  
+                if(callback)callback(base64);
+            }
+        }
+        function getBase64Image(img){  
+            let canvas=document.createElement("canvas");  
+            canvas.width=img.width;  
+            canvas.height=img.height;  
+            let ctx=canvas.getContext("2d");  
+            ctx.drawImage(img,0,0,img.width,img.height);  
+            let ext=img.src.substring(img.src.lastIndexOf(".")+1).toLowerCase();  
+            let dataURL=canvas.toDataURL("image/"+ext);  
+            //let dataURL=canvas.toDataURL("image/png");  
+            return dataURL;  
+        }//e1
+    }//e
     componentWillReceiveProps(nextProps){
         if(nextProps.dataList.toString()!=this.props.dataList.toString()){//判断列表数据是否为新数据
             this.setState({
@@ -87,7 +134,6 @@ class widget_fileList extends Component{
                             let fileName=item.type||"file";
                             let iconurl="/officeIcon/{name}.png".replace("{name}",fileName);
                             let fileicon=require("../utilityIcons"+iconurl);
-                            //let dd=require("../utilityIcons/officeIcon/testPng.png")
                             return (
                                 <div className="fileBox" key={idx}>
                                     {
@@ -103,7 +149,7 @@ class widget_fileList extends Component{
                                     <div className="fileBox-name">
                                         {
                                             fileName!="file"&&item.url?
-                                            <a className="fileName" href={fileicon} download>{item.name||""}</a>:
+                                            <a className="fileName" onClick={()=>{this.downFile(item)}}>{item.name||""}</a>:
                                             <span className="fileName">{item.name||""}</span>
                                         }
                                     </div>

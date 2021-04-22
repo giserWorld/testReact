@@ -73,7 +73,7 @@ class index extends Component{
                     ]
                 },
                 {
-                    id:2,
+                    name:"文本",
                     tip:"",
                     type:"txt",
                     url:"http://localhost:84/testTxt.txt"
