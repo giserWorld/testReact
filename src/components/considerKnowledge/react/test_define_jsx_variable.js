@@ -2,6 +2,7 @@ import React,{ Component }from 'react';
 /********************创建jsx组件属性*********************
 *1.使用静态jsx(jsx中只能使用html代码,不能使用使用js代码),直接写入jsx
 *2.使用动态jsx(jsx中可以使用使用js代码),动态jsx通过函数的方式返回jsx(推荐)
+*3.jsx组件中可以使用html标签和react组件
 **/
 class jsxAttr extends Component{
     constructor(props){

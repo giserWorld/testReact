@@ -63,7 +63,20 @@ class ant_table_data extends Component{
 
         }
         else if(type==="添加表格数据"){
-
+            //模拟表格数据
+            const dataTemp = [];
+            for(let i = 0; i < 46; i++){
+                dataTemp.push({
+                    key:i+1,
+                    name:`Edward King ${i}`,
+                    age: 32,
+                    address: `London, Park Lane no. ${i}`,
+                });
+            }
+            state={
+                tableRows:dataTemp,//表格数据
+                selectedRowKeys:[]//清空选中行key
+            }
         }
         else if(type==="数据加载状态"){
             state={
@@ -92,7 +105,7 @@ class ant_table_data extends Component{
                         bordered={true}//是否显示单元格边框
                         //rowSelection={this.row_checkbox}//行checkbox配置
                         loading={this.state.loadStatus}//页面是否加载中
-                        expandable={{
+                        expandable={{//配置展开属性
                             //defaultExpandAllRows:true
                         }}
                     />
@@ -111,25 +124,6 @@ class ant_table_data extends Component{
                 <a id="sc" style={rowStyle}>删除</a>
             </span>
         )
-    }
-
-    //添加表格数据
-    addTableData(){
-        //模拟表格数据
-        const dataTemp = [];
-        for(let i = 0; i < 46; i++){
-            dataTemp.push({
-                key:i+1,
-                name:`Edward King ${i}`,
-                age: 32,
-                address: `London, Park Lane no. ${i}`,
-            });
-        }
-        this.setState({
-            columns:data.table_columns,
-            data:data.table_data1,//表格数据
-            selectedRowKeys:[]//清空选中行key
-        });
     }
 }
 export default ant_table_data;
