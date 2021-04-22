@@ -29,6 +29,7 @@ class ant_table_data extends Component{
             tableRows:data.table_data1,//表格数据
             selectedRowKeys:["2"],//控制表格选中的行key
             expandedRowKeys:[],
+            loadStatus:false,//数据加载状态
         }
     }
     //行checkbox配置
@@ -44,28 +45,53 @@ class ant_table_data extends Component{
           })
         },
         selectedRowKeys:[],//设置talble checkbox选中的数据key
-    };
+    }
     rowExpandable=(record)=>{
         return true;
     }//e
 
+    //点击函数
+    clickFun=(type)=>{
+        let state=null;
+        if(type==="清空表格数据"){
+            state={
+                tableRows:[],
+                selectedRowKeys:[]//清空选中行key
+            };
+        }
+        else if(type==="控制表格字段"){
+
+        }
+        else if(type==="添加表格数据"){
+
+        }
+        else if(type==="数据加载状态"){
+            state={
+                loadStatus:this.count?true:false,
+            };
+            this.count?this.count=false:this.count=true;
+        }
+        this.setState(state);
+    }//e
 
     render(){
         console.log("*******render()******");
         this.row_checkbox.selectedRowKeys=this.state.selectedRowKeys;
         return(
             <div>
-                <h2>{this.state.name}</h2><Divider/>
-                <Button type="primary" onClick={this.control_filter}>控制表格字段</Button><p/>
-                <Button type="primary" onClick={this.addTableData.bind(this)}>添加表格数据</Button><p/>
-                <Button type="primary" onClick={this.clearTable.bind(this)}>清空表格数据</Button><Divider/>
+                <h2>{this.state.name}</h2><p/>
+                <Button type="primary" onClick={()=>{this.clickFun("控制表格字段")}}>控制表格字段</Button><p/>
+                <Button type="primary" onClick={()=>{this.clickFun("添加表格数据")}}>添加表格数据</Button><p/>
+                <Button type="primary" onClick={()=>{this.clickFun("清空表格数据")}}>清空表格数据</Button><p/>
+                <Button type="primary" onClick={()=>{this.clickFun("数据加载状态")}}>数据加载状态</Button><p/>
                 <div className="tableDiv">
                     <Table 
                         style={{width:"1000px"}}
-                        //rowSelection={this.row_checkbox}//行checkbox配置
                         columns={this.state.tableColumns}//表格列配置
                         dataSource={this.state.tableRows}//表格数据
                         bordered={true}//是否显示单元格边框
+                        //rowSelection={this.row_checkbox}//行checkbox配置
+                        loading={this.state.loadStatus}//页面是否加载中
                         expandable={{
                             //defaultExpandAllRows:true
                         }}
@@ -86,6 +112,7 @@ class ant_table_data extends Component{
             </span>
         )
     }
+
     //添加表格数据
     addTableData(){
         //模拟表格数据
@@ -101,13 +128,6 @@ class ant_table_data extends Component{
         this.setState({
             columns:data.table_columns,
             data:data.table_data1,//表格数据
-            selectedRowKeys:[]//清空选中行key
-        });
-    }
-    //清空表格数据
-    clearTable(){
-        this.setState({
-            data:[],
             selectedRowKeys:[]//清空选中行key
         });
     }
