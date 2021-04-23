@@ -49,7 +49,7 @@ class reactViewer extends Component{
     render(){
         return(
             <div className="wrap">
-				<React_api_createElement name={this.state.name}/>                      
+				<Plugin_Widget_fileLibrary name={this.state.name}/>                      
             </div>
         )
     }

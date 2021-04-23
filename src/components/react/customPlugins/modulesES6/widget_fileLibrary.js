@@ -16,6 +16,8 @@ import preDir from '../utilityIcons/officeIcon/preDir.png';
     tip?:"1",//右上角提示信息
     children:[],//嵌套的子节点
   }
+  *********************成员方法*********************
+  *1.recordHistory(datalist):记录当前目录数据
  */
 class widget_fileList extends Component{
     historyLog=[];//历史记录
@@ -44,6 +46,12 @@ class widget_fileList extends Component{
         }
         //console.log("clickItem:",item);
     }//e
+    //记录历史记录
+    recordHistory(datalist){
+        let _self=this;
+        _self.historyLog.push({type:"next",data:datalist}); 
+    }//e
+
     //点击返回上级目录
     clickPreDirectory=()=>{
         let _self=this;

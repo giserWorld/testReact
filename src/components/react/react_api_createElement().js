@@ -7,6 +7,8 @@ import React ,{ Component }from 'react';
  *4.创建react元素的方式
    1)通过React.createElement("div")方式创建
    2)通过jsx方式创建
+ *5.html元素在react中可以作为react元素
+ *6.react元素是构成 React 应用的最小砖块，react组件是由react元素构成的
 */
 class React_createElement extends Component{
     constructor(props){
